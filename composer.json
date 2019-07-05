@@ -1,10 +1,9 @@
 {
-    "name": "laravel/laravel",
+    "name": "project-alisa/Ouranos",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Web system for MLP",
+    "version": "0.1.0",
     "keywords": [
-        "framework",
-        "laravel"
     ],
     "license": "MIT",
     "require": {
