@@ -213,7 +213,7 @@ main{
 }
 .msgboxfoot{
     background:lightgray;
-    padding:15px 0 18px 0;
+    padding:10px 0 10px 0;
     border-bottom-left-radius:20px;
     border-bottom-right-radius:20px;
     text-align:center;
@@ -227,6 +227,7 @@ main{
     padding:4px 15px;
     margin:5px;
     color:black !important;
+    font-size: 16px;
     text-decoration:none;
     border-radius:50px;
     border:solid 1px black;
@@ -251,20 +252,20 @@ main{
     background: linear-gradient(90deg, #ff3a44, #a71718);
 }
 
-.ildef{
-    display: inline-block;
-}
 .il{
     display: inline-block;
-    width: 285px;
-    text-align: center;
-    font-size: 18px;
+    margin: 10px;
 }
-.il80{
-    margin: 2px;
+.jw{
     display: inline-block;
-    width: 80%;
+    margin: 0 5px;
+    padding: 6px 15px;
+    min-width: 120px;
+}
+
+.buttonbox{
     text-align: center;
+    padding: 10px;
 }
 
 /* twemoji */
@@ -504,10 +505,12 @@ td{
 }
 
 /* input area */
-.textarea{
+.textarea,input[type="text"],input[type="email"],input[type="password"]{
     border: none;
     border-radius: 3px;
-    padding: 5px;
+    background: #fafafa;
+    padding: 7px;
+    font-size: 15px;
     box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
     text-align: center;
 }

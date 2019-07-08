@@ -63,9 +63,19 @@
             </div>
         </header>
 
-
-
-        <main class="py-4">
+        <main>
+            @if(!empty($title))
+                <?php $sub = empty($sub) ? config('app.name')." - Ver".config('ouranos.version') : $sub ?>
+                <div class="topnavi">
+                    <a href="javascript:history.back()" class="backbutton">
+                        <img src="{{ asset('image/backkey.png') }}" alt="back">
+                    </a>
+                    <div>
+                        <div class="topnavititle">{{ $title }}</div>
+                        <div class="topnavisub">{{ $sub }}</div>
+                    </div>
+                </div>
+            @endif
             @yield('content')
         </main>
     </div>

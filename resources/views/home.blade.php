@@ -1,23 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.app',['title' => '事務室'])
 
 @section('content')
-<main>
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<div class="msgbox">
+    <div class="msgboxtop">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    どうしてオレたちを殺そうとするんだ！
-                </div>
+    <div class="msgboxbody">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
             </div>
-        </div>
+        @endif
+
+        <p>
+            どうしてオレたちを殺そうとするんだ！
+        </p>
     </div>
-</main>
+    <div class="msgboxfoot"></div>
+</div>
 @endsection
