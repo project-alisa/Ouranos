@@ -1,5 +1,5 @@
 {
-    "name": "project-alisa/Ouranos",
+    "name": "project-alisa/ouranos",
     "type": "project",
     "description": "Web system for MLP",
     "version": "0.1.0",
@@ -14,6 +14,7 @@
         "ext-pdo": "*"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.6",
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
