@@ -57,6 +57,7 @@
             color: white;
             text-decoration: none;
             font-size: 16px;
+            margin: 0 5px;
         }
 
         #links > a{
@@ -103,11 +104,11 @@
         <a href="javascript:void(0)">List</a>
         <a href="javascript:void(0)">Unit</a>
         <a href="javascript:void(0)">Search</a>
-        <a href="https://github.com/project-alisa/Ouranos" target="_blank">GitHub</a>
     </div>
 
     @if (Route::has('login'))
         <div id="admin">
+            <a href="https://github.com/project-alisa/Ouranos" target="_blank">GitHub</a>
             @auth
                 <a href="{{ url('/home') }}">Office</a>
             @else
