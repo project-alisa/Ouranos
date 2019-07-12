@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'Laravel-admin',
+    'name' => "THE@TER OFFICE",
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>Laravel</b> admin',
+    'logo' => '<img src="'.'/image/mlp_ouranos.png'.'" alt="Admin logo" style="width:200px;height:auto;">',
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<b>La</b>',
+    'logo-mini' => '<img src="'.'/image/ouranos_icon.png'.'" alt="Admin logo" style="width:auto;height:35px;">',
 
     /*
     |--------------------------------------------------------------------------
