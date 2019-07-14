@@ -32,5 +32,7 @@
   "Forgot Your Password?": "合言葉をメメントした",
   "Reset Password": "合言葉の再設定",
   "Send Password Reset Link": "合言葉再設定リンクを送信",
-  "Logout": "ろぐあうと"
+  "Logout": "ろぐあうと",
+
+  "The requested page was not found on this server.": "お探しのページは存在しないか、メメントしてしまいました"
 }

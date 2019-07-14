@@ -1,0 +1,35 @@
+#error{
+    position: relative;
+    text-align: center;
+    margin: 120px auto 0;
+}
+#reika{
+    width: 136px;
+    height: 168px;
+}
+#arara{
+    position: absolute;
+    top: -30px;
+    left: calc(50% + 60px);
+    height: 80px;
+    width: 80px;
+}
+
+.error{
+    display: flex;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+.error > div{
+    padding: 1px 13px;
+}
+.error > .code{
+    font-size: 23px;
+    font-weight: bold;
+    border-right: solid 2px black;
+}
+.error > .desc{
+    font-size: 20px;
+}
