@@ -30,7 +30,7 @@ class CreateIdolsTable extends Migration
             $table->enum('bloodtype',['A','B','O','AB']);
             $table->string('handedness',2);
             $table->integer('bust');
-            $table->integer('weist');
+            $table->integer('waist');
             $table->integer('hip');
             $table->string('birthplace',30);
             $table->string('hobby',50)->nullable();

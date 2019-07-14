@@ -106,20 +106,12 @@
         <a href="javascript:void(0)">Search</a>
     </div>
 
-    @if (Route::has('login'))
-        <div id="admin">
-            <a href="https://github.com/project-alisa/Ouranos" target="_blank">GitHub</a>
-            @auth
-                <a href="{{ url('/home') }}">Office</a>
-            @else
-                <a href="{{ route('login') }}">Admin</a>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
-                @endif
-            @endauth
-        </div>
-    @endif
+    <div id="admin">
+        <a href="https://github.com/project-alisa/Ouranos" target="_blank">GitHub</a>
+        @if (Route::has('admin.home'))
+            <a href="{{ url('/admin') }}">Admin</a>
+        @endif
+    </div>
 </main>
 
 
