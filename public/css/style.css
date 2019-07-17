@@ -119,17 +119,21 @@ footer{
     color: #393939;
 }
 
-#footlinks{
+#footbanners{
     display: flex;
     flex-direction: row-reverse;
     width: 50%;
 }
-#footlinks > a{
+#footbanners > a{
     margin-left: 10px;
 }
-#footlinks > a[title="MiyanojiRapid"] > img{
+#footbanners > a[title="MiyanojiRapid"] > img{
     width: auto;
     height: 50px;
+}
+
+#footlinks > a{
+    margin-right: 10px;
 }
 
 /* message window */

@@ -100,8 +100,7 @@
     <h1><img src="{{ asset('image/mlp_ouranos.png') }}" alt="mlp">
     </h1>
     <div id="links">
-        <a href="javascript:void(0)">Idol</a>
-        <a href="javascript:void(0)">List</a>
+        <a href="{{ url('/idol') }}">Idol</a>
         <a href="javascript:void(0)">Unit</a>
         <a href="javascript:void(0)">Search</a>
     </div>

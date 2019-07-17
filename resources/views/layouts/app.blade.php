@@ -95,8 +95,12 @@
                 </select>
             </label>
         </p>
+        <div id="footlinks">
+            <a href="javascript:void(0)">{{ __('About this site') }}</a>
+            <a href="https://github.com/project-alisa/Ouranos">GitHub</a>
+        </div>
     </div>
-    <div id="footlinks">
+    <div id="footbanners">
         <a href="https://miyacorata.net" target="_blank" title="MiyanojiRapid">
             <img src="{{ asset('image/miyanojirapid.png') }}" alt="MiyanojiRapid">
         </a>
