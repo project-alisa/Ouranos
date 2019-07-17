@@ -13,7 +13,7 @@ class CheckLocale
      *
      * @var array
      */
-    private $langs = array('ja','en');
+    private $langs = array('ja','en','ko');
 
     /**
      * Handle an incoming request.

@@ -1,0 +1,41 @@
+{
+  "Idol": "아이돌",
+
+  "Name": "이름",
+  "Name y": "읽기",
+  "Name r": "Alphabet",
+  "Name separate": "NS",
+  "Name y separate": "NYS",
+  "Name r separate": "NRS",
+  "subname": "별명",
+  "Type": "유형",
+  "Birthdate": "생일",
+  "Age": "나이",
+  "Height": "신장",
+  "Weight": "체중",
+  "Blood type": "혈액형",
+  "Handedness": "손쓰임",
+  "Bust": "B",
+  "Waist": "W",
+  "Hip": "H",
+  "Birthplace": "출생지",
+  "Hobby": "취미",
+  "Skill": "특기",
+  "Favorite": "좋아하는 것",
+  "Color": "퍼스널 컬러",
+
+  "Admin Console": "사무실",
+  "Login": "로그인",
+  "E-Mail Address": "이메일 주소",
+  "Password": "비밀번호",
+  "Remember Me": "로그인 상태 유지",
+  "Forgot Your Password?": "비밀번호를 잊어",
+  "Reset Password": "암호를 다시 설정",
+  "Send Password Reset Link": "비밀번호 재설정 링크를 보내",
+  "Logout": "로그 아웃",
+
+  "Idols list": "아이돌 목록",
+
+  "The requested page was not found on this server.": "찾으시는 페이지가 존재하지 않거나 삭제되었습니다",
+  "You dont have a permission to access to this page.": "이 페이지에 액세스 할 수있는 권한이 없습니다"
+}

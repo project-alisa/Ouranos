@@ -18,14 +18,13 @@
     @endif
 
     <!-- Scripts -->
-{{--    <script src="{{ asset('js/app.js') }}"></script>--}}
+    <script src="{{ asset('js/changelang.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
@@ -68,7 +67,7 @@
 
 <main>
     @if(!empty($title))
-        <?php $sub = empty($sub) ? config('app.name')." - Ver".config('ouranos.version') : $sub ?>
+        <?php $sub = !empty($sub) ?: config('app.name')." - Ver".config('ouranos.version') ?>
         <div class="topnavi">
             <a href="javascript:history.back()" class="backbutton">
                 <img src="{{ asset('image/backkey.png') }}" alt="back">
@@ -83,7 +82,30 @@
 </main>
 
 <footer>
-
+    <div id="siteinfo">
+        <div class="sitename">{{ config('ouranos.sitename') }}</div>
+        <div class="appinfo">{{ config('app.name')." Ver".config('ouranos.version') }}</div>
+        <p>
+            <label>
+                Language:
+                <select id="language">
+                    <option value="ja" @if(\App::isLocale('ja')) selected @endif>{{ __('locale.ja') }}</option>
+                    <option value="en" @if(\App::isLocale('en')) selected @endif>{{ __('locale.en') }}</option>
+                    <option value="ko" @if(\App::isLocale('ko')) selected @endif>{{ __('locale.ko') }}</option>
+                </select>
+            </label>
+        </p>
+    </div>
+    <div id="footlinks">
+        <a href="https://miyacorata.net" target="_blank" title="MiyanojiRapid">
+            <img src="{{ asset('image/miyanojirapid.png') }}" alt="MiyanojiRapid">
+        </a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                 src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                 alt="正当なCSSです!" />
+        </a>
+    </div>
 </footer>
 </body>
 </html>

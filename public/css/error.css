@@ -1,7 +1,8 @@
 #error{
     position: relative;
     text-align: center;
-    margin: 120px auto 0;
+    margin: 0 auto;
+    transform: translateY(calc(50vh - 140px - 50%));
 }
 #reika{
     width: 136px;
