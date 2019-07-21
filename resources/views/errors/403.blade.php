@@ -12,7 +12,7 @@
             @if(!empty($exception->getMessage()))
                 {{ $exception->getMessage() }}
             @else
-                {{ __('You dont have a permission to access to this page.') }}
+                {{ __('You don\'t have a permission to access to this page.') }}
             @endif
         </p>
     </div>
