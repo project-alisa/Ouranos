@@ -1,5 +1,3 @@
-@extends('layouts.app',['title' => '403 Forbidden', 'css' => 'error'])
-
 @php
 $status_desc = array(
     400 => 'Bad Request',
@@ -21,6 +19,8 @@ if(!empty($exception)){
     $message = $status_message[$code];
 }
 @endphp
+
+@extends('layouts.app',['title' => $desc, 'css' => 'error'])
 
 @section('content')
     <div id="error">
