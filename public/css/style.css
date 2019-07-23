@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding-top: 37px;
+    padding-bottom: 120px;
     position: relative;
     box-sizing: border-box;
     min-height: 99vh;
@@ -98,11 +99,13 @@ h1.sitename > a{
 footer{
     position: absolute;
     bottom: 0;
-    width: 1300px;
-    margin: 0 calc(50vw - 650px);
+    min-width: 1300px;
+    width: calc(100% - 60px);
+    margin: 0 30px;
     padding: 15px 0;
     border-top: dashed 1px gray;
     display: flex;
+    font-size: 14px;
 }
 #siteinfo{
     width: 50%;
@@ -241,7 +244,7 @@ main{
 }
 .msgboxbody{
     background:white;
-    padding:7px 14px;
+    padding:0 14px;
 }
 .msgboxfoot{
     background:lightgray;

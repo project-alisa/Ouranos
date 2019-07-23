@@ -67,9 +67,9 @@
 
 <main>
     @if(!empty($title))
-        <?php $sub = !empty($sub) ?: config('app.name')." - Ver".config('ouranos.version') ?>
+        <?php $sub = !empty($sub) ? $sub : config('app.name')." - Ver".config('ouranos.version') ?>
         <div class="topnavi">
-            <a href="javascript:history.back()" class="backbutton">
+            <a href="{{ url()->previous() }}" class="backbutton">
                 <img src="{{ asset('image/backkey.png') }}" alt="back">
             </a>
             <div>
@@ -97,7 +97,7 @@
         </p>
         <div id="footlinks">
             <a href="javascript:void(0)">{{ __('About this site') }}</a>
-            <a href="https://github.com/project-alisa/Ouranos">GitHub</a>
+            <a href="https://github.com/project-alisa/Ouranos" target="_blank">GitHub</a>
         </div>
     </div>
     <div id="footbanners">
