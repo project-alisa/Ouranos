@@ -3,6 +3,7 @@
 /public/storage
 /public/image/card
 /public/image/icon
+/public/image/tachie
 /storage/*.key
 /vendor
 /.idea
