@@ -69,7 +69,7 @@
     @if(!empty($title))
         <?php $sub = !empty($sub) ? $sub : config('app.name')." - Ver".config('ouranos.version') ?>
         <div class="topnavi">
-            <a href="{{ url()->previous() }}" class="backbutton">
+            <a href="javascript:history.back()" class="backbutton">
                 <img src="{{ asset('image/backkey.png') }}" alt="back">
             </a>
             <div>
