@@ -13,7 +13,8 @@ class IdolController extends Controller
      */
     public function index()
     {
-        //
+        $idols = \App\Idol::all();
+        return view('idol.index',compact('idols'));
     }
 
     /**
@@ -21,10 +22,10 @@ class IdolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    /*public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -32,20 +33,21 @@ class IdolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         //
-    }
+    }*/
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $name_r
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($name_r)
     {
-        //
+        $idol = \App\Idol::where('name_r', 'like', $name_r)->firstOrFail();
+        return view('idol.show',compact('idol'));
     }
 
     /**
@@ -54,10 +56,10 @@ class IdolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    /*public function edit($id)
     {
         //
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
@@ -66,10 +68,10 @@ class IdolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    /*public function update(Request $request, $id)
     {
         //
-    }
+    }*/
 
     /**
      * Remove the specified resource from storage.
@@ -77,8 +79,8 @@ class IdolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    /*public function destroy($id)
     {
         //
-    }
+    }*/
 }
