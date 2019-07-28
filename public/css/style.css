@@ -244,7 +244,7 @@ main{
 }
 .msgboxbody{
     background:white;
-    padding:0 14px;
+    padding:1px 14px;
 }
 .msgboxfoot{
     background:lightgray;
@@ -391,17 +391,33 @@ img.emoji{
 .idol{
     color: black;
     margin:10px 5px;
+    display: block;
     border:solid 1px black;
     box-shadow: 0 0 0 2px darkgray;
     border-radius:5px;
     background:linear-gradient(80deg, #f9f9f9, #e5eff9);
     height:86px;
+    position: relative;
+    text-decoration: none;
 }
 .idol p{
     margin: 5px 0;
 }
 .idol table{
     /*transform: rotate(0.028deg);*/
+}
+.idol th{
+    box-sizing: border-box;
+    width: 90px;
+}
+.idol th::before{
+    content: "【";
+}
+.idol th::after{
+    content: "】";
+}
+.idol td{
+    text-align: center;
 }
 .idolicon{
     margin:5px 0 0 8px;
@@ -529,8 +545,6 @@ th{
     background: none;
     color: black;
     border:none;
-    border-radius: 40px;
-    /*text-shadow: 0 0 3px black;*/
 }
 td{
     text-align: left;
