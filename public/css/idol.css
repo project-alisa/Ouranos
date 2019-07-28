@@ -1,0 +1,87 @@
+#idoldetail{
+    position: relative;
+}
+
+#tachie{
+    display: block;
+    width: 476px;
+    height: auto;
+}
+
+#info{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 800px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.6);
+}
+
+#dataheader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#idolname{
+    padding: 0 10px 5px 40px;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    background-position: top 5px left;
+}
+#idolname.Fairy{
+    background-image: url("../image/fairy_symbol.png");
+}
+#idolname.Angel{
+    background-image: url("../image/angel_symbol.png");
+}
+#idolname.Princess{
+    background-image: url("../image/princess_symbol.png");
+}
+
+hr.gradient{
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,1) 30%, rgba(0,0,0,1) 70%, rgba(0,0,0,0));
+}
+
+table#idolinfo{
+    padding: 0 3px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 15px;
+    border-left: dotted 2px lightgray;
+}
+#idolinfo th{
+    border: none;
+    text-align: left;
+}
+#idolinfo th::after{
+    content: '\3011';
+}
+#idolinfo th::before{
+    content: '\3010';
+}
+#idolinfo td{
+    border: none;
+    text-align: right;
+}
+
+#datatable{
+    position: relative;
+    margin-bottom: 5px;
+    width: 790px;
+    border-spacing: 5px;
+}
+#datatable th{
+    width: 110px;
+    border:solid 2px black;
+    border-radius: 50px;
+}
+#datatable td{
+    text-align: left;
+    padding:0 4px;
+    border: none;
+    border-bottom: dashed 1px lightgray;
+}
