@@ -60,3 +60,18 @@ if(!function_exists('getTypeColor')){
         }
     }
 }
+
+if(!function_exists('calcBmi')){
+    /** BMI計算関数
+     * @param $height
+     * @param $weight
+     * @return bool|float
+     */
+    function calcBmi($height,$weight){
+        //入力が正の整数であるかチェック
+        if(!is_numeric($height)||!is_numeric($weight))return false;
+        $hm = $height / 100;
+        $bmi = $weight / ($hm * $hm);
+        return round($bmi,1);
+    }
+}
