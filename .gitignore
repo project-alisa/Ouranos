@@ -2,7 +2,7 @@
 /public/hot
 /public/storage
 /public/image/card
-/public/image/idol
+/public/image/icon
 /storage/*.key
 /vendor
 /.idea
