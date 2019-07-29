@@ -37,7 +37,7 @@ class CreateIdolsTable extends Migration
             $table->string('skill',50)->nullable();
             $table->string('favorite',50)->nullable();
             $table->string('cv',30)->nullable();
-            $table->string('color',6)->nullable();
+            $table->string('color',7)->nullable();
             $table->timestamps();
         });
     }

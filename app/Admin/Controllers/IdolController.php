@@ -127,7 +127,7 @@ class IdolController extends AdminController
         $form->text('skill', __('Skill'));
         $form->text('favorite', __('Favorite'));
         $form->text('cv', __('CV'));
-        $form->color('color', __('Color'));
+        $form->color('color', __('Color'))->hex();
 
         return $form;
     }

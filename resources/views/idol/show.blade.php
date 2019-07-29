@@ -18,7 +18,7 @@
                     </tr>
                     <tr>
                         <th title="パーソナルカラーの16進表記です">パーソナルカラー</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
-                            {{ !empty($idol->color) ? '■ #'.$idol->color : 'N/A' }}
+                            {{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}
                         </td>
                     </tr>
                 </table>
