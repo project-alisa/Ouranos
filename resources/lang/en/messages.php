@@ -6,5 +6,6 @@ return [
     '500' => 'A fault or an error has occurred.',
     '503' => 'Service temporarily unavailable due to capacity problems or maintenance.',
 
+    'idol.index.desc' => 'Select idol to see information.',
     'idol.show.desc' => 'You can check the idol information.',
 ];

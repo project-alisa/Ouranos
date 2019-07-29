@@ -1,4 +1,4 @@
-@extends('layouts.app',['title' => __('Idols list'), 'sub' => 'ｼｬﾊﾞﾀﾞﾊﾞｯ (⋈•̀ᴗ•́⋈三(⋈•̀ᴗ•́⋈)三⋈ •̀ᴗ•́⋈)ｼｬﾊﾞﾀﾞﾊﾞｯ'])
+@extends('layouts.app',['title' => __('Idols list'), 'sub' => __('messages.idol.index.desc')])
 
 @section('content')
     <div id="contentright">
