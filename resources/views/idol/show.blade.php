@@ -1,4 +1,4 @@
-@extends('layouts.app',['title' => $idol->name, 'sub' => 'アイドルの情報を確認することができます', 'css' => 'idol'])
+@extends('layouts.app',['title' => $idol->name, 'sub' => __('messages.idol.show.desc'), 'css' => 'idol'])
 
 @section('content')
     <div id="idoldetail">
@@ -28,39 +28,40 @@
                 <tr>
                     <?php /** @var \App\Idol $idol */
                     $namestr = separateString($idol->name,$idol->name_separate);
-                    if(!empty($idol->subname)) $namestr .= ' ('.$idol->subname.')' ?>
-                    <th>名前</th><td colspan="3">{{ $namestr }}</td>
-                    <th>CV</th><td>{{ $idol->cv }}</td>
+                    if(!empty($idol->subname)) $namestr .= ' ('.$idol->subname.')';
+                    $dateflag = \App::isLocale('ja') ? 'ja' : 'slash'; ?>
+                    <th>{{ __('Name') }}</th><td colspan="3">{{ $namestr }}</td>
+                    <th>{{ __('CV') }}</th><td>{{ $idol->cv }}</td>
                 </tr>
                 <tr>
-                    <th>よみがな</th><td colspan="5">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
+                    <th>{{ __('Name y') }}</th><td colspan="5">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
                 </tr>
                 <tr>
                     <th>Alphabet</th><td colspan="5">{{ ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</td>
                 </tr>
                 <tr>
-                    <th>誕生日</th><td>{{ convertDateString($idol->birthdate,'slash') }}</td>
-                    <th>身長</th><td>{{ $idol->height }}cm</td>
-                    <th>血液型</th><td>{{ $idol->bloodtype }}型</td>
+                    <th>{{ __('Birthdate') }}</th><td>{{ convertDateString($idol->birthdate,$dateflag) }}</td>
+                    <th>{{ __('Height') }}</th><td>{{ $idol->height }}cm</td>
+                    <th>{{ __('Blood type') }}</th><td>{{ $idol->bloodtype }}型</td>
                 </tr>
                 <tr>
-                    <th>年齢</th><td>{{ $idol->age }}歳</td>
-                    <th>体重</th><td>{{ $idol->weight }}kg</td>
-                    <th>利き手</th><td>{{ $idol->handedness }}</td>
+                    <th>{{ __('Age') }}</th><td>{{ $idol->age }}歳</td>
+                    <th>{{ __('Weight') }}</th><td>{{ $idol->weight }}kg</td>
+                    <th>{{ __('Handedness') }}</th><td>{{ $idol->handedness }}</td>
                 </tr>
                 <tr>
-                    <th>出身地</th><td><a href="javascript:void(0)">{{ $idol->birthplace }}</a></td>
+                    <th>{{ __('Birthplace') }}</th><td><a href="javascript:void(0)">{{ $idol->birthplace }}</a></td>
                     <th>BMI</th><td>{{ calcBmi($idol->height,$idol->weight) }}</td>
-                    <th>スリーサイズ</th><td>{{ $idol->bust.' / '.$idol->waist.' / '.$idol->hip }}</td>
+                    <th>3 size</th><td>{{ $idol->bust.' / '.$idol->waist.' / '.$idol->hip }}</td>
                 </tr>
                 <tr>
-                    <th>趣味</th><td colspan="5">{{ $idol->hobby }}</td>
+                    <th>{{ __('Hobby') }}</th><td colspan="5">{{ $idol->hobby }}</td>
                 </tr>
                 <tr>
-                    <th>特技</th><td colspan="5">{{ $idol->skill }}</td>
+                    <th>{{ __('Skill') }}</th><td colspan="5">{{ $idol->skill }}</td>
                 </tr>
                 <tr>
-                    <th>好きなもの</th><td colspan="5">{{ $idol->favorite }}</td>
+                    <th>{{ __('Favorite') }}</th><td colspan="5">{{ $idol->favorite }}</td>
                 </tr>
             </table>
         </div>

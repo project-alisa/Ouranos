@@ -20,6 +20,7 @@
                     @php
                         /** @var \App\Idol $idol */
                         $icon = asset('image/icon/'.$idol->name_r.'/0.png');
+                        $dateflag = \App::isLocale('ja') ? 'ja' : 'slash';
                     @endphp
                     <a href="{{ url('/idol/'.$idol->name_r) }}" class="idol">
                         <img src="{{ $icon }}" class="idolicon" alt="icon" style="border-color: {{ getTypeColor($idol->type) }}">
@@ -29,7 +30,7 @@
                                 <tr>
                                     <th>{{ __('Type') }}</th><td style="width: 80px;font-weight: bold;color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
                                     <th>{{ __('Age') }}</th><td style="width: 70px;">{{ $idol->age }}</td>
-                                    <th>{{ __('Birthdate') }}</th><td>{{ convertDateString($idol->birthdate,'ja') }}</td>
+                                    <th>{{ __('Birthdate') }}</th><td>{{ convertDateString($idol->birthdate,$dateflag) }}</td>
                                     <th>{{ __('Color') }}</th><td style="color: {{ '#'.$idol->color }};width: 100px">■ {{ '#'.$idol->color }}</td>
                                 </tr>
                             </table>

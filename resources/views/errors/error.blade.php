@@ -7,11 +7,11 @@ $status_desc = array(
     503 => 'Service Unavailable'
 );
 $status_message = array(
-    400 => __('Format of the request is not correct.'),
-    403 => __('You don\'t have a permission to access to this page.'),
-    404 => __('The requested page was not found on this server.'),
-    500 => __('A fault or an error has occurred.'),
-    503 => __('Service temporarily unavailable due to capacity problems or maintenance.')
+    400 => __('messages.400'),
+    403 => __('messages.403'),
+    404 => __('messages.404'),
+    500 => __('messages.500'),
+    503 => __('messages.503')
 );
 if(!empty($exception)){
     $code = $exception->getStatusCode() ?: '500';
