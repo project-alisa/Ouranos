@@ -64,6 +64,28 @@
                     <th>{{ __('Favorite') }}</th><td colspan="5">{{ $idol->favorite }}</td>
                 </tr>
             </table>
+            <div id="idollinks">
+                <div>
+                    <h2>百科事典</h2>
+                    <div class="buttonbox">
+                        <a href="https://dic.nicovideo.jp/a/{{ urlencode($idol->name) }}" class="button jwil" target="_blank">
+                            ニコニコ大百科
+                        </a>
+                        <a href="https://dic.pixiv.net/a/{{ urlencode($idol->name) }}" class="button jwil" target="_blank">
+                            pixiv百科事典
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h2>別サイト</h2>
+                    <div class="buttonbox">
+                        <a href="https://fujiwarahaji.me/idol/765/{{ $idol->name_r }}" class="button jwil" target="_blank">
+                            ふじわらはじめ
+                            <span class="subline">アイマス楽曲DBで楽曲検索</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="msgbox">

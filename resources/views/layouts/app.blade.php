@@ -44,6 +44,9 @@
             </ul>
         </nav>
     </div>
+    <div id="share_button">
+        <a href="javascript:openShareWindow()" class="fedi">{{ __('Share') }}</a>
+    </div>
 </header>
 
 <main>
@@ -92,5 +95,67 @@
         </a>
     </div>
 </footer>
+
+<dialog id="sharewindow">
+    <div class="msgbox" style="width: 700px">
+        <div class="msgboxtop">Share</div>
+        <div class="msgboxbody">
+            <h2>Fediverseで共有</h2>
+            <div style="padding: 5px 10px 10px;text-align: center">
+                <p style="margin: 10px 15px;">共有するインスタンスのホストを入力してください</p>
+                <label>
+                    <input type="search" id="sm_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block;width: 450px">
+                </label>
+                <datalist id="mastodon_instance">
+                    <option value="imastodon.net">
+                    <option value="imastodon.blue">
+                    <option value="pawoo.net">
+                    <option value="mstdn.maud.io">
+                    <option value="mstdn.jp">
+                    <option value="twista.283.cloud">
+                    <option value="misskey.io">
+                    <option value="misskey.m544.net">
+                </datalist>
+                <p>または以下から選ぶことができます</p>
+                <hr>
+                <div class="buttonbox">
+                    <a href="javascript:openTootWindow('imastodon.net')" class="mstdn il half">imastodon.net</a>
+                    <a href="javascript:openTootWindow('imastodon.blue')" class="mstdn il half">imastodon.blue</a>
+                    <a href="javascript:openTootWindow('mstdn.jp')" class="mstdn il half">mstdn.jp</a>
+                    <a href="javascript:openTootWindow('mstdn.maud.io')" class="mstdn il half">mstdn.maud.io</a>
+                    <a href="javascript:openTootWindow('pawoo.net')" class="mstdn il half">pawoo.net</a>
+                    <a href="javascript:openTootWindow('twista.283.cloud')" class="twista il half">twista.283.cloud</a>
+                    <a href="javascript:openTootWindow('misskey.io')" class="misskey il half">misskey.io</a>
+                    <a href="javascript:openTootWindow('misskey.m544.net')" class="misskey il half">misskey.m544.net</a>
+                </div>
+                <script>
+                    var sm_instance = document.getElementById('sm_instance');
+                    sm_instance.addEventListener('keydown',function(event){
+                        if(event.key === 'Enter'){
+                            openTootWindow(sm_instance.value);
+                        }
+                    });
+                    function openTootWindow(instance){
+                        var share_text = document.title + " {{ url()->current() }}";
+                        window.open("https://"+instance+"/share?text="+share_text,"_blank","width=500,height=500");
+                        closeShareWindow();
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="msgboxfoot">
+            <a href="javascript:closeShareWindow()" class="button jw">{{ __('Close') }}</a>
+        </div>
+    </div>
+</dialog>
+<script>
+    function openShareWindow(){
+        document.querySelector('#sharewindow').showModal();
+    }
+    function closeShareWindow(){
+        document.querySelector('#sharewindow').close();
+    }
+</script>
+
 </body>
 </html>

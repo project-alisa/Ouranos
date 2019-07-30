@@ -2,10 +2,12 @@
     position: relative;
 }
 
-#tachie{
+#tachie {
     display: block;
     width: 476px;
-    height: auto;
+    height: 600px;
+    object-fit: cover;
+    object-position: top center;
 }
 
 #info{
@@ -13,7 +15,7 @@
     top: 30px;
     right: 0;
     width: 800px;
-    padding: 15px 20px;
+    padding: 15px 20px 5px;
     border-radius: 15px;
     background: rgba(255,255,255,0.6);
 }
@@ -84,4 +86,13 @@ table#idolinfo{
     padding:0 4px;
     border: none;
     border-bottom: dashed 1px lightgray;
+}
+
+#idollinks{
+    display: flex;
+}
+#idollinks > div{
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 5px;
 }
