@@ -4,6 +4,7 @@
 /public/image/card
 /public/image/icon
 /public/image/tachie
+/public/font
 /storage/*.key
 /vendor
 /.idea
