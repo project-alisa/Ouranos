@@ -14,10 +14,10 @@
                         <th title="データベース内部ID ゲームの内部IDと同一です">データベースID</th><td>{{ $idol->id }}</td>
                     </tr>
                     <tr>
-                        <th title="シアターデイズにおけるアイドルの属性です">シアター属性</th><td style="color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
+                        <th title="シアターデイズにおけるアイドルの属性です">{{ __('Type') }}</th><td style="color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
                     </tr>
                     <tr>
-                        <th title="パーソナルカラーの16進表記です">パーソナルカラー</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
+                        <th title="パーソナルカラーの16進表記です">{{ __('Color') }}</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
                             {{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}
                         </td>
                     </tr>
