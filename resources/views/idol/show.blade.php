@@ -11,13 +11,13 @@
                 </div>
                 <table id="idolinfo">
                     <tr>
-                        <th title="データベース内部ID ゲームの内部IDと同一です">データベースID</th><td>{{ $idol->id }}</td>
+                        <th title="データベース内部ID ゲームの内部IDと同一です">{{ __('Database ID') }}</th><td>{{ $idol->id }}</td>
                     </tr>
                     <tr>
                         <th title="シアターデイズにおけるアイドルの属性です">{{ __('Type') }}</th><td style="color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
                     </tr>
                     <tr>
-                        <th title="パーソナルカラーの16進表記です">{{ __('Color') }}</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
+                        <th title="パーソナルカラーの16進表記です">{{ __('Personal Color') }}</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
                             {{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}
                         </td>
                     </tr>
@@ -34,7 +34,7 @@
                     <th>{{ __('CV') }}</th><td>{{ $idol->cv }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Name y') }}</th><td colspan="5">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
+                    <th>{{ __('Hiragana') }}</th><td colspan="5">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
                 </tr>
                 <tr>
                     <th>Alphabet</th><td colspan="5">{{ ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</td>
@@ -42,10 +42,10 @@
                 <tr>
                     <th>{{ __('Birthdate') }}</th><td>{{ convertDateString($idol->birthdate,$dateflag) }}</td>
                     <th>{{ __('Height') }}</th><td>{{ $idol->height }}cm</td>
-                    <th>{{ __('Blood type') }}</th><td>{{ $idol->bloodtype }}型</td>
+                    <th>{{ __('Blood type') }}</th><td>{{ $idol->bloodtype }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Age') }}</th><td>{{ $idol->age }}歳</td>
+                    <th>{{ __('Age') }}</th><td>{{ $idol->age }}</td>
                     <th>{{ __('Weight') }}</th><td>{{ $idol->weight }}kg</td>
                     <th>{{ __('Handedness') }}</th><td>{{ $idol->handedness }}</td>
                 </tr>
@@ -55,33 +55,45 @@
                     <th>3 size</th><td>{{ $idol->bust.' / '.$idol->waist.' / '.$idol->hip }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Hobby') }}</th><td colspan="5">{{ $idol->hobby }}</td>
+                    <th>{{ __('Hobby') }}</th>
+                    <td colspan="5">
+                        <?php if(!\App::isLocale('ja')) echo genTranslationLink($idol->hobby,\App::getLocale()) ?>
+                        {{ $idol->hobby }}
+                    </td>
                 </tr>
                 <tr>
-                    <th>{{ __('Skill') }}</th><td colspan="5">{{ $idol->skill }}</td>
+                    <th>{{ __('Skill') }}</th>
+                    <td colspan="5">
+                        <?php if(!\App::isLocale('ja')) echo genTranslationLink($idol->skill,\App::getLocale()) ?>
+                        {{ $idol->skill }}
+                    </td>
                 </tr>
                 <tr>
-                    <th>{{ __('Favorite') }}</th><td colspan="5">{{ $idol->favorite }}</td>
+                    <th>{{ __('Favorite') }}</th>
+                    <td colspan="5">
+                        <?php if(!\App::isLocale('ja')) echo genTranslationLink($idol->favorite,\App::getLocale()) ?>
+                        {{ $idol->favorite }}
+                    </td>
                 </tr>
             </table>
             <div id="idollinks">
                 <div>
-                    <h2>百科事典</h2>
+                    <h2>{{ __('Encyclopedia') }}</h2>
                     <div class="buttonbox">
                         <a href="https://dic.nicovideo.jp/a/{{ urlencode($idol->name) }}" class="button jwil" target="_blank">
-                            ニコニコ大百科
+                            {{ __('niconico Pedia') }}
                         </a>
                         <a href="https://dic.pixiv.net/a/{{ urlencode($idol->name) }}" class="button jwil" target="_blank">
-                            pixiv百科事典
+                            {{ __('pixiv encyclopedia (ja)') }}
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h2>別サイト</h2>
+                    <h2>{{ __('Musics info') }}</h2>
                     <div class="buttonbox">
                         <a href="https://fujiwarahaji.me/idol/765/{{ $idol->name_r }}" class="button jwil" target="_blank">
-                            ふじわらはじめ
-                            <span class="subline">アイマス楽曲DBで楽曲検索</span>
+                            {{ __('fujiwarahaji.me') }}
+                            <span class="subline">{{ __('THE IDOLM@STER Musics DB') }}</span>
                         </a>
                     </div>
                 </div>
