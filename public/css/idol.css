@@ -96,3 +96,8 @@ table#idolinfo{
     box-sizing: border-box;
     padding: 0 5px;
 }
+
+.translate{
+    font-size: 10px !important;
+    margin-right: 10px;
+}

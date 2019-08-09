@@ -75,3 +75,12 @@ if(!function_exists('calcBmi')){
         return round($bmi,1);
     }
 }
+
+if(!function_exists('genTranslationLink')){
+    function genTranslationLink($string,$locale){
+        $tag = "<a href='https://translate.google.com/#view=home&op=translate&sl=ja&tl={$locale}&text={$string}' target='_blank' class='button translate'>";
+        $tag .= __('View translation on Google');
+        $tag .= "</a>";
+        return $tag;
+    }
+}
