@@ -3,6 +3,7 @@
 
   "Name": "이름",
   "Name y": "읽기",
+  "Hiragana": "히라가나",
   "Name r": "Alphabet",
   "Name separate": "NS",
   "Name y separate": "NYS",
@@ -22,7 +23,18 @@
   "Hobby": "취미",
   "Skill": "특기",
   "Favorite": "좋아하는 것",
-  "Color": "퍼스널 컬러",
+  "Color": "컬러",
+  "Personal Color": "퍼스널 컬러",
+
+  "Encyclopedia": "백과 사전",
+  "niconico Pedia": "니코니코 대백과",
+  "pixiv encyclopedia (ja)": "픽시브 백과사전",
+
+  "Musics info": "음악 정보",
+  "fujiwarahaji.me": "fujiwarahaji.me",
+  "THE IDOLM@STER Musics DB": "음악 데이터베이스에서 검색",
+
+  "View translation on Google": "Google번역 에서 번역표시",
 
   "Admin Console": "사무실",
   "Login": "로그인",
@@ -34,6 +46,7 @@
   "Send Password Reset Link": "비밀번호 재설정 링크를 보내",
   "Logout": "로그 아웃",
 
+  "Share": "공유하다",
   "Close": "닫기",
 
   "Idols list": "아이돌 목록",

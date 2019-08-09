@@ -3,6 +3,7 @@
 
   "Name": "名前",
   "Name y": "なまえ",
+  "Hiragana": "ひらがな",
   "Name r": "Alphabet",
   "Name separate": "NS",
   "Name y separate": "NYS",
@@ -23,6 +24,17 @@
   "Skill": "特技",
   "Favorite": "好きなもの",
   "Color": "カラー",
+  "Personal Color": "パーソナルカラー",
+
+  "Encyclopedia": "百科事典",
+  "niconico Pedia": "ニコニコ大百科",
+  "pixiv encyclopedia (ja)": "ピクシブ百科事典",
+
+  "Musics info": "楽曲情報",
+  "fujiwarahaji.me": "ふじわらはじめ",
+  "THE IDOLM@STER Musics DB": "アイマス楽曲DBで楽曲検索",
+
+  "View translation on Google": "Googleで翻訳",
 
   "Admin Console": "事務室",
   "Login": "ログイン",
