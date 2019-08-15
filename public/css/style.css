@@ -23,7 +23,11 @@ html{
     margin: 0;
     font-family: "VL PGothic", sans-serif;
     font-weight: 500;
-    background: #c6cad0;
+    background:
+            repeating-linear-gradient(45deg, rgba(255,255,255,0.5), rgba(255,255,255,0.5) 1px, rgba(255,255,255,0) 2px, rgba(255,255,255,0) 40px),
+            repeating-linear-gradient(-45deg, rgba(255,255,255,0.5), rgba(255,255,255,0.5) 1px, rgba(255,255,255,0) 2px, rgba(255,255,255,0) 40px),
+            linear-gradient(#d8e5ee,#b8c1c8,#d8e5ee);
+    background-attachment: fixed;
 }
 p{
     margin: 7px 0;
