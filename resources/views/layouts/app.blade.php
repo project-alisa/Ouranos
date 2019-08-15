@@ -100,9 +100,9 @@
     <div class="msgbox" style="width: 700px">
         <div class="msgboxtop">Share</div>
         <div class="msgboxbody">
-            <h2>Fediverseで共有</h2>
+            <h2>{{ __('messages.share.title') }}</h2>
             <div style="padding: 5px 10px 10px;text-align: center">
-                <p style="margin: 10px 15px;">共有するインスタンスのホストを入力してください</p>
+                <p style="margin: 10px 15px;">{{ __('messages.share.input') }}</p>
                 <label>
                     <input type="search" id="sm_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block;width: 450px">
                 </label>
@@ -116,7 +116,7 @@
                     <option value="misskey.io">
                     <option value="misskey.m544.net">
                 </datalist>
-                <p>または以下から選ぶことができます</p>
+                <p>{{ __('messages.share.select') }}</p>
                 <hr>
                 <div class="buttonbox">
                     <a href="javascript:openTootWindow('imastodon.net')" class="mstdn il half">imastodon.net</a>

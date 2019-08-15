@@ -8,4 +8,8 @@ return [
 
     'idol.index.desc' => '정보를 보려면 idol을 선택하십시오.',
     'idol.show.desc' => '여기에서 아이돌의 정보를 볼 수 있습니다.',
+
+    'share.title' => 'Fediverse 에 공유',
+    'share.input' => '공유 할 인스턴스 호스트를 입력하십시오.',
+    'share.select' => '아래 목록에서 선택할 수도 있습니다.',
 ];

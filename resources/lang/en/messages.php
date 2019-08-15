@@ -8,4 +8,8 @@ return [
 
     'idol.index.desc' => 'Select idol to see information.',
     'idol.show.desc' => 'You can check the idol information.',
+
+    'share.title' => 'Share to Fediverse',
+    'share.input' => 'Enter the instance host to share.',
+    'share.select' => 'You can also choose from the list below.',
 ];

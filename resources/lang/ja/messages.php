@@ -8,4 +8,8 @@ return [
 
     'idol.index.desc' => 'アイドルを選んでください',
     'idol.show.desc' => 'アイドルの情報を確認することができます',
+
+    'share.title' => 'Fediverseで共有',
+    'share.input' => '共有するインスタンスのホストを入力してください',
+    'share.select' => 'または以下から選ぶことができます',
 ];
