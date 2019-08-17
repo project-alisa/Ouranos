@@ -62,7 +62,9 @@ if(!function_exists('getTypeColor')){
 }
 
 if(!function_exists('calcBmi')){
-    /** BMI計算関数
+    /**
+     * BMI計算関数
+     *
      * @param $height
      * @param $weight
      * @return bool|float
