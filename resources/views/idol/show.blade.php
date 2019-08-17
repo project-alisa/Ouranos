@@ -11,13 +11,13 @@
                 </div>
                 <table id="idolinfo">
                     <tr>
-                        <th title="データベース内部ID ゲームの内部IDと同一です">{{ __('Database ID') }}</th><td>{{ $idol->id }}</td>
+                        <th title="{{ __('messages.idol.show.dbid') }}">{{ __('Database ID') }}</th><td>{{ $idol->id }}</td>
                     </tr>
                     <tr>
-                        <th title="シアターデイズにおけるアイドルの属性です">{{ __('Type') }}</th><td style="color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
+                        <th title="{{ __('messages.idol.show.type') }}">MLTD {{ __('Type') }}</th><td style="color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
                     </tr>
                     <tr>
-                        <th title="パーソナルカラーの16進表記です">{{ __('Personal Color') }}</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
+                        <th>{{ __('Personal Color') }}</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
                             {{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}
                         </td>
                     </tr>
