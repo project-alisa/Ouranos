@@ -7,7 +7,10 @@ return [
     '503' => 'Service temporarily unavailable due to capacity problems or maintenance.',
 
     'idol.index.desc' => 'Select idol to see information.',
+
     'idol.show.desc' => 'You can check the idol information.',
+    'idol.show.dbid' => 'Database ID is the same as the internal ID in the MLTD',
+    'idol.show.type' => 'Idol type of MLTD',
 
     'share.title' => 'Share to Fediverse',
     'share.input' => 'Enter the instance host to share.',

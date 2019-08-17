@@ -7,7 +7,10 @@ return [
     '503' => '용량 문제 또는 유지 관리로 인해 서비스를 일시적으로 사용할 수 없습니다.',
 
     'idol.index.desc' => '정보를 보려면 idol을 선택하십시오.',
+
     'idol.show.desc' => '여기에서 아이돌의 정보를 볼 수 있습니다.',
+    'idol.show.dbid' => '데이터베이스아이디는 게임내부ID와 동일합니다.',
+    'idol.show.type' => 'MLTD에서의 아이돌의 속성을 나타냅니다.',
 
     'share.title' => 'Fediverse 에 공유',
     'share.input' => '공유 할 인스턴스 호스트를 입력하십시오.',

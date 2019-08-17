@@ -7,7 +7,10 @@ return [
     '503' => 'アクセス集中かメンテナンスのため一時的にページを表示できません',
 
     'idol.index.desc' => 'アイドルを選んでください',
+
     'idol.show.desc' => 'アイドルの情報を確認することができます',
+    'idol.show.dbid' => 'データベースID ゲーム内の内部IDと同一です',
+    'idol.show.type' => 'シアターデイズのアイドル属性です',
 
     'share.title' => 'Fediverseで共有',
     'share.input' => '共有するインスタンスのホストを入力してください',
