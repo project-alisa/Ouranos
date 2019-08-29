@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "VL PGothic";
+    src: local("VL PGothic"),
+    url('../font/VL-PGothic-Regular.woff');
+}
+
 body{
     margin: 0;
     padding-top: 37px;
@@ -10,12 +16,6 @@ body{
 }
 *:focus{
     outline: none;
-}
-
-@font-face {
-    font-family: "VL PGothic";
-    src: local("VL PGothic"),
-    url('../font/VL-PGothic-Regular.woff');
 }
 
 html{
@@ -584,8 +584,10 @@ dialog{
     position: fixed;
     border: none;
     background: transparent;
+    top: 50vh;
+    transform: translateY(-50%);
 }
-dialog::backdrop{
+dialog::backdrop , dialog + .backdrop{
     background: rgba(0,0,0,0.4);
 }
 
