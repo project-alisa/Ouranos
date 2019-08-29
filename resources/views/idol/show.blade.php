@@ -26,10 +26,10 @@
             <hr class="gradient">
             <table id="datatable">
                 <tr>
-                    <?php /** @var \App\Idol $idol */
+                    <?php /** @var App\Idol $idol */
                     $namestr = separateString($idol->name,$idol->name_separate);
                     if(!empty($idol->subname)) $namestr .= ' ('.$idol->subname.')';
-                    $dateflag = \App::isLocale('ja') ? 'ja' : 'slash'; ?>
+                    $dateflag = App::isLocale('ja') ? 'ja' : 'slash'; ?>
                     <th>{{ __('Name') }}</th><td colspan="3">{{ $namestr }}</td>
                     <th>{{ __('CV') }}</th><td>{{ $idol->cv }}</td>
                 </tr>
@@ -57,21 +57,21 @@
                 <tr>
                     <th>{{ __('Hobby') }}</th>
                     <td colspan="5">
-                        <?php if(!\App::isLocale('ja')) echo genTranslationLink($idol->hobby,\App::getLocale()) ?>
+                        <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->hobby,App::getLocale()) ?>
                         {{ $idol->hobby }}
                     </td>
                 </tr>
                 <tr>
                     <th>{{ __('Skill') }}</th>
                     <td colspan="5">
-                        <?php if(!\App::isLocale('ja')) echo genTranslationLink($idol->skill,\App::getLocale()) ?>
+                        <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->skill,App::getLocale()) ?>
                         {{ $idol->skill }}
                     </td>
                 </tr>
                 <tr>
                     <th>{{ __('Favorite') }}</th>
                     <td colspan="5">
-                        <?php if(!\App::isLocale('ja')) echo genTranslationLink($idol->favorite,\App::getLocale()) ?>
+                        <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->favorite,App::getLocale()) ?>
                         {{ $idol->favorite }}
                     </td>
                 </tr>
