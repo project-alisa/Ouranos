@@ -2,7 +2,7 @@
 name: Translation update request
 about: Suggest better translation, or report incorrect translation
 title: "[Translation] "
-labels: ''
+labels: translation
 assignees: ''
 
 ---
