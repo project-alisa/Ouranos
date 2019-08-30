@@ -8,7 +8,6 @@ return [
 
     'idol.index.desc' => '정보를 보려면 idol을 선택하십시오.',
 
-    'idol.show.desc' => '여기에서 아이돌의 정보를 볼 수 있습니다.',
     'idol.show.desc' => '아이돌의 정보를 확인할 수 있습니다.',
     'idol.show.dbid' => '데이터베이스아이디는 게임내부ID와 동일합니다.',
     'idol.show.type' => 'MLTD에서의 아이돌의 속성을 나타냅니다.',
