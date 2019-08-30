@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400,700&display=swap&subset=korean');
+
 @font-face {
     font-family: "VL PGothic";
     src: local("VL PGothic"),
@@ -12,7 +14,7 @@ body{
     box-sizing: border-box;
     min-height: 99vh;
 
-    font-family: 'VL PGothic','Segoe UI',sans-serif;
+    font-family: 'VL PGothic','Gothic A1','Segoe UI',sans-serif;
 }
 *:focus{
     outline: none;
