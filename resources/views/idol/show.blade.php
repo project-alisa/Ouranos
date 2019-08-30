@@ -45,14 +45,14 @@
                     <th>{{ __('Blood type') }}</th><td>{{ $idol->bloodtype }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Age') }}</th><td>{{ $idol->age }}</td>
+                    <th>{{ __('Age') }}</th><td>{{ $idol->age }}{{ !App::isLocale('en') ? __('years old') : '' }}</td>
                     <th>{{ __('Weight') }}</th><td>{{ $idol->weight }}kg</td>
                     <th>{{ __('Handedness') }}</th><td>{{ $idol->handedness }}</td>
                 </tr>
                 <tr>
                     <th>{{ __('Birthplace') }}</th><td><a href="javascript:void(0)">{{ $idol->birthplace }}</a></td>
                     <th>BMI</th><td>{{ calcBmi($idol->height,$idol->weight) }}</td>
-                    <th>3 size</th><td>{{ $idol->bust.' / '.$idol->waist.' / '.$idol->hip }}</td>
+                    <th>{{ __('3 size') }}</th><td>{{ $idol->bust.' / '.$idol->waist.' / '.$idol->hip }}</td>
                 </tr>
                 <tr>
                     <th>{{ __('Hobby') }}</th>

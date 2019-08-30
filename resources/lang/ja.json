@@ -12,6 +12,7 @@
   "Type": "属性",
   "Birthdate": "誕生日",
   "Age": "年齢",
+  "years old": "歳",
   "Height": "身長",
   "Weight": "体重",
   "Blood type": "血液型",
@@ -25,6 +26,7 @@
   "Favorite": "好きなもの",
   "Color": "カラー",
   "Personal Color": "パーソナルカラー",
+  "3 size": "スリーサイズ",
 
   "Encyclopedia": "百科事典",
   "niconico Pedia": "ニコニコ大百科",
