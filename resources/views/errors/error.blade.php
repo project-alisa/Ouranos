@@ -16,7 +16,7 @@ $status_message = array(
 if(!empty($exception)){
     $code = $exception->getStatusCode() ?: '500';
     $desc = $status_desc[$code];
-    $message = $status_message[$code];
+    $message = $exception->getMessage() ?: $status_message[$code];
 }
 @endphp
 
