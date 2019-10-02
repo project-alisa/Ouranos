@@ -6,7 +6,12 @@ return [
     '500' => 'A fault or an error has occurred.',
     '503' => 'Service temporarily unavailable due to capacity problems or maintenance.',
 
+    'common.numbersof' => 'Numbers of :type',
+
     'idol.index.desc' => 'Select idol to see information.',
+    'idol.index.incorrect' => 'Incorrect type.',
+    'idol.index.typedetail' => 'Overview : :type',
+    'idol.index.typeselect' => 'Filter by type.',
 
     'idol.show.desc' => 'You can check the idol information.',
     'idol.show.dbid' => 'Database ID is the same as the internal ID in the MLTD',

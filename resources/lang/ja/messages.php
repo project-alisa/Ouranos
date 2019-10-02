@@ -6,7 +6,12 @@ return [
     '500' => 'サーバ内部でエラーが発生しました',
     '503' => 'アクセス集中かメンテナンスのため一時的にページを表示できません',
 
+    'common.numbersof' => ':typeの人数',
+
     'idol.index.desc' => 'アイドルを選んでください',
+    'idol.index.incorrect' => '存在しない属性です',
+    'idol.index.typedetail' => ':typeアイドルの概要',
+    'idol.index.typeselect' => '属性で絞り込む',
 
     'idol.show.desc' => 'アイドルの情報を確認することができます',
     'idol.show.dbid' => 'データベースID ゲーム内の内部IDと同一です',

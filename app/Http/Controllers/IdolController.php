@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class IdolController extends Controller
 {
@@ -13,8 +14,18 @@ class IdolController extends Controller
      */
     public function index()
     {
-        $idols = \App\Idol::all();
-        return view('idol.index',compact('idols'));
+        $type = Input::get('type') ?: false;
+        if(!empty($type) and array_search($type,config('ouranos.acceptableTypes')) === false){
+            abort(404,__('messages.idol.index.incorrect'));
+        }elseif(!empty($type)){
+            $idols = \App\Idol::where('type',$type)->get();
+            if($idols->isEmpty()) abort(404);
+            $idol_count = $idols->count();
+        }else{
+            $idols = \App\Idol::all();
+            $idol_count = $idols->count();
+        }
+        return view('idol.index',compact('idols','type','idol_count'));
     }
 
     /**
