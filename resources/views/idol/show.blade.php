@@ -103,54 +103,54 @@
     </div>
     <div id="twinbox">
         <div class="msgbox" id="contentwide">
-            <div class="msgboxtop">メディア検索</div>
-            <div class="msgboxbody" style="overflow-x: scroll">
-                <h2>Twitterを検索</h2>
+            <div class="msgboxtop">{{ __('mediasearch.title') }}</div>
+            <div class="msgboxbody">
+                <h2>{{ __('mediasearch.twitter') }}</h2>
                 <div class="buttonbox">
                     <a href="https://twitter.com/search?q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f50e; 通常検索<br><span class="subline">Twitter検索</span>
+                        &#x1f50e; {{ __('mediasearch.twitter.normal') }}<br><span class="subline">{{ __('mediasearch.twitter.normal.desc') }}</span>
                     </a>
                     <a href="https://twitter.com/search?f=live&q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x231a; リアルタイム検索<br><span class="subline">すべてのツイートを時系列順に表示</span>
+                        &#x231a; {{ __('mediasearch.twitter.realtime') }}<br><span class="subline">{{ __('mediasearch.twitter.realtime.desc') }}</span>
                     </a>
                     <a href="https://twitter.com/search?f=user&q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f1f5; ユーザー検索<br><span class="subline">プロフィールからユーザーを検索</span>
+                        &#x1f1f5; {{ __('mediasearch.twitter.user') }}<br><span class="subline">{{ __('mediasearch.twitter.user.desc') }}</span>
                     </a>
                     <a href="https://twitter.com/search?f=image&q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4f7; 画像検索<br><span class="subline">画像を含むツイートを検索</span>
+                        &#x1f4f7; {{ __('mediasearch.twitter.image') }}<br><span class="subline">{{ __('mediasearch.twitter.image.desc') }}</span>
                     </a>
                     <a href="https://twitter.com/search?f=video&q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4f9; 動画検索<br><span class="subline">動画を含むツイートを検索</span>
+                        &#x1f4f9; {{ __('mediasearch.twitter.video') }}<br><span class="subline">{{ __('mediasearch.twitter.video.desc') }}</span>
                     </a>
-                    <a href="https://twitter.com/search?f=tweet&q={{ $urlname }}%20⚡️️" class="button jwil" target="_blank">
-                        &#x26a1; モーメント検索<br><span class="subline">モーメントを検索</span>
+                    <a href="https://twitter.com/search?f=tweet&q={{ $urlname }}%20⚡" class="button jwil" target="_blank">
+                        &#x26a1; {{ __('mediasearch.twitter.moment') }}<br><span class="subline">{{ __('mediasearch.twitter.moment.desc') }}</span>
                     </a>
                 </div>
                 <p class="notification">
-                    Twitter検索は愛称・ニックネームにより表示されるべき結果を表示できない可能性があります。
+                    {{ __('mediasearch.twitter.notice') }}
                 </p>
-                <h2>niconicoを検索</h2>
+                <h2>{{ __('mediasearch.niconico') }}</h2>
                 <div class="buttonbox">
                     <a href="http://www.nicovideo.jp/search/{{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4fa; 動画をキーワード検索
+                        &#x1f4fa; {{ __('mediasearch.niconico.keyword') }}
                     </a>
                     <a href="http://www.nicovideo.jp/tag/{{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4fa; 動画をタグ検索
+                        &#x1f4fa; {{ __('mediasearch.niconico.tag') }}
                     </a>
                     <a href="http://seiga.nicovideo.jp/tag/{{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f3a8; 静画をタグ検索
+                        &#x1f3a8; {{ __('mediasearch.niconico.seiga') }}
                     </a>
                 </div>
-                <h2>Pixivを検索</h2>
+                <h2>{{ __('mediasearch.pixiv') }}</h2>
                 <div class="buttonbox">
                     <a href="https://www.pixiv.net/search.php?s_mode=s_tag_full&word={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f3a8; タグで検索<br><span class="subline">Pixiv総合検索</span>
+                        &#x1f3a8; {{ __('mediasearch.pixiv.tag') }}<br><span class="subline">{{ __('mediasearch.pixiv.tag.desc') }}</span>
                     </a>
                     <a href="https://www.pixiv.net/search.php?s_mode=s_tc&word={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f3a8; キーワードで検索<br><span class="subline">Pixiv総合検索</span>
+                        &#x1f3a8; {{ __('mediasearch.pixiv.keyword') }}<br><span class="subline">{{ __('mediasearch.pixiv.keyword.desc') }}</span>
                     </a>
                     <a href="https://www.pixiv.net/novel/tags.php?tag={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4dd; 書き物をタグで検索<br><span class="subline">Pixiv小説検索</span>
+                        &#x1f4dd; {{ __('mediasearch.pixiv.novel') }}<br><span class="subline">{{ __('mediasearch.pixiv.novel.desc') }}</span>
                     </a>
                 </div>
             </div>
