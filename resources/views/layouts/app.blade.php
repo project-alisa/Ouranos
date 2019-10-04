@@ -13,6 +13,8 @@
         <title>{{ $title." - ".config('ouranos.sitename', config('app.name','Ouranos')) }}</title>
     @endif
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @if(!empty($css))
         <link rel="stylesheet" href="{{ asset('css/'.$css.'.css') }}">
     @endif
@@ -29,8 +31,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
 <header>
