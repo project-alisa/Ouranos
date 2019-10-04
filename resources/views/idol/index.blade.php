@@ -1,4 +1,4 @@
-@extends('layouts.app',['title' => $type.__('Idols list'), 'sub' => __('messages.idol.index.desc')])
+@extends('layouts.app',['title' => $type.' '.__('Idols list'), 'sub' => __('messages.idol.index.desc')])
 
 @section('content')
     <div id="twinbox">
@@ -10,12 +10,13 @@
                         @php
                             /** @var App\Idol $idol */
                             $icon = asset('image/icon/'.$idol->name_r.'/0.png');
-                            $dateflag = App::isLocale('ja') ? 'ja' : 'slash';
+                            $ja_flag = App::isLocale('ja');
+                            $dateflag = $ja_flag ? 'ja' : 'slash';
                         @endphp
                         <a href="{{ url('/idol/'.$idol->name_r) }}" class="idol">
                             <img src="{{ $icon }}" class="idolicon" alt="icon" style="border-color: {{ getTypeColor($idol->type) }}">
                             <div class="idolinfo">
-                                <p class="name">{{ separateString($idol->name,$idol->name_separate) }}</p>
+                                <p class="name">{{ $ja_flag ? separateString($idol->name,$idol->name_separate) : ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</p>
                                 <table>
                                     <tr>
                                         <th>{{ __('Type') }}</th><td style="width: 80px;font-weight: bold;color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
@@ -36,10 +37,14 @@
                 <div class="msgboxtop">{{ __('messages.idol.index.typeselect') }}</div>
                 <div class="msgboxbody">
                     <div class="buttonbox">
-                        <a class="button jwil{{ $type === 'Princess' ? ' selected' : '' }}" href="{{ url('/idol?type=Princess') }}">Princess</a>
-                        <a class="button jwil{{ $type === 'Fairy' ? ' selected' : '' }}" href="{{ url('/idol?type=Fairy') }}">Fairy</a>
-                        <a class="button jwil{{ $type === 'Angel' ? ' selected' : '' }}" href="{{ url('/idol?type=Angel') }}">Angel</a>
-                        <a class="button jwil{{ $type === 'Ex' ? ' selected' : '' }}" href="{{ url('/idol?type=Ex') }}">Ex</a>
+                        <a class="button jwil{{ $type === 'Princess' ? ' selected' : '' }}" href="{{ url('/idol?type=Princess') }}">
+                            <img src="{{ asset('image/princess_symbol.png') }}" class="emoji" alt="Pr"> Princess</a>
+                        <a class="button jwil{{ $type === 'Fairy' ? ' selected' : '' }}" href="{{ url('/idol?type=Fairy') }}">
+                            <img src="{{ asset('image/fairy_symbol.png') }}" class="emoji" alt="Fa"> Fairy</a>
+                        <a class="button jwil{{ $type === 'Angel' ? ' selected' : '' }}" href="{{ url('/idol?type=Angel') }}">
+                            <img src="{{ asset('image/angel_symbol.png') }}" class="emoji" alt="An"> Angel</a>
+                        <a class="button jwil{{ $type === 'Ex' ? ' selected' : '' }}" href="{{ url('/idol?type=Ex') }}">
+                            Ex</a>
                     </div>
                 </div>
                 <div class="msgboxfoot">
