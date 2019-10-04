@@ -11,7 +11,7 @@ return [
     'idol.index.desc' => 'Select idol to see information.',
     'idol.index.incorrect' => 'Incorrect type.',
     'idol.index.typedetail' => 'Overview : :type',
-    'idol.index.typeselect' => 'Filter by type.',
+    'idol.index.typeselect' => 'Filter by type',
 
     'idol.show.desc' => 'You can check the idol information.',
     'idol.show.dbid' => 'Database ID is the same as the internal ID in the MLTD',
