@@ -14,4 +14,6 @@ Route::group([
 
     $router->resource('idols', IdolController::class);
 
+    $router->resource('c-k-names', CKNameController::class);
+
 });
