@@ -31,14 +31,16 @@
                     if(!empty($idol->subname)) $namestr .= ' ('.$idol->subname.')';
                     $dateflag = App::isLocale('ja') ? 'ja' : 'slash';
                     $urlname = urlencode($idol->name) ?>
-                    <th>{{ __('Name') }}</th><td colspan="3">{{ $namestr }}</td>
-                    <th>{{ __('CV') }}</th><td>{{ $idol->cv }}</td>
+                    <th>{{ __('Name') }}</th><td colspan="2">{{ $namestr }}</td>
+                    <th>{{ __('CV') }}</th><td colspan="2">{{ $idol->cv }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Hiragana') }}</th><td colspan="5">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
+                    <th>{{ __('Hiragana') }}</th><td colspan="2">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
+                    <th>{{ __('Chinese') }}</th><td colspan="2">{{ separateString($idol->name_r,$idol->name_r_separate) }}</td>
                 </tr>
                 <tr>
-                    <th>Alphabet</th><td colspan="5">{{ ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</td>
+                    <th>Alphabet</th><td colspan="2">{{ ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</td>
+                    <th>{{ __('Hangul') }}</th><td colspan="2">{{ separateString($idol->name_r,$idol->name_r_separate) }}</td>
                 </tr>
                 <tr>
                     <th>{{ __('Birthdate') }}</th><td>{{ convertDateString($idol->birthdate,$dateflag) }}</td>
