@@ -1,6 +1,15 @@
 @extends('layouts.app',['title' => $title, 'sub' => __('messages.idol.show.desc'), 'css' => 'idol'])
 
 @section('content')
+    @if(date('2017-m-d') === $idol->birthdate) {{-- 2017-m-d --}}
+        <div id="happybirthday" style="background: rgba({{ convertColorcode($idol->color,true) }},0.3);display: flex">
+            <img src="{{ asset('image/icon/'.$idol->name_r.'/0.png') }}" alt="{{ $idol->name }}" style="width: 55px;display: block;padding-right: 12px">
+            <div>
+                <span style="font-size:25px">Happy Birthday {{ ucfirst(substr($idol->name_r,0,($idol->name_r_separate ?: strlen($idol->name_r)))) }}!</span><br>
+                {{ date('l F jS, Y') }}
+            </div>
+        </div>
+    @endif
     <div id="idoldetail">
         <img id="tachie" src="{{ asset('image/tachie/'.$idol->name_r.'.png') }}" alt="{{ $idol->name }}">
         <div id="info">
@@ -50,7 +59,7 @@
                 <tr>
                     <th>{{ __('Age') }}</th><td>{{ $idol->age }}{{ !App::isLocale('en') ? __('years old') : '' }}</td>
                     <th>{{ __('Weight') }}</th><td>{{ $idol->weight }}kg</td>
-                    <th>{{ __('Handedness') }}</th><td>{{ $idol->handedness }}</td>
+                    <th>{{ __('Handedness') }}</th><td>{{ translateHandedness($idol->handedness) }}</td>
                 </tr>
                 <tr>
                     <th>{{ __('Birthplace') }}</th><td><a href="javascript:void(0)">{{ $idol->birthplace }}</a></td>
@@ -104,67 +113,79 @@
         </div>
     </div>
     <div id="twinbox">
-        <div class="msgbox" id="contentwide">
-            <div class="msgboxtop">{{ __('mediasearch.title') }}</div>
-            <div class="msgboxbody">
-                <h2>{{ __('mediasearch.twitter') }}</h2>
-                <div class="buttonbox">
-                    <a href="https://twitter.com/search?q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f50e; {{ __('mediasearch.twitter.normal') }}<br><span class="subline">{{ __('mediasearch.twitter.normal.desc') }}</span>
-                    </a>
-                    <a href="https://twitter.com/search?f=live&q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x231a; {{ __('mediasearch.twitter.realtime') }}<br><span class="subline">{{ __('mediasearch.twitter.realtime.desc') }}</span>
-                    </a>
-                    <a href="https://twitter.com/search?f=user&q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f1f5; {{ __('mediasearch.twitter.user') }}<br><span class="subline">{{ __('mediasearch.twitter.user.desc') }}</span>
-                    </a>
-                    <a href="https://twitter.com/search?f=image&q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4f7; {{ __('mediasearch.twitter.image') }}<br><span class="subline">{{ __('mediasearch.twitter.image.desc') }}</span>
-                    </a>
-                    <a href="https://twitter.com/search?f=video&q={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4f9; {{ __('mediasearch.twitter.video') }}<br><span class="subline">{{ __('mediasearch.twitter.video.desc') }}</span>
-                    </a>
-                    <a href="https://twitter.com/search?f=tweet&q={{ $urlname }}%20⚡" class="button jwil" target="_blank">
-                        &#x26a1; {{ __('mediasearch.twitter.moment') }}<br><span class="subline">{{ __('mediasearch.twitter.moment.desc') }}</span>
-                    </a>
+        <div id="contentwide">
+            <div class="msgbox">
+                <div class="msgboxtop">{{ __('mediasearch.title') }}</div>
+                <div class="msgboxbody">
+                    <h2>{{ __('mediasearch.twitter') }}</h2>
+                    <div class="buttonbox">
+                        <a href="https://twitter.com/search?q={{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f50e; {{ __('mediasearch.twitter.normal') }}<br><span class="subline">{{ __('mediasearch.twitter.normal.desc') }}</span>
+                        </a>
+                        <a href="https://twitter.com/search?f=live&q={{ $urlname }}" class="button jwil" target="_blank">
+                            &#x231a; {{ __('mediasearch.twitter.realtime') }}<br><span class="subline">{{ __('mediasearch.twitter.realtime.desc') }}</span>
+                        </a>
+                        <a href="https://twitter.com/search?f=user&q={{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f1f5; {{ __('mediasearch.twitter.user') }}<br><span class="subline">{{ __('mediasearch.twitter.user.desc') }}</span>
+                        </a>
+                        <a href="https://twitter.com/search?f=image&q={{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f4f7; {{ __('mediasearch.twitter.image') }}<br><span class="subline">{{ __('mediasearch.twitter.image.desc') }}</span>
+                        </a>
+                        <a href="https://twitter.com/search?f=video&q={{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f4f9; {{ __('mediasearch.twitter.video') }}<br><span class="subline">{{ __('mediasearch.twitter.video.desc') }}</span>
+                        </a>
+                        <a href="https://twitter.com/search?f=tweet&q={{ $urlname }}%20⚡" class="button jwil" target="_blank">
+                            &#x26a1; {{ __('mediasearch.twitter.moment') }}<br><span class="subline">{{ __('mediasearch.twitter.moment.desc') }}</span>
+                        </a>
+                    </div>
+                    <p class="notification">
+                        {{ __('mediasearch.twitter.notice') }}
+                    </p>
+                    <h2>{{ __('mediasearch.niconico') }}</h2>
+                    <div class="buttonbox">
+                        <a href="http://www.nicovideo.jp/search/{{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f4fa; {{ __('mediasearch.niconico.keyword') }}
+                        </a>
+                        <a href="http://www.nicovideo.jp/tag/{{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f4fa; {{ __('mediasearch.niconico.tag') }}
+                        </a>
+                        <a href="http://seiga.nicovideo.jp/tag/{{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f3a8; {{ __('mediasearch.niconico.seiga') }}
+                        </a>
+                    </div>
+                    <h2>{{ __('mediasearch.pixiv') }}</h2>
+                    <div class="buttonbox">
+                        <a href="https://www.pixiv.net/search.php?s_mode=s_tag_full&word={{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f3a8; {{ __('mediasearch.pixiv.tag') }}<br><span class="subline">{{ __('mediasearch.pixiv.tag.desc') }}</span>
+                        </a>
+                        <a href="https://www.pixiv.net/search.php?s_mode=s_tc&word={{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f3a8; {{ __('mediasearch.pixiv.keyword') }}<br><span class="subline">{{ __('mediasearch.pixiv.keyword.desc') }}</span>
+                        </a>
+                        <a href="https://www.pixiv.net/novel/tags.php?tag={{ $urlname }}" class="button jwil" target="_blank">
+                            &#x1f4dd; {{ __('mediasearch.pixiv.novel') }}<br><span class="subline">{{ __('mediasearch.pixiv.novel.desc') }}</span>
+                        </a>
+                    </div>
                 </div>
-                <p class="notification">
-                    {{ __('mediasearch.twitter.notice') }}
-                </p>
-                <h2>{{ __('mediasearch.niconico') }}</h2>
-                <div class="buttonbox">
-                    <a href="http://www.nicovideo.jp/search/{{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4fa; {{ __('mediasearch.niconico.keyword') }}
-                    </a>
-                    <a href="http://www.nicovideo.jp/tag/{{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4fa; {{ __('mediasearch.niconico.tag') }}
-                    </a>
-                    <a href="http://seiga.nicovideo.jp/tag/{{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f3a8; {{ __('mediasearch.niconico.seiga') }}
-                    </a>
-                </div>
-                <h2>{{ __('mediasearch.pixiv') }}</h2>
-                <div class="buttonbox">
-                    <a href="https://www.pixiv.net/search.php?s_mode=s_tag_full&word={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f3a8; {{ __('mediasearch.pixiv.tag') }}<br><span class="subline">{{ __('mediasearch.pixiv.tag.desc') }}</span>
-                    </a>
-                    <a href="https://www.pixiv.net/search.php?s_mode=s_tc&word={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f3a8; {{ __('mediasearch.pixiv.keyword') }}<br><span class="subline">{{ __('mediasearch.pixiv.keyword.desc') }}</span>
-                    </a>
-                    <a href="https://www.pixiv.net/novel/tags.php?tag={{ $urlname }}" class="button jwil" target="_blank">
-                        &#x1f4dd; {{ __('mediasearch.pixiv.novel') }}<br><span class="subline">{{ __('mediasearch.pixiv.novel.desc') }}</span>
-                    </a>
-                </div>
+                <div class="msgboxfoot"></div>
             </div>
-            <div class="msgboxfoot"></div>
+            <div class="msgbox">
+                <div class="msgboxtop">var_dump</div>
+                <div class="msgboxbody">
+                    <?php var_dump($idol); ?>
+                </div>
+                <div class="msgboxfoot"></div>
+            </div>
         </div>
         <div class="msgbox" id="contentnarrow">
             <div class="msgboxtop">Inform@tion</div>
             <div class="msgboxbody">
-                <h2>Hoge</h2>
-                <p>
-                    piyo
-                </p>
+                <h2>Platform info</h2>
+                <div class="buttonbox">
+                    <a href="https://mltd.matsurihi.me/cards/#idol-list-{{ $idol->id }}" class="button jwil" target="_blank">
+                        MLTD Cards (ja)
+                        <span class="subline">matsurihi.me</span>
+                    </a>
+                </div>
             </div>
             <div class="msgboxfoot"></div>
         </div>

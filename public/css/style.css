@@ -590,8 +590,8 @@ optgroup{
 /* dialog */
 dialog{
     position: fixed;
-    border: none;
-    background: transparent;
+    border: none !important;
+    background: transparent !important;
     top: 50vh;
     transform: translateY(-50%);
 }

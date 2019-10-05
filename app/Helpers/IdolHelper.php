@@ -86,3 +86,48 @@ if(!function_exists('genTranslationLink')){
         return $tag;
     }
 }
+
+if(!function_exists('convertColorcode')){
+    /**
+     * カラーコード変換関数
+     *
+     * "#92cfbb" => array(146,207,187) or "146,207,187"
+     *
+     * @param $code
+     * @return bool|array
+     */
+    function convertColorcode($code,bool $str = false){
+        $code = str_replace('#','',$code);
+        if(strlen($code) == 6){
+            $cc['r'] = hexdec(substr($code, 0, 2));
+            $cc['g'] = hexdec(substr($code, 2, 2));
+            $cc['b'] = hexdec(substr($code, 4, 2));
+            return $str ? $cc['r'].','.$cc['g'].','.$cc['b'] : $cc;
+        }else{
+            return false;
+        }
+    }
+}
+
+if(!function_exists('translateHandedness')){
+    /**
+     * 利き手翻訳関数
+     *
+     * めんどいねんDB変えるの
+     *
+     * @param $text
+     * @return bool|string
+     */
+    function translateHandedness($text){
+        switch ($text){
+            case '左':
+                return 'Left handed';
+            case '右':
+                return 'Right handed';
+            case '両':
+                return 'Both handed';
+            default:
+                return false;
+        }
+    }
+}

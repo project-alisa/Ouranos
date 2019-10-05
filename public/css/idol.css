@@ -108,3 +108,13 @@ table#idolinfo{
     font-size: 10px !important;
     margin-right: 10px;
 }
+
+#happybirthday{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 15px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: rgba(255,255,255,0.3);
+}
