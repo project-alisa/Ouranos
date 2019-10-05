@@ -1,4 +1,4 @@
-@extends('layouts.app',['title' => $idol->name, 'sub' => __('messages.idol.show.desc'), 'css' => 'idol'])
+@extends('layouts.app',['title' => $title, 'sub' => __('messages.idol.show.desc'), 'css' => 'idol'])
 
 @section('content')
     <div id="idoldetail">
@@ -36,11 +36,11 @@
                 </tr>
                 <tr>
                     <th>{{ __('Hiragana') }}</th><td colspan="2">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
-                    <th>{{ __('Chinese') }}</th><td colspan="2">{{ separateString($idol->name_r,$idol->name_r_separate) }}</td>
+                    <th>{{ __('Chinese') }}</th><td colspan="2">{{ separateString($idol->name_zh,$idol->name_zh_separate) }}</td>
                 </tr>
                 <tr>
                     <th>Alphabet</th><td colspan="2">{{ ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</td>
-                    <th>{{ __('Hangul') }}</th><td colspan="2">{{ separateString($idol->name_r,$idol->name_r_separate) }}</td>
+                    <th>{{ __('Hangul') }}</th><td colspan="2">{{ separateString($idol->name_ko,$idol->name_ko_separate) }}</td>
                 </tr>
                 <tr>
                     <th>{{ __('Birthdate') }}</th><td>{{ convertDateString($idol->birthdate,$dateflag) }}</td>

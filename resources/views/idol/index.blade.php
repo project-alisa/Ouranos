@@ -7,16 +7,23 @@
                 <div class="msgboxtop">{{ __('Idols list') }}</div>
                 <div class="msgboxbody">
                     @foreach ($idols as $idol)
-                        @php
+                        <?php
                             /** @var App\Idol $idol */
                             $icon = asset('image/icon/'.$idol->name_r.'/0.png');
                             $ja_flag = App::isLocale('ja');
+                            if(!$ja_flag){
+                                $name = 'name_'.(App::isLocale('en') ? 'r' : App::getLocale());
+                                if(empty($idol->$name)) $name = 'r'; //fallback
+                                $separate = $name.'_separate';
+                                $text = e(ucwords(separateString($idol->$name,$idol->$separate)));
+                                $text .= "<span style='font-size: 15px;color: dimgray;margin-left: 15px'>".e(ucwords(separateString($idol->name,$idol->name_separate)))."</span>";
+                            }
                             $dateflag = $ja_flag ? 'ja' : 'slash';
-                        @endphp
+                        ?>
                         <a href="{{ url('/idol/'.$idol->name_r) }}" class="idol">
                             <img src="{{ $icon }}" class="idolicon" alt="icon" style="border-color: {{ getTypeColor($idol->type) }}">
                             <div class="idolinfo">
-                                <p class="name">{{ $ja_flag ? separateString($idol->name,$idol->name_separate) : ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</p>
+                                <p class="name">{!! $ja_flag ? e(separateString($idol->name,$idol->name_separate)) : $text !!}</p>
                                 <table>
                                     <tr>
                                         <th>{{ __('Type') }}</th><td style="width: 80px;font-weight: bold;color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>

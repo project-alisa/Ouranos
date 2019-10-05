@@ -5,6 +5,8 @@
   "Name y": "なまえ",
   "Hiragana": "ひらがな",
   "Name r": "Alphabet",
+  "Chinese": "繁体字",
+  "Hangul": "ハングル",
   "Name separate": "NS",
   "Name y separate": "NYS",
   "Name r separate": "NRS",
@@ -27,9 +29,6 @@
   "Color": "カラー",
   "Personal Color": "パーソナルカラー",
   "3 size": "スリーサイズ",
-
-  "Chinese": "繁体字",
-  "Hangul": "ハングル",
 
   "Encyclopedia": "百科事典",
   "niconico Pedia": "ニコニコ大百科",

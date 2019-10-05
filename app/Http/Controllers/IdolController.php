@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Lang;
 
 class IdolController extends Controller
 {
@@ -18,11 +19,11 @@ class IdolController extends Controller
         if(!empty($type) and array_search($type,config('ouranos.acceptableTypes')) === false){
             abort(404,__('messages.idol.index.incorrect'));
         }elseif(!empty($type)){
-            $idols = \App\Idol::where('type',$type)->get();
+            $idols = \App\Idol::select()->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')->where('type',$type)->get();
             if($idols->isEmpty()) abort(404);
             $idol_count = $idols->count();
         }else{
-            $idols = \App\Idol::all();
+            $idols = \App\Idol::select()->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')->get();
             $idol_count = $idols->count();
         }
         return view('idol.index',compact('idols','type','idol_count'));
@@ -57,8 +58,21 @@ class IdolController extends Controller
      */
     public function show($name_r)
     {
-        $idol = \App\Idol::where('name_r', 'like', $name_r)->firstOrFail();
-        return view('idol.show',compact('idol'));
+        $idol = \App\Idol::select()->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')
+            ->where('name_r', 'like', $name_r)->firstOrFail();
+        $name = 'name';
+        switch (\App::getLocale()){
+            case 'ja':
+                break;
+            case 'en':
+                $name .= '_r'; break;
+            default:
+                $name .= '_'.\App::getLocale();
+        }
+        if(empty($idol->$name)) $name = 'name_r'; //fallback
+        $separate = $name.'_separate';
+        $title = ucwords(separateString($idol->$name,$idol->$separate));
+        return view('idol.show',compact('idol','title','name'));
     }
 
     /**
