@@ -58,7 +58,10 @@ class IdolController extends Controller
      */
     public function show($name_r)
     {
-        $idol = \App\Idol::select()->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')
+        $idol = \App\Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
+            'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
+            'c_k_names.subname_zh','c_k_names.subname_ko')
+            ->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')
             ->where('name_r', 'like', $name_r)->firstOrFail();
         $name = 'name';
         switch (\App::getLocale()){
