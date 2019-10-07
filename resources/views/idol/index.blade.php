@@ -13,7 +13,7 @@
                             $ja_flag = App::isLocale('ja');
                             if(!$ja_flag){
                                 $name = 'name_'.(App::isLocale('en') ? 'r' : App::getLocale());
-                                if(empty($idol->$name)) $name = 'r'; //fallback
+                                if(empty($idol->$name)) $name = 'name_r'; //fallback
                                 $separate = $name.'_separate';
                                 $text = e(ucwords(separateString($idol->$name,$idol->$separate)));
                                 $text .= "<span style='font-size: 15px;color: dimgray;margin-left: 15px'>".e(ucwords(separateString($idol->name,$idol->name_separate)))."</span>";
