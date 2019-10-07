@@ -59,7 +59,7 @@
                 <tr>
                     <th>{{ __('Age') }}</th><td>{{ $idol->age }}{{ !App::isLocale('en') ? __('years old') : '' }}</td>
                     <th>{{ __('Weight') }}</th><td>{{ $idol->weight }}kg</td>
-                    <th>{{ __('Handedness') }}</th><td>{{ translateHandedness($idol->handedness) }}</td>
+                    <th>{{ __('Handedness') }}</th><td>{{ __(translateHandedness($idol->handedness)) }}</td>
                 </tr>
                 <tr>
                     <th>{{ __('Birthplace') }}</th><td><a href="javascript:void(0)">{{ $idol->birthplace }}</a></td>
@@ -177,15 +177,28 @@
             </div>
         </div>
         <div class="msgbox" id="contentnarrow">
-            <div class="msgboxtop">Inform@tion</div>
+            <div class="msgboxtop">TheaterDays info</div>
             <div class="msgboxbody">
-                <h2>Platform info</h2>
+                <h2>Japanese version</h2>
                 <div class="buttonbox">
                     <a href="https://mltd.matsurihi.me/cards/#idol-list-{{ $idol->id }}" class="button jwil" target="_blank">
-                        MLTD Cards (ja)
-                        <span class="subline">matsurihi.me</span>
+                        TheaterDays Cards (ja)
+                        <span class="subline">matsurihi.me Fantasia</span>
                     </a>
                 </div>
+                <h2>Oversea version</h2>
+                @if(!empty($idol->cknameid))
+                    <div class="buttonbox">
+                        <a href="https://mltd.matsurihi.me/zh/cards/#idol-list-{{ $idol->id }}" class="button jw" target="_blank">
+                            Chinese
+                        </a>
+                        <a href="https://mltd.matsurihi.me/ko/cards/#idol-list-{{ $idol->id }}" class="button jw" target="_blank">
+                            Korean
+                        </a>
+                    </div>
+                @else
+                    <p>This idol has not appeared in the overseas version yet.</p>
+                @endif
             </div>
             <div class="msgboxfoot"></div>
         </div>
