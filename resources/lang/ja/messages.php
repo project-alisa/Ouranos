@@ -16,6 +16,10 @@ return [
     'idol.show.desc' => 'アイドルの情報を確認することができます',
     'idol.show.dbid' => 'データベースID ゲーム内の内部IDと同一です',
     'idol.show.type' => 'シアターデイズのアイドル属性です',
+    'idol.show.mltd.ja' => '日本語版',
+    'idol.show.mltd.oversea' => '海外版',
+    'idol.show.mltd.ja.cards' => 'ミリシタ カード一覧',
+    'idol.show.mltd.oversea.none' => '海外版にはまだ登場していません',
 
     'share.title' => 'Fediverseで共有',
     'share.input' => '共有するインスタンスのホストを入力してください',

@@ -179,14 +179,14 @@
         <div class="msgbox" id="contentnarrow">
             <div class="msgboxtop">TheaterDays info</div>
             <div class="msgboxbody">
-                <h2>Japanese version</h2>
+                <h2>{{ __('messages.idol.show.mltd.ja') }}</h2>
                 <div class="buttonbox">
                     <a href="https://mltd.matsurihi.me/cards/#idol-list-{{ $idol->id }}" class="button jwil" target="_blank">
-                        TheaterDays Cards (ja)
+                        {{ __('messages.idol.show.mltd.ja.cards') }}
                         <span class="subline">matsurihi.me Fantasia</span>
                     </a>
                 </div>
-                <h2>Oversea version</h2>
+                <h2>{{ __('messages.idol.show.mltd.oversea') }}</h2>
                 @if(!empty($idol->cknameid))
                     <div class="buttonbox">
                         <a href="https://mltd.matsurihi.me/zh/cards/#idol-list-{{ $idol->id }}" class="button jw" target="_blank">
@@ -197,7 +197,7 @@
                         </a>
                     </div>
                 @else
-                    <p>This idol has not appeared in the overseas version yet.</p>
+                    <p class="notice">{{ __('messages.idol.show.mltd.oversea.none') }}</p>
                 @endif
             </div>
             <div class="msgboxfoot"></div>

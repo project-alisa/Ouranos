@@ -16,6 +16,10 @@ return [
     'idol.show.desc' => 'You can check the idol information.',
     'idol.show.dbid' => 'Database ID is the same as the internal ID in the MLTD',
     'idol.show.type' => 'Idol type of MLTD',
+    'idol.show.mltd.ja' => 'Japanese version',
+    'idol.show.mltd.oversea' => 'Overseas version',
+    'idol.show.mltd.ja.cards' => 'TheaterDays Cards (ja)',
+    'idol.show.mltd.oversea.none' => 'This idol has not appeared in the overseas version yet.',
 
     'share.title' => 'Share to Fediverse',
     'share.input' => 'Enter the instance host to share.',
