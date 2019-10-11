@@ -6,5 +6,6 @@ return [
     'phrase' => 'The handmade Budokan',
     'cardname' => env('CARD_NAME','shihokitazawa_therapistonboat'),
 
-    'acceptableTypes' => array('Princess','Fairy','Angel','Ex')
+    'acceptableTypes' => array('Princess','Fairy','Angel','Ex'),
+    'mastodonFeedUrl' => 'https://mstdn.miyacorata.net/@ML_Portal.rss',
 ];

@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/clock', function () {
+    $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
+    return view('clock',compact('feed'));
+});
+
 //Auth::routes(['register' => false , 'reset' => false , 'verify' => false]);
 
 //Route::get('/home', 'HomeController@index')->name('home');
