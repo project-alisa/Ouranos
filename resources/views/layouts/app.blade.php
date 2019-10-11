@@ -44,7 +44,7 @@
 
         <nav class="headmenu">
             <ul>
-                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/') }}">ToP!!!!!!!!!!!!!</a></li>
                 <li><a href="{{ url('/idol') }}">Idol</a></li>
             </ul>
         </nav>
@@ -109,7 +109,7 @@
             <div style="padding: 5px 10px 10px;text-align: center">
                 <p style="margin: 10px 15px;">{{ __('messages.share.input') }}</p>
                 <label>
-                    <input type="search" id="sm_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block;width: 450px">
+                    <input type="search" id="sm_instance" list="mastodon_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block;width: 450px">
                 </label>
                 <datalist id="mastodon_instance">
                     <option value="imastodon.net">
