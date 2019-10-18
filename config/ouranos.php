@@ -8,4 +8,5 @@ return [
 
     'acceptableTypes' => array('Princess','Fairy','Angel','Ex'),
     'mastodonFeedUrl' => 'https://mstdn.miyacorata.net/@ML_Portal.rss',
+    'matsurihimeEndpointUrl' => 'https://api.matsurihi.me/mltd/v1/',
 ];

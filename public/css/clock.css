@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400,700&display=swap&subset=korean');
+/*@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400,700&display=swap&subset=korean');*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
 @font-face {
@@ -10,7 +10,7 @@
 html, body {
     background: #544e3e;
     position: relative;
-    font-family: 'Open Sans','VL PGothic','Gothic A1','Segoe UI','Nunito', sans-serif;
+    font-family: 'Open Sans','VL PGothic','Gothic A1','Segoe UI', sans-serif;
     font-weight: 200;
     height: 100vh;
     margin: 0;
@@ -21,7 +21,7 @@ html, body {
     font-size: 60px;
     color: #afa690;
     z-index: 0;
-    top: 45vh;
+    top: 40vh;
     width: 100vw;
     text-align: center;
 }
@@ -91,6 +91,9 @@ h1{
 }
 #infos > div.birth > span:first-child{
     background: linear-gradient(-90deg, rgba(254,213,82,0), rgba(254,213,82,0.5) 10px, rgba(254,213,82,0.8));
+}
+#infos > div.event > span:first-child{
+    background: linear-gradient(-90deg, rgba(61,208,77,0), rgba(61,208,77,0.5) 10px, rgba(61,208,77,0.8));
 }
 
 #background{
