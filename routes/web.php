@@ -19,8 +19,8 @@ Route::get('/clock', function () {
     // mastodonRSS取得
     $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
     $feed_txt = preg_replace("{https?://[\w/:%#$&?()~.=+\-]+}",'',strip_tags($feed->channel->item[0]->description));
-    $feed_txt .= "<a href=\"{$feed->channel->item[0]->link}\" target=\"_blank\">";
-    $feed_txt .= ' ('.date('Y/m/d',strtotime($feed->channel->item[0]->pubDate)).'配信)'."</a>";
+    $feed_txt .= " (<a href=\"{$feed->channel->item[0]->link}\" target=\"_blank\">";
+    $feed_txt .= date('Y/m/d',strtotime($feed->channel->item[0]->pubDate)).'配信'."</a>)";
     // 誕生日
     $birthday = \App\idol::where('birthdate','=',date('2017-m-d'))->get();
     if($birthday->count() !== 0){

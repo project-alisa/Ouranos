@@ -36,7 +36,7 @@
         </div>
         <div class="info" title="{{ config('ouranos.sitename') }}からのお知らせです。&#x0A;このお知らせは @ml_portal@mstdn.miyacorata.net でも配信しています。">
             <span>MLP info</span>
-            {{ $feed_txt ?: 'お知らせを取得できませんでした' }}
+            {!! $feed_txt ?: 'お知らせを取得できませんでした' !!}
         </div>
         <div class="birth">
             <span>{{ $birth_text ? 'Happy Birthday!' : 'Birthday info' }}</span>
