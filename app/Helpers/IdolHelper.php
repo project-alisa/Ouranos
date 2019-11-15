@@ -80,7 +80,7 @@ if(!function_exists('calcBmi')){
 
 if(!function_exists('genTranslationLink')){
     function genTranslationLink($string,$locale){
-        $tag = "<a href='https://translate.google.com/#view=home&op=translate&sl=ja&tl={$locale}&text={$string}' target='_blank' class='button translate'>";
+        $tag = "<a href='https://translate.google.com/#view=home&op=translate&sl=ja&tl={$locale}&text={$string}' target='_blank' class='button smaller'>";
         $tag .= __('View translation on Google');
         $tag .= "</a>";
         return $tag;

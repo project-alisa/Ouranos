@@ -46,6 +46,7 @@
             <ul>
                 <li><a href="{{ url('/') }}">ToP!!!!!!!!!!!!!</a></li>
                 <li><a href="{{ url('/idol') }}">Idol</a></li>
+                <li><a href="{{ url('/clock') }}">Clock</a></li>
             </ul>
         </nav>
     </div>
