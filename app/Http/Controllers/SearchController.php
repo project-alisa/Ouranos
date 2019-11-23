@@ -63,7 +63,7 @@ class SearchController extends Controller
         // TODO:日付と年齢
         $search = $search->orderBy('id','asc')->get();
         $search_count = $search->count();
-        if($search_count === 1){
+        if($search_count === 1 && $name && !($birthplace||$month||$day||$age||$range)){
             return redirect('/idol/'.$search[0]->name_r)->with('flash_message','リダイレクト:検索結果が1件でした');
         }else{
             return view('search.result',compact('search','query_info','search_count'));
