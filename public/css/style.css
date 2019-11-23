@@ -719,3 +719,26 @@ dialog::backdrop , dialog + .backdrop{
 .fedi:hover{
     background-color:#eda701;
 }
+
+/* Flash message */
+#flash_message{
+    position: fixed;
+    display: block;
+    top: 45px;
+    right: -400px;
+    width: 300px;
+    animation: 5s ease-in-out 0s 1 normal flash;
+    background: rgba(180,180,180,0.5);
+    padding: 0 10px;
+    border-radius: 4px;
+}
+#flash_message > p:first-child{
+    padding-bottom: 4px;
+    border-bottom: dotted 2px rgba(100,100,100,0.5);
+}
+@keyframes flash {
+    0%  { margin-right: 0 }
+    20% { margin-right: 400px }
+    80% { margin-right: 400px }
+    0%  { margin-right: 0 }
+}

@@ -56,6 +56,14 @@
     </div>
 </header>
 
+@if(session('flash_message'))
+    <div id="flash_message">
+        @foreach(explode(':',session('flash_message')) as $message)
+            <p>{{ $message }}</p>
+        @endforeach
+    </div>
+@endif
+
 <main>
     @if(!empty($title))
         <?php $sub = !empty($sub) ? $sub : config('app.name')." - Ver".config('ouranos.version') ?>
