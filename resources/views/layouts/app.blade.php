@@ -45,7 +45,8 @@
         <nav class="headmenu">
             <ul>
                 <li><a href="{{ url('/') }}">ToP!!!!!!!!!!!!!</a></li>
-                <li><a href="{{ url('/idol') }}">Idol</a></li>
+                <li><a href="{{ url('/idol') }}">{{ __('Idols list') }}</a></li>
+                <li><a href="{{ url('/search') }}">{{ __('Search') }}</a></li>
                 <li><a href="{{ url('/clock') }}">Clock</a></li>
             </ul>
         </nav>

@@ -21,6 +21,8 @@ return [
     'idol.show.mltd.ja.cards' => 'TheaterDays Cards (ja)',
     'idol.show.mltd.oversea.none' => 'This idol has not appeared in the overseas version yet.',
 
+    'search.index.desc' => 'You can search for idol.',
+
     'share.title' => 'Share to Fediverse',
     'share.input' => 'Enter the instance host to share.',
     'share.select' => 'You can also choose from the list below.',

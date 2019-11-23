@@ -21,6 +21,8 @@ return [
     'idol.show.mltd.ja.cards' => 'ミリシタ カード一覧',
     'idol.show.mltd.oversea.none' => '海外版にはまだ登場していません',
 
+    'search.index.desc' => '様々な条件からアイドルを検索できます',
+
     'share.title' => 'Fediverseで共有',
     'share.input' => '共有するインスタンスのホストを入力してください',
     'share.select' => 'または以下から選ぶことができます',
