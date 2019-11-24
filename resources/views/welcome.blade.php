@@ -101,8 +101,7 @@
     </h1>
     <div id="links">
         <a href="{{ url('/idol') }}">Idol</a>
-        <a href="javascript:void(0)">Unit</a>
-        <a href="javascript:void(0)">Search</a>
+        <a href="{{ url('/search') }}">Search</a>
     </div>
 
     <div id="admin">

@@ -63,7 +63,7 @@
                 <div class="msgboxbody">
                     <h2>{{ __('messages.idol.index.typedetail',['type' => $type ?: 'All']) }}</h2>
                     <p>
-                        {{ __('messages.common.numbersof',['type' => $type.__('Idol')]) }}：{{ $idol_count }}
+                        {{ __('messages.common.numbersof',['type' => $type.' '.__('Idol')]) }}：{{ $idol_count }}
                     </p>
                 </div>
                 <div class="msgboxfoot"></div>

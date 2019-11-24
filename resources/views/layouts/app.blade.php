@@ -45,7 +45,8 @@
         <nav class="headmenu">
             <ul>
                 <li><a href="{{ url('/') }}">ToP!!!!!!!!!!!!!</a></li>
-                <li><a href="{{ url('/idol') }}">Idol</a></li>
+                <li><a href="{{ url('/idol') }}">{{ __('Idols list') }}</a></li>
+                <li><a href="{{ url('/search') }}">{{ __('Search') }}</a></li>
                 <li><a href="{{ url('/clock') }}">Clock</a></li>
             </ul>
         </nav>
@@ -54,6 +55,14 @@
         <a href="javascript:openShareWindow()" class="fedi">{{ __('Share') }}</a>
     </div>
 </header>
+
+@if(session('flash_message'))
+    <div id="flash_message">
+        @foreach(explode(':',session('flash_message')) as $message)
+            <p>{{ $message }}</p>
+        @endforeach
+    </div>
+@endif
 
 <main>
     @if(!empty($title))
@@ -142,7 +151,7 @@
                         }
                     });
                     function openTootWindow(instance){
-                        var share_text = document.title + " {{ url()->current() }}";
+                        var share_text = document.title + " " + encodeURIComponent(location.href);
                         window.open("https://"+instance+"/share?text="+share_text,"_blank","width=500,height=500");
                         closeShareWindow();
                     }

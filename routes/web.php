@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('/clock', 'InfoController@clock');
 
+Route::get('/search', 'SearchController@search');
+
 //Auth::routes(['register' => false , 'reset' => false , 'verify' => false]);
 
 //Route::get('/home', 'HomeController@index')->name('home');
