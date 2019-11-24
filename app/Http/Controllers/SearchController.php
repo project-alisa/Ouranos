@@ -63,7 +63,7 @@ class SearchController extends Controller
                     $ar = array("福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県");
                     break;
                 case "海外":
-                    $ar = array("イギリス","ブラジル");
+                    $ar = array("イギリス","ブラジル","オーストリア");
                     break;
                 default:
                     $ar = array($birthplace);

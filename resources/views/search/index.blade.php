@@ -24,15 +24,16 @@
                             <optgroup label="北海道地方">
                                 <option value="北海道">北海道</option>
                             </optgroup>
-                            <!--<optgroup label="東北地方">
-                                <option value="東北">東北地方全域</option>
+                            <optgroup label="東北地方">
+                                <option value="null" disabled style="background: rgba(0,0,0,0.2)">該当なし</option>
+                                <!--<option value="東北">東北地方全域</option>
                                 <option value="青森">青森</option>
                                 <option value="岩手">岩手</option>
                                 <option value="宮城">宮城</option>
                                 <option value="秋田">秋田</option>
                                 <option value="山形">山形</option>
-                                <option value="福島">福島</option>
-                            </optgroup>-->
+                                <option value="福島">福島</option>-->
+                            </optgroup>
                             <optgroup label="関東地方">
                                 <option value="関東">関東地方全域</option>
                                 <option value="東京都">東京都</option>
@@ -55,9 +56,6 @@
                                 <option value="静岡県">静岡県</option>
                                 <option value="愛知県">愛知県</option>
                             </optgroup>
-                            <!--<optgroup label="中部地方 - 都市名">
-                                <option value="名古屋">名古屋</option>
-                            </optgroup>-->
                             <optgroup label="近畿地方">
                                 <option value="近畿">近畿地方全域</option>
                                 <option value="大阪府">大阪府</option>
@@ -68,34 +66,34 @@
                                 <option value="和歌山県">和歌山県</option>
                                 <option value="三重県">三重県</option>-->
                             </optgroup>
-                            <optgroup label="近畿地方 - 不詳">
+                            <optgroup label="近畿地方？">
                                 <option value="京都府？">京都府？</option>
                             </optgroup>
                             <optgroup label="中国地方">
                                 <option value="中国">中国地方全域</option>
-                                <!--<option value="鳥取">鳥取</option>
-                                <option value="島根">島根</option>
-                                <option value="岡山">岡山</option>-->
+                                <!--<option value="鳥取県">鳥取県</option>
+                                <option value="島根県">島根県</option>
+                                <option value="岡山県">岡山県</option>-->
                                 <option value="広島県">広島県</option>
                                 <option value="山口県">山口県</option>
                             </optgroup>
                             <optgroup label="四国地方">
                                 <option value="四国">四国地方全域</option>
-                                <!--<option value="徳島">徳島</option>
-                                <option value="香川">香川</option>-->
+                                <!--<option value="徳島県">徳島県</option>-->
+                                <option value="香川県">香川県</option>
                                 <option value="愛媛県">愛媛県</option>
-                                <!--<option value="高知">高知</option>-->
+                                <!--<option value="高知県">高知県</option>-->
                             </optgroup>
                             <optgroup label="九州沖縄地方">
                                 <option value="九州沖縄">九州沖縄地方全域</option>
                                 <option value="福岡県">福岡県</option>
-                                <!--<option value="佐賀">佐賀</option>
-                                <option value="長崎">長崎</option>
-                                <option value="熊本">熊本</option>
-                                <option value="大分">大分</option>
-                                <option value="宮崎">宮崎</option>
-                                <option value="鹿児島">鹿児島</option>
-                                <option value="沖縄">沖縄</option>-->
+                                <!--<option value="佐賀県">佐賀</option>
+                                <option value="長崎県">長崎</option>
+                                <option value="熊本県">熊本</option>
+                                <option value="大分県">大分</option>
+                                <option value="宮崎県">宮崎</option>
+                                <option value="鹿児島県">鹿児島</option>-->
+                                <option value="沖縄県">沖縄県</option>
                             </optgroup>
                             <optgroup label="海外">
                                 <option value="海外">海外すべて</option>
