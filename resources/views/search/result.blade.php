@@ -51,7 +51,7 @@
                     <p>以下の条件による検索結果です</p>
                     @foreach($query_info as $query)
                         <h3>{{ __($query['type']) }}</h3>
-                        <p style="text-align: center">{{ $query['value'] }}</p>
+                        <p style="text-align: center;font-size: 18px;">{{ $query['value'] }}</p>
                     @endforeach
                 </div>
                 <div class="msgboxfoot">

@@ -202,7 +202,7 @@
                     <p>すべての条件で検索は実装中です。ごめんね。</p>
                 </div>
                 <div class="msgboxfoot">
-                    <a class="button jw" href="{{ url('/search') }}">リセット</a>
+                    <a class="button jw" href="javascript:location.reload()">リセット</a>
                 </div>
             </div>
         </div>
