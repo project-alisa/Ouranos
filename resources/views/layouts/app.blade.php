@@ -151,7 +151,7 @@
                         }
                     });
                     function openTootWindow(instance){
-                        var share_text = document.title + " {{ url()->current() }}";
+                        var share_text = document.title + " " + encodeURIComponent(location.href);
                         window.open("https://"+instance+"/share?text="+share_text,"_blank","width=500,height=500");
                         closeShareWindow();
                     }
