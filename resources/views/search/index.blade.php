@@ -169,7 +169,7 @@
                         必ず月か日片方は指定する必要があります。
                     </p>
                     <h2>年齢で検索</h2>
-                    <form action="{{ url('/search') }}" method="get" style="text-align:center;">
+                    <form action="{{ url('/search') }}" method="get" name="age" style="text-align:center;">
 {{--                        <input type="hidden" name="type" value="age">--}}
                         <input type="number" name="age" title="年齢(整数)" placeholder="年齢(整数)" class="textarea" max="40" min="0" required style="width: 100px;padding-left:15px">
                         <span style="margin: 4px 0;font-weight: bold">歳</span>
@@ -188,7 +188,13 @@
                     <a href="javascript:searchByAllCondition()" class="button jw">すべての条件で検索</a>
                     <script>
                         function searchByAllCondition(){
-                            alert('もうちょいまってね');
+                            var url = location.pathname+'?';
+                            if(document.forms.name.name.value) url += 'name=' + document.forms.name.name.value + '&';
+                            if(document.forms.birthplace.birthplace.value) url += 'birthplace=' + document.forms.birthplace.name + '&';
+                            if(document.forms.birthday.month.value !== 'u' || document.forms.birthday.day.value !== 'u')
+                                url += 'month=' + document.forms.birthday.month.value + '&day=' + document.forms.birthday.day.value + '&';
+                            if(document.forms.age.age.value) url += 'age=' + document.forms.age.age.value + '&range=' + document.forms.age.range.value + '&';
+                            location.href = url.substr(0,url.length-1);
                         }
                     </script>
                 </div>
@@ -198,8 +204,8 @@
             <div class="msgbox">
                 <div class="msgboxtop">Inform@tion</div>
                 <div class="msgboxbody">
-                    <h3>実装中です</h3>
-                    <p>すべての条件で検索は実装中です。ごめんね。</p>
+                    <h3>使い方</h3>
+                    <p>各種条件単体で検索するか、必要ないくつかの条件を入力しそれらすべてを考慮して検索することができます。</p>
                 </div>
                 <div class="msgboxfoot">
                     <a class="button jw" href="javascript:location.reload()">リセット</a>
