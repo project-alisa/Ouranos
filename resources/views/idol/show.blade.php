@@ -45,46 +45,46 @@
                 </tr>
                 <tr>
                     <th>{{ __('Hiragana') }}</th><td colspan="2">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
-                    <th>{{ __('Chinese') }}</th><td colspan="2">{{ separateString($idol->name_zh,$idol->name_zh_separate) }}</td>
+                    <th>{{ __('Chinese') }}</th><td colspan="2">{{ $idol->name_zh ? separateString($idol->name_zh,$idol->name_zh_separate) : __('N/A') }}</td>
                 </tr>
                 <tr>
                     <th>Alphabet</th><td colspan="2">{{ ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</td>
-                    <th>{{ __('Hangul') }}</th><td colspan="2">{{ separateString($idol->name_ko,$idol->name_ko_separate) }}</td>
+                    <th>{{ __('Hangul') }}</th><td colspan="2">{{ $idol->name_ko ? separateString($idol->name_ko,$idol->name_ko_separate) : __('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Birthdate') }}</th><td>{{ convertDateString($idol->birthdate,$dateflag) }}</td>
-                    <th>{{ __('Height') }}</th><td>{{ $idol->height }}cm</td>
-                    <th>{{ __('Blood type') }}</th><td>{{ $idol->bloodtype }}</td>
+                    <th>{{ __('Birthdate') }}</th><td>{{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : __('N/A') }}</td>
+                    <th>{{ __('Height') }}</th><td>{{ $idol->height ?: '? ' }}cm</td>
+                    <th>{{ __('Blood type') }}</th><td>{{ $idol->bloodtype ?: __('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Age') }}</th><td>{{ $idol->age }}{{ !App::isLocale('en') ? __('years old') : '' }}</td>
-                    <th>{{ __('Weight') }}</th><td>{{ $idol->weight }}kg</td>
-                    <th>{{ __('Handedness') }}</th><td>{{ __(translateHandedness($idol->handedness)) }}</td>
+                    <th>{{ __('Age') }}</th><td>{{ $idol->age ? $idol->age.(!App::isLocale('en') ? __('years old') : '') : __('N/A')}}</td>
+                    <th>{{ __('Weight') }}</th><td>{{ $idol->weight ?: '? ' }}kg</td>
+                    <th>{{ __('Handedness') }}</th><td>{{ __(translateHandedness($idol->handedness)) ?: __('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Birthplace') }}</th><td><a href="javascript:void(0)">{{ $idol->birthplace }}</a></td>
-                    <th>BMI</th><td>{{ calcBmi($idol->height,$idol->weight) }}</td>
-                    <th>{{ __('3 size') }}</th><td>{{ $idol->bust.' / '.$idol->waist.' / '.$idol->hip }}</td>
+                    <th>{{ __('Birthplace') }}</th><td><a href="javascript:void(0)">{{ $idol->birthplace ?: '不明' }}</a></td>
+                    <th>BMI</th><td>{{ calcBmi($idol->height,$idol->weight) ?: __('N/A') }}</td>
+                    <th>{{ __('3 size') }}</th><td>{{ $idol->bust ? $idol->bust.' / '.$idol->waist.' / '.$idol->hip : __('N/A') }}</td>
                 </tr>
                 <tr>
                     <th>{{ __('Hobby') }}</th>
                     <td colspan="5">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->hobby,App::getLocale()) ?>
-                        {{ $idol->hobby }}
+                        {{ $idol->hobby ?: __('N/A') }}
                     </td>
                 </tr>
                 <tr>
                     <th>{{ __('Skill') }}</th>
                     <td colspan="5">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->skill,App::getLocale()) ?>
-                        {{ $idol->skill }}
+                        {{ $idol->skill ?: __('N/A') }}
                     </td>
                 </tr>
                 <tr>
                     <th>{{ __('Favorite') }}</th>
                     <td colspan="5">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->favorite,App::getLocale()) ?>
-                        {{ $idol->favorite }}
+                        {{ $idol->favorite ?: __('N/A') }}
                     </td>
                 </tr>
             </table>
