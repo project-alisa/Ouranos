@@ -1,8 +1,9 @@
 img#homebackground{
     position: relative;
-    width: 100vw;
+    width: 100%;
+    min-width: 1300px;
+    margin: 0 0 -200px;
     height: auto;
-    margin: 0 calc(-50vw + 650px) -200px;
     z-index: 1;
     overflow: hidden;
 }
