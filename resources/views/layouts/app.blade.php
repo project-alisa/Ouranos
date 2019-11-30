@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @if(empty($title))
-        <title>{{ config('app.name', 'Ouranos') }}</title>
+        <title>{{ config('ouranos.sitename', config('app.name', 'Ouranos')) }}</title>
     @else
         <title>{{ $title." - ".config('ouranos.sitename', config('app.name','Ouranos')) }}</title>
     @endif
