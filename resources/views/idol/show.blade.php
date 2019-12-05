@@ -168,13 +168,6 @@
                 </div>
                 <div class="msgboxfoot"></div>
             </div>
-            <div class="msgbox">
-                <div class="msgboxtop">var_dump</div>
-                <div class="msgboxbody">
-                    <?php var_dump($idol); ?>
-                </div>
-                <div class="msgboxfoot"></div>
-            </div>
         </div>
         <div class="msgbox" id="contentnarrow">
             <div class="msgboxtop">TheaterDays info</div>
