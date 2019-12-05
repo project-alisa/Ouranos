@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Lang;
@@ -11,7 +12,7 @@ class IdolController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
@@ -54,15 +55,19 @@ class IdolController extends Controller
      * Display the specified resource.
      *
      * @param  string  $name_r
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function show($name_r)
     {
-        $idol = \App\Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
-            'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
-            'c_k_names.subname_zh','c_k_names.subname_ko')
-            ->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')
-            ->where('name_r', 'like', $name_r)->firstOrFail();
+        try{
+            $idol = \App\Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
+                'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
+                'c_k_names.subname_zh','c_k_names.subname_ko')
+                ->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')
+                ->where('name_r', 'like', $name_r)->firstOrFail();
+        }catch(ModelNotFoundException $e){
+            abort(404);
+        }
         $name = 'name';
         switch (\App::getLocale()){
             case 'ja':
