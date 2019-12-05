@@ -27,8 +27,8 @@
                                 <table>
                                     <tr>
                                         <th>{{ __('Type') }}</th><td style="width: 80px;font-weight: bold;color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
-                                        <th>{{ __('Age') }}</th><td style="width: 70px;">{{ $idol->age }}</td>
-                                        <th>{{ __('Birthdate') }}</th><td>{{ convertDateString($idol->birthdate,$dateflag) }}</td>
+                                        <th>{{ __('Age') }}</th><td style="width: 70px;">{{ $idol->age ?: 'N/A' }}</td>
+                                        <th>{{ __('Birthdate') }}</th><td>{{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : 'N/A' }}</td>
                                         <th>{{ __('Color') }}</th><td style="color: {{ '#'.$idol->color }};width: 100px">{{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}</td>
                                     </tr>
                                 </table>
