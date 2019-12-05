@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'InfoController@home');
 
 Route::get('/clock', 'InfoController@clock');
 

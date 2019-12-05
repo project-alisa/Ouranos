@@ -36,4 +36,9 @@ class InfoController extends Controller
         }
         return view('clock',compact('feed_txt','birth_text','event_txt'));
     }
+
+    public function home(){
+        $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
+        return view('home',compact('feed'));
+    }
 }
