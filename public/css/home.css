@@ -1,0 +1,21 @@
+img#homebackground{
+    position: relative;
+    width: 100%;
+    min-width: 1300px;
+    margin: 0 0 -200px;
+    height: auto;
+    z-index: 1;
+    overflow: hidden;
+}
+#homebackground + *{
+    position: relative;
+    z-index: 2;
+}
+
+h1#sitelogo{
+    margin: 0;
+    text-align: center;
+}
+h1#sitelogo > img{
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}

@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @if(empty($title))
-        <title>{{ config('app.name', 'Ouranos') }}</title>
+        <title>{{ config('ouranos.sitename', config('app.name', 'Ouranos')) }}</title>
     @else
         <title>{{ $title." - ".config('ouranos.sitename', config('app.name','Ouranos')) }}</title>
     @endif
@@ -64,7 +64,7 @@
     </div>
 @endif
 
-<main>
+<?php echo (!empty($fullwidth) && $fullwidth) ? "<div data-pagetype=\"fullwidth\">" : "<main>"; ?>
     @if(!empty($title))
         <?php $sub = !empty($sub) ? $sub : config('app.name')." - Ver".config('ouranos.version') ?>
         <div class="topnavi">
@@ -78,7 +78,8 @@
         </div>
     @endif
     @yield('content')
-</main>
+<?php echo (!empty($fullwidth) && $fullwidth) ? "</div>" : "</main>"; ?>
+
 
 <footer>
     <div id="siteinfo">
