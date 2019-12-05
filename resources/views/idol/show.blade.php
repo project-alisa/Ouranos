@@ -62,7 +62,7 @@
                     <th>{{ __('Handedness') }}</th><td>{{ __(translateHandedness($idol->handedness)) ?: __('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __('Birthplace') }}</th><td><a href="javascript:void(0)">{{ $idol->birthplace ?: '不明' }}</a></td>
+                    <th>{{ __('Birthplace') }}</th><td><a href="{{ url('/search').'?birthplace='.$idol->birthplace }}">{{ $idol->birthplace ?: '不明' }}</a></td>
                     <th>BMI</th><td>{{ calcBmi($idol->height,$idol->weight) ?: __('N/A') }}</td>
                     <th>{{ __('3 size') }}</th><td>{{ $idol->bust ? $idol->bust.' / '.$idol->waist.' / '.$idol->hip : __('N/A') }}</td>
                 </tr>
