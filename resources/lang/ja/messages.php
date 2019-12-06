@@ -22,6 +22,14 @@ return [
     'idol.show.mltd.oversea.none' => '海外版にはまだ登場していません',
 
     'search.index.desc' => '様々な条件からアイドルを検索できます',
+    'search.result.found' => ':count人のアイドルが見つかりました',
+    'search.result.query' => '検索クエリ',
+    'search.result.query.info' => '以下の条件による検索結果です',
+    'search.result.notfound' => '条件を満たすアイドルが見つかりませんでした',
+    'search.redirect' => 'リダイレクト:検索結果が1件でした',
+    'search.error.range.empty' => '年齢の検索範囲指定がありません',
+    'search.error.range.invalid' => '年齢の検索範囲指定が正しくありません',
+    'search.error.birthdate.invalid' => '月か日どちらかは指定してください',
 
     'share.title' => 'Fediverseで共有',
     'share.input' => '共有するインスタンスのホストを入力してください',

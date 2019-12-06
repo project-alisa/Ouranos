@@ -44,6 +44,8 @@
 
   "View translation on Google": "Googleで翻訳",
   "N/A": "不明",
+  "Month": "月",
+  "Day": "日",
 
   "Admin Console": "事務室",
   "Login": "ログイン",
@@ -56,9 +58,11 @@
   "Logout": "ろぐあうと",
 
   "Search": "検索",
+  "How to use": "使い方",
 
   "Share": "共有",
   "Close": "閉じる",
+  "Reset": "リセット",
 
   "Idols list": "アイドル一覧",
   "About this site": "このサイトについて"

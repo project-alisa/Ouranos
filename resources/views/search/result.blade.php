@@ -7,7 +7,7 @@
                 <div class="msgboxtop">{{ __('Search') }}</div>
                 <div class="msgboxbody">
                     <p class="notification">
-                        {{ $search_count }}人のアイドルが該当しました
+                        {{ __('messages.search.result.found',['count' => $search_count]) }}
                     </p>
                     @forelse ($search as $idol)
                         <?php
@@ -48,14 +48,14 @@
             <div class="msgbox">
                 <div class="msgboxtop">検索クエリ</div>
                 <div class="msgboxbody">
-                    <p>以下の条件による検索結果です</p>
+                    <p>{{ trans_choice('messages.search.result.query.info',count($query_info)) }}</p>
                     @foreach($query_info as $query)
                         <h3>{{ __($query['type']) }}</h3>
                         <p style="text-align: center;font-size: 18px;">{{ $query['value'] }}</p>
                     @endforeach
                 </div>
                 <div class="msgboxfoot">
-                    <a href="{{ url('/search') }}" class="button jw">リセット</a>
+                    <a href="{{ url('/search') }}" class="button jw">{{ __('Reset') }}</a>
                 </div>
             </div>
         </div>

@@ -22,6 +22,14 @@ return [
     'idol.show.mltd.oversea.none' => 'This idol has not appeared in the overseas version yet.',
 
     'search.index.desc' => 'You can search for idol.',
+    'search.result.found' => ':count idols found.',
+    'search.result.query' => 'Search query',
+    'search.result.query.info' => 'Search results based on this condition.|Search results based on these conditions.',
+    'search.result.notfound' => 'No idol was found that met the conditions',
+    'search.redirect' => 'Redirected:Redirected because there was only one search result.',
+    'search.error.range.empty' => 'Age search range not specified',
+    'search.error.range.invalid' => 'Invalid search range for age',
+    'search.error.birthdate.invalid' => 'Neither month nor day is specified',
 
     'share.title' => 'Share to Fediverse',
     'share.input' => 'Enter the instance host to share.',

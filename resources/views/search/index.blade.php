@@ -6,21 +6,18 @@
             <div class="msgbox">
                 <div class="msgboxtop">{{ __('Search') }}</div>
                 <div class="msgboxbody">
-                    <h2>名前で検索</h2>
+                    <h2>{{ __('search-index.name.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="name" style="text-align: center">
-{{--                        <input type="hidden" name="type" value="name">--}}
-                        <input type="search" name="name" class="textarea" required style="width: 300px" title="名前" placeholder="名前">
-                        <input type="submit" value="検索" class="button">
+                        <input type="search" name="name" class="textarea" required style="width: 300px" title="{{ __('Name') }}" placeholder="{{ __('Name') }}">
+                        <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
-                        漢字かよみがなで検索できます。<br>
-                        検索結果が1件の場合は該当するアイドルのページに自動的に遷移します。
+                        {{ __('search-index.name.notice.0') }}<br>{{ __('search-index.name.notice.1') }}
                     </p>
-                    <h2>出身地で検索</h2>
+                    <h2>{{ __('search-index.birthplace.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="birthplace" style="text-align: center">
-{{--                        <input type="hidden" name="type" value="birthplace">--}}
                         <select name="birthplace" title="出身地を選択">
-                            <option value="">選択してください</option>
+                            <option value="" disabled selected>選択してください</option>
                             <optgroup label="北海道地方">
                                 <option value="北海道">北海道</option>
                             </optgroup>
@@ -101,16 +98,18 @@
                                 <option value="ブラジル">ブラジル</option>
                                 <option value="オーストリア">オーストリア</option>
                             </optgroup>
+                            <optgroup label="不詳">
+                                <option value="不明">不明</option>
+                            </optgroup>
                         </select>
-                        <input type="submit" value="検索" class="button">
+                        <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
-                        アイドルの出身地で検索できます。
+                        {{ __('search-index.birthplace.notice') }}
                     </p>
-                    <h2>誕生日で検索</h2>
+                    <h2>{{ __('search-index.birthdate.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="birthday" style="text-align: center">
-{{--                        <input type="hidden" name="type" value="birthday">--}}
-                        <select name="month" title="誕生月">
+                        <select name="month" title="{{ __('Month') }}">
                             <option value="u" selected>-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -124,8 +123,8 @@
                             <option value="10">10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
-                        </select><span style="margin:0 4px">月</span>
-                        <select name="day" title="誕生日">
+                        </select><span style="margin:0 4px">{{ App::isLocale('ja') ? '月' : '/' }}</span>
+                        <select name="day" title="{{ __('Day') }}">
                             <option value="u" selected>-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -158,32 +157,31 @@
                             <option value="29">29</option>
                             <option value="30">30</option>
                             <option value="31">31</option>
-                        </select><span style="margin:0 4px">日</span>
-                        <input type="submit" value="検索" class="button">
+                        </select><span style="margin:0 4px">{{ App::isLocale('ja') ? '日' : '' }}</span>
+                        <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
-                        -のままにすることで月のみ、日のみの検索もできます。<br>
-                        (例：8月生まれすべてを検索、月を指定せず27日生まれを検索)<br>
-                        必ず月か日片方は指定する必要があります。
+                        {{ __('search-index.birthdate.notice.0') }}<br>
+                        {{ __('search-index.birthdate.notice.1') }}<br>
+                        {{ __('search-index.birthdate.notice.2') }}
                     </p>
-                    <h2>年齢で検索</h2>
+                    <h2>{{ __('search-index.age.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="age" style="text-align:center;">
-{{--                        <input type="hidden" name="type" value="age">--}}
-                        <input type="number" name="age" title="年齢(整数)" placeholder="年齢(整数)" class="textarea" max="40" min="0" required style="width: 100px;padding-left:15px">
-                        <span style="margin: 4px 0;font-weight: bold">歳</span>
-                        <select name="range" class="select" title="年齢の範囲">
-                            <option value="higher">以上</option>
-                            <option value="equal" selected>である</option>
-                            <option value="lower">以下</option>
+                        <input type="number" name="age" title="{{ __('search-index.age.input') }}" placeholder="{{ __('search-index.age.input') }}" class="textarea" max="40" min="10" required style="width: 110px;padding-left:15px">
+                        <span style="margin: 4px 0;font-weight: bold">{{ __('years old') }}</span>
+                        <select name="range" class="select" title="{{ __('search-index.age.range') }}">
+                            <option value="higher">{{ __('search-index.age.range.older') }}</option>
+                            <option value="equal" selected>{{ __('search-index.age.range.equal') }}</option>
+                            <option value="lower">{{ __('search-index.age.range.younger') }}</option>
                         </select>
-                        <input type="submit" value="検索" class="button">
+                        <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
-                        整数のみ入力できます。もし修飾語がある場合は整数部分のみを入力してください。
+                        {{ __('search-index.age.notice') }}
                     </p>
                 </div>
                 <div class="msgboxfoot">
-                    <a href="javascript:searchByAllCondition()" class="button jw">すべての条件で検索</a>
+                    <a href="javascript:searchByAllCondition()" class="button jw">{{ __('search-index.searchbyallcond') }}</a>
                     <script>
                         function searchByAllCondition(){
                             var url = location.pathname+'?';
@@ -202,11 +200,11 @@
             <div class="msgbox">
                 <div class="msgboxtop">Inform@tion</div>
                 <div class="msgboxbody">
-                    <h3>使い方</h3>
-                    <p>各種条件単体で検索するか、必要ないくつかの条件を入力しそれらすべてを考慮して検索することができます。</p>
+                    <h3>{{ __('How to use') }}</h3>
+                    <p>{{ __('search-index.howtouse') }}</p>
                 </div>
                 <div class="msgboxfoot">
-                    <a class="button jw" href="javascript:location.reload()">リセット</a>
+                    <a class="button jw" href="javascript:location.reload()">{{ __('Reset') }}</a>
                 </div>
             </div>
         </div>

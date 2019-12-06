@@ -35,9 +35,12 @@ class SearchController extends Controller
         $order_by = "id";
         $order_direction = "asc";
         if($name){ // 名前
-            $name_flag = (bool)preg_match("/^([ぁ-ゞ]|[ァ-ヴ])+$/u", $name);
-            $search = $search->where($name_flag ? 'name_y' : 'name' ,'like',"%{$name}%");
-            $query_info[0] = array('type' => $name_flag ? 'Hiragana' : 'Name', 'value' => $name);
+            $search = $search->where(function($search) use($name){
+                $search->where('name','like',"%{$name}%")
+                    ->orWhere('name_y','like',"%{$name}%")
+                    ->orWhere('name_r','like',"%{$name}%");
+            });
+            $query_info[0] = array('type' => 'Name', 'value' => $name);
         }
         if($birthplace){ // 出身地
             switch($birthplace){
