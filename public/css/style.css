@@ -589,7 +589,7 @@ optgroup{
 
 /* dialog */
 dialog{
-    position: fixed;
+    position: fixed !important;
     border: none !important;
     background: transparent !important;
     top: 50vh;
@@ -613,7 +613,6 @@ dialog::backdrop , dialog + .backdrop{
     background-repeat:no-repeat;
     background-position:top 50% left 8px;
     transition:all 0.5s;
-    vertical-align: top;
 }
 .mstdn:hover{
     background-color:#484c56;
