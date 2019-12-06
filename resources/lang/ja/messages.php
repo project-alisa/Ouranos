@@ -8,6 +8,11 @@ return [
 
     'common.numbersof' => ':typeの人数',
 
+    'home.description' => 'MillionLivePortalは、アイドルマスターミリオンライブ！の非公式データベース＆ポータルサイトです。',
+    'home.latestnews' => '最新情報',
+    'home.mastodon' => '更新情報は宮野駅(Mastodonインスタンス)から配信しています。',
+    'home.mastodon.error' => 'Mastodonからお知らせを取得できませんでした',
+
     'idol.index.desc' => 'アイドルを選んでください',
     'idol.index.incorrect' => '存在しない属性です',
     'idol.index.typedetail' => ':typeアイドルの概要',

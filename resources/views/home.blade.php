@@ -8,7 +8,7 @@
             <div class="msgboxtop">Welcome!!</div>
             <div class="msgboxbody" style="text-align: center">
                 <p style="font-size: 24px">Welcome!!</p>
-                <p>{{ config('ouranos.sitename',config('app.name','Ouranos')) }}は、アイドルマスターミリオンライブの非公式データベース＆ポータルサイトです。</p>
+                <p>{{ __('messages.home.description') }}</p>
                 <hr>
                 <div class="buttonbox">
                     <a href="{{ url('/idol') }}" class="button jwil">
@@ -27,11 +27,11 @@
         <div id="twinbox">
             <div id="contentwide">
                 <div class="msgbox">
-                    <div class="msgboxtop">MillionLivePortalからのお知らせ</div>
+                    <div class="msgboxtop">{{ __('messages.home.latestnews') }}</div>
                     <div class="msgboxbody">
                         <p>
                             <a href="https://mstdn.miyacorata.net/@ml_portal" class="mstdn" target="_blank">ml_portal<span>mstdn.miyacorata.net</span></a>
-                            更新情報はmastodonより配信しております。
+                            {{ __('messages.home.mastodon') }}
                         </p>
                         <hr>
                         <div style="height: 500px;overflow-y: scroll">

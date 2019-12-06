@@ -46,7 +46,7 @@
         </div>
         <div id="contentnarrow">
             <div class="msgbox">
-                <div class="msgboxtop">検索クエリ</div>
+                <div class="msgboxtop">{{ __('messages.search.result.query') }}</div>
                 <div class="msgboxbody">
                     <p>{{ trans_choice('messages.search.result.query.info',count($query_info)) }}</p>
                     @foreach($query_info as $query)
