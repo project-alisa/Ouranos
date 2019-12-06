@@ -18,7 +18,7 @@ class SearchController extends Controller
 
         // 日付のみ指定で両方未定義ならキレる
         if($month === 'u' && $day === 'u' && !($name||$birthplace||$age||$range)){
-            abort(400,'月か日どちらかは指定してください');
+            abort(400,__('messages.search.error.birthdate.invalid'));
         }
         // 日付未定義の場合false扱いにする
         $month = $month !== 'u' ? $month : false;
@@ -88,16 +88,16 @@ class SearchController extends Controller
             $query_info[2] = array('type' => 'Birthdate','value' => $month.'月'.$day.'日生まれ');
         }
         if($age){
-            if(!$range) abort(400,'年齢の検索範囲指定がありません');
+            if(!$range) abort(400,__('messages.search.error.range.empty'));
             switch ($range){
                 case 'equal':
-                    $range_op = '=';  $range_info = '歳である'; break;
+                    $range_op = '=';  $range_info = __('years old'); break;
                 case 'higher':
-                    $range_op = '>='; $range_info = '歳以上'; $order_direction = 'asc'; break;
+                    $range_op = '>='; $range_info = __('years old').__('search-index.age.range.older'); $order_direction = 'asc'; break;
                 case 'lower':
-                    $range_op = '<='; $range_info = '歳以下'; $order_direction = 'desc';  break;
+                    $range_op = '<='; $range_info = __('years old').__('search-index.age.range.younger'); $order_direction = 'desc';  break;
                 default:
-                    abort(400,'年齢の範囲指定が正しくありません');
+                    abort(400,__('messages.search.error.range.invalid'));
             }
             $order_by = 'age';
             $search = $search->where('age',$range_op,$age);
@@ -106,7 +106,9 @@ class SearchController extends Controller
         $search = $search->orderBy($order_by,$order_direction)->get();
         $search_count = $search->count();
         if($search_count === 1 && $name && !($birthplace||$month||$day||$age||$range)){
-            return redirect('/idol/'.$search[0]->name_r)->with('flash_message','リダイレクト:検索結果が1件でした');
+            return redirect('/idol/'.$search[0]->name_r)->with('flash_message',__('messages.search.redirect'));
+        }elseif($search_count === 0){
+            return abort(404,__('messages.search.result.notfound'));
         }else{
             return view('search.result',compact('search','query_info','search_count'));
         }
