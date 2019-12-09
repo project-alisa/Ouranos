@@ -13,7 +13,7 @@ class InfoController extends Controller
         $feed_txt .= " (<a href=\"{$feed->channel->item[0]->link}\" target=\"_blank\">";
         $feed_txt .= date('Y/m/d',strtotime($feed->channel->item[0]->pubDate)).'配信'."</a>)";
         // 誕生日
-        $birthday = \App\idol::where('birthdate','=',date('2017-m-d'))->get();
+        $birthday = \App\Idol::where('birthdate','=',date('2017-m-d'))->get();
         if($birthday->count() !== 0){
             $birth_text = '今日は';
             foreach ($birthday as $idol) $birth_text .= $idol->name.'さん('.$idol->age.'歳)、';
