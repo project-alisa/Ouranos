@@ -385,10 +385,10 @@ main{
     width: 90px;
 }
 .idol th::before{
-    content: "【";
+    content: "\3010";
 }
 .idol th::after{
-    content: "】";
+    content: "\3011";
 }
 .idol td{
     text-align: center;
