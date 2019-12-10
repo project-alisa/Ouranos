@@ -41,4 +41,8 @@ class InfoController extends Controller
         $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
         return view('home',compact('feed'));
     }
+
+    public function about(){
+        return view('info.about');
+    }
 }
