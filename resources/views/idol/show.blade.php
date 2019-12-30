@@ -134,12 +134,13 @@
                         <a href="https://twitter.com/search?f=video&q={{ $urlname }}" class="button jwil" target="_blank">
                             &#x1f4f9; {{ __('mediasearch.twitter.video') }}<br><span class="subline">{{ __('mediasearch.twitter.video.desc') }}</span>
                         </a>
-                        <a href="https://twitter.com/search?f=tweet&q={{ $urlname }}%20⚡" class="button jwil" target="_blank">
-                            &#x26a1; {{ __('mediasearch.twitter.moment') }}<br><span class="subline">{{ __('mediasearch.twitter.moment.desc') }}</span>
+                        <a href="https://azure-gallery.net/?query=imas%3A{{ $urlname }}" class="button jwil" target="_blank">
+                            &#x2693; {{ __('mediasearch.twitter.azure') }}<br><span class="subline">{{ __('mediasearch.twitter.azure.desc') }}</span>
                         </a>
                     </div>
                     <p class="notification">
-                        {{ __('mediasearch.twitter.notice') }}
+                        {{ __('mediasearch.twitter.notice.0') }}<br>
+                        {{ __('mediasearch.twitter.notice.1') }}
                     </p>
                     <h2>{{ __('mediasearch.niconico') }}</h2>
                     <div class="buttonbox">

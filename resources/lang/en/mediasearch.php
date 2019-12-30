@@ -13,9 +13,10 @@ return [
     'twitter.image.desc' => 'Search tweets containing images',
     'twitter.video' => 'Video',
     'twitter.video.desc' => 'Search tweets containing videos',
-    'twitter.moment' => 'Moments',
-    'twitter.moment.desc' => 'Search moments',
-    'twitter.notice' => 'Twitter search may not show results that should be displayed.',
+    'twitter.azure' => 'Azure-Gallery.net',
+    'twitter.azure.desc' => 'Search tweets containing illustrations',
+    'twitter.notice.0' => 'Twitter search may not show results that should be displayed.',
+    'twitter.notice.1' => 'Azure-Gallery.net is a web service that specializes in searching for tweets about fan art and creation. (note : Twitter and MiyanojiRapid are not operators of this site.)',
 
     'niconico' => 'niconico (nicovideo.jp)',
     'niconico.keyword' => 'Search videos by keyword',

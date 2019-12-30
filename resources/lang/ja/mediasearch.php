@@ -13,9 +13,10 @@ return [
     'twitter.image.desc' => '画像を含むツイートを検索',
     'twitter.video' => '動画検索',
     'twitter.video.desc' => '動画を含むツイートを検索',
-    'twitter.moment' => 'モーメント検索',
-    'twitter.moment.desc' => 'モーメントを検索',
-    'twitter.notice' => 'Twitter検索は愛称・ニックネームにより表示されるべき結果を表示できない可能性があります。',
+    'twitter.azure' => '蒼天画廊検索',
+    'twitter.azure.desc' => 'イラストを含むツイートを検索',
+    'twitter.notice.0' => 'Twitter検索は愛称・ニックネームにより表示されるべき結果を表示できない可能性があります。',
+    'twitter.notice.1' => '蒼天画廊(azure-gallery.net)はファンアートや創作に関するツイートの検索に特化したウェブサービスです。(Twitter公式や宮野路快速の提供するサービスではありません)',
 
     'niconico' => 'niconicoを検索',
     'niconico.keyword' => '動画をキーワード検索',
