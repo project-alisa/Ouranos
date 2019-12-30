@@ -5,8 +5,8 @@
 #tachie {
     display: block;
     position: relative;
-    width: 476px;
-    height: 600px;
+    width: 490px;
+    height: 615px;
     object-fit: cover;
     object-position: top center;
     filter: drop-shadow(0 0 20px rgba(0,0,0,0.1));
