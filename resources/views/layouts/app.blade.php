@@ -18,6 +18,7 @@
     @if(!empty($css))
         <link rel="stylesheet" href="{{ asset('css/'.$css.'.css') }}">
     @endif
+    @yield('style')
 
     <!-- Scripts -->
     <script src="{{ asset('js/changelang.js') }}"></script>
@@ -96,17 +97,17 @@
             </label>
         </p>
         <div id="footlinks">
-            <a href="javascript:void(0)">{{ __('About this site') }}</a>
-            <a href="https://github.com/project-alisa/Ouranos" target="_blank">GitHub</a>
+            <a href="{{ url('/about') }}">{{ __('About this site') }}</a>
+            <a href="{{ config('ouranos.repositoryUrl','https://github.com/project-alisa/Ouranos') }}" target="_blank">GitHub</a>
         </div>
     </div>
     <div id="footbanners">
         <a href="https://miyacorata.net" target="_blank" title="MiyanojiRapid">
             <img src="{{ asset('image/miyanojirapid.png') }}" alt="MiyanojiRapid">
         </a>
-        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
             <img style="border:0;width:88px;height:31px"
-                 src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                 src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
                  alt="正当なCSSです!" />
         </a>
     </div>

@@ -43,6 +43,7 @@ class InfoController extends Controller
     }
 
     public function about(){
-        return view('info.about');
+        $selected_idol = \App\Idol::inRandomOrder()->first();
+        return view('info.about',compact('selected_idol'));
     }
 }
