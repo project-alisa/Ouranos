@@ -2,8 +2,8 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '0.1.0 THE@TER',
-    'phrase' => 'The handmade Budokan',
+    'version' => '1.0.0 Angelic Parade',
+    'phrase' => 'Let\'s cast the first magic',
     'cardname' => env('CARD_NAME','shihokitazawa_therapistonboat'),
 
     'googleAnalytics' => env('GOOGLE_ANALYTICS','UA-000000000-0'),
