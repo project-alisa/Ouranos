@@ -23,16 +23,20 @@ class InfoController extends Controller
             $birth_text = null;
         }
         // イベント情報
-        $events = json_decode(file_get_contents(config('ouranos.matsurihimeEndpointUrl').'/events/?at='.date('c').'&prettyPrint=false'));
-        if(count($events)){
-            $event_txt = 'ただいま、';
-            foreach ($events as $event){
-                $event_txt .= '「'.$event->name.'」('.date('m/d H:i T',strtotime($event->schedule->endDate)).' まで)、';
+        if(false && $event_raw = file_get_contents(config('ouranos.matsurihimeEndpointUrl').'/events/?at='.date('c').'&prettyPrint=false')){
+            $events = json_decode($event_raw);
+            if(count($events)){
+                $event_txt = 'ただいま、';
+                foreach ($events as $event){
+                    $event_txt .= '「'.$event->name.'」('.date('m/d H:i T',strtotime($event->schedule->endDate)).' まで)、';
+                }
+                $event_txt = mb_substr($event_txt,0,mb_strlen($event_txt)-1);
+                $event_txt .= 'が開催中です';
+            }else{
+                $event_txt = '現在開催中のイベントはありません';
             }
-            $event_txt = mb_substr($event_txt,0,mb_strlen($event_txt)-1);
-            $event_txt .= 'が開催中です';
         }else{
-            $event_txt = '現在開催中のイベントはありません';
+            $event_txt = 'この機能は整備中です 実装までしばらくお待ち下さい';
         }
         return view('clock',compact('feed_txt','birth_text','event_txt'));
     }
