@@ -186,7 +186,7 @@
                         function searchByAllCondition(){
                             var url = location.pathname+'?';
                             if(document.forms.name.name.value) url += 'name=' + document.forms.name.name.value + '&';
-                            if(document.forms.birthplace.birthplace.value) url += 'birthplace=' + document.forms.birthplace.name + '&';
+                            if(document.forms.birthplace.birthplace.value) url += 'birthplace=' + document.forms.birthplace.birthplace.value + '&';
                             if(document.forms.birthday.month.value !== 'u' || document.forms.birthday.day.value !== 'u')
                                 url += 'month=' + document.forms.birthday.month.value + '&day=' + document.forms.birthday.day.value + '&';
                             if(document.forms.age.age.value) url += 'age=' + document.forms.age.age.value + '&range=' + document.forms.age.range.value + '&';
