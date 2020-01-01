@@ -14,9 +14,9 @@ class IdolController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        $type = Input::get('type') ?: false;
+        $type = $request->input('type') ?: false;
         if(!empty($type) and array_search($type,config('ouranos.acceptableTypes')) === false){
             abort(404,__('messages.idol.index.incorrect'));
         }elseif(!empty($type)){
