@@ -523,23 +523,23 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.7.8",
+            "version": "v1.7.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "4c82e84f70556b1cdb6647ff82dee87921e3dddd"
+                "reference": "216662ad1aff4073c55288805cf565cba1817073"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/4c82e84f70556b1cdb6647ff82dee87921e3dddd",
-                "reference": "4c82e84f70556b1cdb6647ff82dee87921e3dddd",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/216662ad1aff4073c55288805cf565cba1817073",
+                "reference": "216662ad1aff4073c55288805cf565cba1817073",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "2.*",
                 "laravel/framework": "~5.5|~6.0",
                 "php": ">=7.0.0",
-                "symfony/dom-crawler": "~3.1|~4.0"
+                "symfony/dom-crawler": "~3.1|~4.0|~5.0"
             },
             "require-dev": {
                 "fzaninotto/faker": "~1.4",
@@ -590,7 +590,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2019-11-08T07:40:27+00:00"
+            "time": "2019-12-31T08:00:56+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -1990,7 +1990,7 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.4.1",
+            "version": "v4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
