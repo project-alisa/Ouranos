@@ -8,10 +8,14 @@ class InfoController extends Controller
 {
     public function clock(){
         // mastodonRSS取得
-        $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
-        $feed_txt = preg_replace("{https?://[\w/:%#$&?()~.=+\-]+}",'',strip_tags($feed->channel->item[0]->description));
-        $feed_txt .= " (<a href=\"{$feed->channel->item[0]->link}\" target=\"_blank\">";
-        $feed_txt .= date('Y/m/d',strtotime($feed->channel->item[0]->pubDate)).'配信'."</a>)";
+        try {
+            $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
+            $feed_txt = preg_replace("{https?://[\w/:%#$&?()~.=+\-]+}",'',strip_tags($feed->channel->item[0]->description));
+            $feed_txt .= " (<a href=\"{$feed->channel->item[0]->link}\" target=\"_blank\">";
+            $feed_txt .= date('Y/m/d',strtotime($feed->channel->item[0]->pubDate)).'配信'."</a>)";
+        }catch (\Exception $exception){
+            $feed_txt = '( ! ) Mastodonからお知らせを取得できませんでした';
+        }
         // 誕生日
         $birthday = \App\Idol::where('birthdate','=',date('2017-m-d'))->get();
         if($birthday->count() !== 0){
@@ -23,8 +27,8 @@ class InfoController extends Controller
             $birth_text = null;
         }
         // イベント情報
-        if(false && $event_raw = file_get_contents(config('ouranos.matsurihimeEndpointUrl').'/events/?at='.date('c').'&prettyPrint=false')){
-            $events = json_decode($event_raw);
+        try{
+            $events = json_decode(file_get_contents(config('ouranos.matsurihimeEndpointUrl').'/events/?at='.date('c').'&prettyPrint=false'));
             if(count($events)){
                 $event_txt = 'ただいま、';
                 foreach ($events as $event){
@@ -35,14 +39,18 @@ class InfoController extends Controller
             }else{
                 $event_txt = '現在開催中のイベントはありません';
             }
-        }else{
-            $event_txt = 'この機能は整備中です 実装までしばらくお待ち下さい';
+        }catch (\Exception $exception){
+            $event_txt = 'イベント情報を取得できませんでした';
         }
         return view('clock',compact('feed_txt','birth_text','event_txt'));
     }
 
     public function home(){
-        $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
+        try {
+            $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
+        }catch (\Exception $exception){
+            $feed = null;
+        }
         return view('home',compact('feed'));
     }
 
