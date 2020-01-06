@@ -62,7 +62,7 @@ return [
     'administrator'         => '관리자',
     'roles'                 => '역할',
     'permissions'           => '권한',
-    'slug'                  => '',
+    'slug'                  => 'スラッグ',
     'created_at'            => '생성일',
     'updated_at'            => '수정일',
     'alert'                 => '경계경보',
@@ -98,7 +98,5 @@ return [
         'filter_clear'       => '전체 보기',
         'filter_placeholder' => '필터',
     ],
-    'grid_items_selected' => '{n} 선택한 항목',
-
-    'menu_titles' => [],
+    'menu_titles'           => [],
 ];
