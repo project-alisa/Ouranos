@@ -2,7 +2,7 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '1.0.3 Angelic Parade',
+    'version' => '1.1.0 Angelic Parade',
     'phrase' => 'Let\'s cast the first magic',
     'cardname' => env('CARD_NAME','shihokitazawa_therapistonboat'),
 
