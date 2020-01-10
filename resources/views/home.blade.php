@@ -1,7 +1,7 @@
 @extends('layouts.app',['css' => 'home', 'fullwidth' => true])
 
 @section('content')
-    <img src="{{ asset('image/homebackground.png') }}" alt="background" id="homebackground">
+    <div id="homebackground" style="background-image: url('{{ asset('image/homebackground.jpg') }}')"></div>
     <main>
         <h1 id="sitelogo"><img src="{{ asset('image/mlp_ouranos.png') }}" alt="{{ config('ouranos.sitename',config('app.name','Ouranos')) }}"></h1>
         <div class="msgbox" style="width: 1000px;margin: 0 auto 20px;">
