@@ -118,6 +118,7 @@
                 <td>{{ \App::isLocale('ja') ? '宮野 慧' : 'K Miyano' }} (<a href="https://github.com/miyacorata" target="_blank">miyacorata</a>)</td></tr>
             <tr><th>Web system</th><td>{{ config('app.name') }} (<a href="{{ config('ouranos.repositoryUrl') }}" target="_blank">GitHub Repository</a>)</td></tr>
             <tr><th>System version</th><td>{{ 'Ver'.config('ouranos.version').' - '.config('ouranos.phrase') }}</td></tr>
+            <tr><th>API Powered by</th><td><a href="https://matsurihi.me">matsurihi.me</a></td></tr>
         </table>
     </div>
     <div class="msgboxfoot"></div>

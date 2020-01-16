@@ -1,10 +1,9 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
-    | Password Reset Language Lines
+    | Password Reminder Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are the default lines which match reasons
@@ -13,10 +12,10 @@ return [
     |
     */
 
-    'password' => '请输入6位数以上的密码，并与再次确认栏保持一致',
-    'reset' => '成功重置密码！',
-    'sent' => '已发送密码重置链接到此邮箱',
-    'token' => '此链接已失效',
-    'user' => "不存在与该邮箱一致的用户",
-
+    'password'  => '密码至少是八位字符并且应与确认密码匹配。',
+    'reset'     => '密码重置成功！',
+    'sent'      => '密码重置邮件已发送！',
+    'throttled' => '请稍候再试。',
+    'token'     => '密码重置令牌无效。',
+    'user'      => '找不到该邮箱对应的用户。',
 ];
