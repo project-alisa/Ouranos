@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'online'                => 'オンライン',
+    'online'                => '在线',
     'login'                 => 'ログイン',
     'logout'                => 'ログアウト',
     'setting'               => '設定',
