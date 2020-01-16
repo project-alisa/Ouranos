@@ -1,6 +1,7 @@
 <?php
 
 return [
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -11,7 +12,8 @@ return [
     | these language lines according to your application's requirements.
     |
     */
+    
+    'failed' => '帐号或密码不正确',
+    'throttle' => '尝试登录的次数过多。:seconds秒后可以重新登录',
 
-    'failed'   => '用户名或密码错误。',
-    'throttle' => '您的尝试登录次数过多，请 :seconds 秒后再试。',
 ];
