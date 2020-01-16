@@ -15,7 +15,7 @@ return [
 
     'idol.index.desc' => '请选择偶像',
     'idol.index.incorrect' => '该属性不存在',
-    'idol.index.typedetail' => '',
+    'idol.index.typedetail' => ':type偶像概述',
     'idol.index.typeselect' => '属性筛选',
 
     'idol.show.desc' => '可以查看偶像信息',
@@ -27,16 +27,16 @@ return [
     'idol.show.mltd.oversea.none' => '海外服还未登场',
 
     'search.index.desc' => '可以用各种条件搜索偶像',
-    'search.result.found' => '搜索出了:count个偶像',
+    'search.result.found' => '找到:count个偶像',
     'search.result.query' => '关键字',
     'search.result.query.info' => '符合以下条件的搜索结果',
     'search.result.notfound' => '找不到符合条件的偶像',
-    'search.redirect' => '',
-    'search.error.range.empty' => '',
-    'search.error.range.invalid' => '',
-    'search.error.birthdate.invalid' => '',
+    'search.redirect' => '重定向：找到相关结果1件',
+    'search.error.range.empty' => '未指定年龄搜索范围',
+    'search.error.range.invalid' => '年龄的搜索范围不正确',
+    'search.error.birthdate.invalid' => '请指定月份或日期',
 
-    'share.title' => '',
-    'share.input' => '',
-    'share.select' => '',
+    'share.title' => '分享到长毛象',
+    'share.input' => '请输入要共享的实例链接',
+    'share.select' => '也可以从以下实例选择',
 ];
