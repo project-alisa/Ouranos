@@ -1,10 +1,9 @@
 {
   "Idol": "아이돌",
-
   "Name": "이름",
   "Name y": "읽기",
   "Hiragana": "히라가나",
-  "Name r": "Alphabet",
+  "Name r": "",
   "Chinese": "정체자",
   "Hangul": "한글",
   "Name separate": "NS",
@@ -29,22 +28,19 @@
   "Color": "컬러",
   "Personal Color": "퍼스널 컬러",
   "3 size": "신쳬 사이즈",
-
   "Left handed": "왼쪽",
   "Right handed": "오른쪽",
   "Both handed": "양쪽",
-
   "Encyclopedia": "백과 사전",
   "niconico Pedia": "니코니코 대백과",
   "pixiv encyclopedia (ja)": "픽시브 백과사전",
-
   "Musics info": "음악 정보",
   "fujiwarahaji.me": "fujiwarahaji.me",
   "THE IDOLM@STER Musics DB": "음악 데이터베이스에서 검색",
-
   "View translation on Google": "Google번역 에서 번역표시",
   "N/A": "불명",
-
+  "Month": "",
+  "Day": "",
   "Admin Console": "사무실",
   "Login": "로그인",
   "E-Mail Address": "이메일 주소",
@@ -54,12 +50,11 @@
   "Reset Password": "암호를 다시 설정",
   "Send Password Reset Link": "비밀번호 재설정 링크를 보내",
   "Logout": "로그 아웃",
-
   "Search": "검색",
-
+  "How to use": "",
   "Share": "공유하다",
   "Close": "닫기",
-
+  "Reset": "",
   "Idols list": "아이돌 목록",
   "About this site": "이 사이트 정보"
 }

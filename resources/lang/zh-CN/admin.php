@@ -46,7 +46,7 @@ return [
     'menu'                  => '菜单',
     'input'                 => '',
     'succeeded'             => '成功',
-    'failed'                => '失败',
+    'failed'                => '用户名或密码错误。',
     'delete_confirm'        => '真的要删除吗？',
     'delete_succeeded'      => '已成功删除！',
     'delete_failed'         => '删除失败！',
