@@ -13,7 +13,7 @@ return [
     |
     */
     
-    'failed' => '',
-    'throttle' => '',
+    'failed' => '帐号或密码不正确',
+    'throttle' => '尝试登录的次数过多。:seconds秒后可以重新登录',
 
 ];
