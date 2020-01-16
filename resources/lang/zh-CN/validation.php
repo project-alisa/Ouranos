@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'accepted'             => '',
-    'active_url'           => '',
-    'after'                => '',
+    'accepted'             => '请批准:attribute',
+    'active_url'           => '请指定一个有效的链接到:attribute',
+    'after'                => '请指定:date以后的日期到:attribute',
     'after_or_equal'       => '',
     'alpha'                => '',
     'alpha_dash'           => '',
