@@ -25,9 +25,9 @@ return [
 
     'pixiv' => 'Pixiv',
     'pixiv.tag' => 'Search by tag',
-    'pixiv.tag.desc' => ' Pixiv comprehensive search',
+    'pixiv.tag.desc' => 'Pixiv comprehensive search',
     'pixiv.keyword' => 'Search by keyword',
-    'pixiv.keyword.desc' => ' Pixiv comprehensive search',
+    'pixiv.keyword.desc' => 'Pixiv comprehensive search',
     'pixiv.novel' => 'Search novels by tag',
     'pixiv.novel.desc' => 'Pixiv novel search',
 ];
