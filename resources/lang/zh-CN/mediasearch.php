@@ -27,7 +27,7 @@ return [
     'pixiv.tag' => '标签搜索插画',
     'pixiv.tag.desc' => 'Pixiv关键字搜索',
     'pixiv.keyword' => '关键字搜索插画',
-    'pixiv.keyword.desc' => 'Pixiv关键字搜索',
+    'pixiv.keyword.desc' => '',
     'pixiv.novel' => '标签搜索小说',
     'pixiv.novel.desc' => 'Pixiv小说搜索',
 ];
