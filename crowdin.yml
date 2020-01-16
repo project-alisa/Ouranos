@@ -1,3 +1,5 @@
 files:
   - source: /resources/lang/ja/*.php
     translation: /resources/lang/%locale%/%original_file_name%
+  - source: /resources/lang/ja.json
+    translation: /resources/lang/%locale%.json
