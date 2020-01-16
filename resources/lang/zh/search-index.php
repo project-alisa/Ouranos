@@ -1,13 +1,13 @@
 <?php
 return [
-    'howtouse' => '可以单条件搜索，也可以多条件搜索',
-    'searchbyallcond' => '多条件搜索',
+    'howtouse' => '',
+    'searchbyallcond' => '',
 
-    'name.header' => '姓名搜索',
-    'name.notice.0' => '可以使用汉字和假名搜索',
-    'name.notice.1' => '如果只有一个搜索结果，会自动跳转到该偶像的页面',
+    'name.header' => '',
+    'name.notice.0' => '',
+    'name.notice.1' => '',
 
-    'birthplace.header' => '家乡搜索',
+    'birthplace.header' => '',
     'birthplace.notice' => '',
 
     'birthdate.header' => '',
