@@ -29,6 +29,14 @@
     @if(!empty($css))
         <link rel="stylesheet" href="{{ asset('css/'.$css.'.css') }}">
     @endif
+    @if(\App::isLocale('zh-CN'))
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC:400,700&display=swap');
+            body{
+                font-family: 'Noto Sans SC','Open Sans','VL PGothic','Gothic A1','Segoe UI',sans-serif;
+            }
+        </style>
+    @endif
     @yield('style')
 
     <!-- Scripts -->
