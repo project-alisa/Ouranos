@@ -11,6 +11,7 @@ return [
 
     'en' => 'English (en)',
     'ja' => '日本語 (ja)',
-    'ko' => '한국어 (ko)'
+    'ko-KR' => '한국어 (ko-KR)',
+    'zh-CN' => '简体中文 (zh-CN)',
 
 ];

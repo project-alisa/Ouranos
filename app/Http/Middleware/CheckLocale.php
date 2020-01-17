@@ -7,15 +7,6 @@ use Closure;
 class CheckLocale
 {
     /**
-     * Available languages
-     *
-     * 許容単語リスト
-     *
-     * @var array
-     */
-    private $langs = array('ja','en','ko');
-
-    /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -42,7 +33,7 @@ class CheckLocale
             }
         }
 
-        if(!in_array($locale,$this->langs,true)){
+        if(!in_array($locale,config('ouranos.acceptableLangs'),true)){
             $locale = config('app.locale');
             // 許容リストになければとりあえずデフォ言語にしとく
         }
