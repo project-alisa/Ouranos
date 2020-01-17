@@ -74,6 +74,8 @@ class IdolController extends Controller
                 break;
             case 'en':
                 $name .= '_r'; break;
+            case 'ko-KR':
+                $name .= '_ko'; break;
             default:
                 $name .= '_'.\App::getLocale();
         }
