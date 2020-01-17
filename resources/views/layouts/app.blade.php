@@ -101,9 +101,9 @@
             <label>
                 Language:
                 <select id="language">
-                    <option value="ja" @if(\App::isLocale('ja')) selected @endif>{{ __('locale.ja') }}</option>
-                    <option value="en" @if(\App::isLocale('en')) selected @endif>{{ __('locale.en') }}</option>
-                    <option value="ko" @if(\App::isLocale('ko')) selected @endif>{{ __('locale.ko') }}</option>
+                    @foreach(config('ouranos.acceptableLangs') as $lang)
+                        <option value="{{ $lang }}" @if(\App::isLocale($lang)) selected @endif>{{ __('locale.'.$lang) }}</option>
+                    @endforeach
                 </select>
             </label>
         </p>
