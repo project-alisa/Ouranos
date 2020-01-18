@@ -175,31 +175,43 @@
                 <div class="msgboxfoot"></div>
             </div>
         </div>
-        <div class="msgbox" id="contentnarrow">
-            <div class="msgboxtop">TheaterDays info</div>
-            <div class="msgboxbody">
-                <h2>{{ __('messages.idol.show.mltd.ja') }}</h2>
-                <div class="buttonbox">
-                    <a href="https://mltd.matsurihi.me/cards/#idol-list-{{ $idol->id }}" class="button jwil" target="_blank">
-                        {{ __('messages.idol.show.mltd.ja.cards') }}
-                        <span class="subline">matsurihi.me Fantasia</span>
-                    </a>
-                </div>
-                <h2>{{ __('messages.idol.show.mltd.oversea') }}</h2>
-                @if(!empty($idol->cknameid))
+        <div id="contentnarrow">
+            <div class="msgbox">
+                <div class="msgboxtop">TheaterDays info</div>
+                <div class="msgboxbody">
+                    <h2>{{ __('messages.idol.show.mltd.ja') }}</h2>
                     <div class="buttonbox">
-                        <a href="https://mltd.matsurihi.me/zh/cards/#idol-list-{{ $idol->id }}" class="button jw" target="_blank">
-                            Chinese
-                        </a>
-                        <a href="https://mltd.matsurihi.me/ko/cards/#idol-list-{{ $idol->id }}" class="button jw" target="_blank">
-                            Korean
+                        <a href="https://mltd.matsurihi.me/cards/#idol-list-{{ $idol->id }}" class="button jwil" target="_blank">
+                            {{ __('messages.idol.show.mltd.ja.cards') }}
+                            <span class="subline">matsurihi.me Fantasia</span>
                         </a>
                     </div>
-                @else
-                    <p class="notice">{{ __('messages.idol.show.mltd.oversea.none') }}</p>
-                @endif
+                    <h2>{{ __('messages.idol.show.mltd.oversea') }}</h2>
+                    @if(!empty($idol->cknameid))
+                        <div class="buttonbox">
+                            <a href="https://mltd.matsurihi.me/zh/cards/#idol-list-{{ $idol->id }}" class="button jw" target="_blank">
+                                Chinese
+                            </a>
+                            <a href="https://mltd.matsurihi.me/ko/cards/#idol-list-{{ $idol->id }}" class="button jw" target="_blank">
+                                Korean
+                            </a>
+                        </div>
+                    @else
+                        <p class="notice">{{ __('messages.idol.show.mltd.oversea.none') }}</p>
+                    @endif
+                </div>
+                <div class="msgboxfoot"></div>
             </div>
-            <div class="msgboxfoot"></div>
+            <div class="msgbox">
+                <div class="msgboxtop">GREEm@s info</div>
+                <div class="msgboxbody">
+                    <div class="buttonbox">
+                        <a href="http://mill.tokyo/category/{{ strtolower($idol->greemas_type).'/'.genMillTokyoLinkText($idol->name_r,$idol->name_r_separate) }}"
+                           class="button jwil" target="_blank">MillionLive Cards<span class="subline">mill.tokyo</span></a>
+                    </div>
+                </div>
+                <div class="msgboxfoot"></div>
+            </div>
         </div>
     </div>
 
