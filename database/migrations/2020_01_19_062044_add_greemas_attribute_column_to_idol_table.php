@@ -14,7 +14,7 @@ class AddGreemasAttributeColumnToIdolTable extends Migration
     public function up()
     {
         Schema::table('idols', function (Blueprint $table) {
-            $table->string('greemas_type','4')->nullable();
+            $table->string('greemas_type','10')->nullable();
         });
     }
 
