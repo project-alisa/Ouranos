@@ -4,6 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=1366px">
 
+    <!-- Descriptions and OGP -->
+    <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <meta property="og:sitename" content="{{ config('ouranos.sitename',config('app.name','Ouranos')) }}">
+    <meta property="og:title" content="{{ (empty($title) ? '' : $title.' - ').config('ouranos.sitename',config('app.name','Ouranos')) }}">
+    <meta property="og:type" content="{{ url()->current() === config('app.url') ? 'website' : 'article' }}">
+    <meta property="og:url" content="{{ url()->full() }}">
+    <meta property="og:description" content="{{ $description ?? config('ouranos.defaultDescription','') }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ (empty($title) ? '' : $title.' - ').config('ouranos.sitename',config('app.name','Ouranos')) }}">
+    <meta name="twitter:description" content="{{ $description ?? config('ouranos.defaultDescription','') }}">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('ouranos.googleAnalytics') }}"></script>
     <script>
@@ -118,16 +129,15 @@
         <div id="footlinks">
             <a href="{{ url('/about') }}">{{ __('About this site') }}</a>
             <a href="{{ config('ouranos.repositoryUrl','https://github.com/project-alisa/Ouranos') }}" target="_blank">GitHub</a>
+            @forelse(config('ouranos.footerLinkUrls') as $site => $link)
+                <a href="{{ $link }}" target="_blank">{{ $site }}</a>
+            @empty
+            @endforelse
         </div>
     </div>
     <div id="footbanners">
         <a href="https://miyacorata.net" target="_blank" title="MiyanojiRapid">
             <img src="{{ asset('image/miyanojirapid.png') }}" alt="MiyanojiRapid">
-        </a>
-        <a href="https://jigsaw.w3.org/css-validator/check/referer">
-            <img style="border:0;width:88px;height:31px"
-                 src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-                 alt="正当なCSSです!" />
         </a>
     </div>
 </footer>

@@ -15,4 +15,11 @@ return [
     'matsurihimeEndpointUrl' => 'https://api.matsurihi.me/mltd/v1/',
 
     'repositoryUrl' => 'https://github.com/project-alisa/Ouranos',
+
+    'footerLinkUrls' => [
+        'Crowdin' => 'https://crowdin.com/project/ouranos',
+        '@ml_portal' => 'https://mstdn.miyacorata.net/@ml_portal',
+    ],
+
+    'defaultDescription' => 'MillionLivePortalは、アイドルマスターミリオンライブ！の非公式データベース＆ポータルサイトです。',
 ];
