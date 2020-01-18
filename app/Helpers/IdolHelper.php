@@ -55,6 +55,12 @@ if(!function_exists('getTypeColor')){
                 return "#ff2284";
             case "angel":
                 return "#ffbb00";
+            case "vocal":
+                return "deeppink";
+            case "dance":
+                return "deepskyblue";
+            case "visual":
+                return "orange";
             default:
                 return "#00ff43";
         }

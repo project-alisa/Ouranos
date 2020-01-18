@@ -23,7 +23,12 @@
                         <th title="{{ __('messages.idol.show.dbid') }}">{{ __('Database ID') }}</th><td>{{ $idol->id }}</td>
                     </tr>
                     <tr>
-                        <th title="{{ __('messages.idol.show.type') }}">MLTD {{ __('Type') }}</th><td style="color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
+                        <th title="{{ __('messages.idol.show.type') }}">{{ __('Idol').(\App::isLocale('ja') ? '' : ' ').__('Type') }}</th>
+                        <td>
+                            <span style="{{ empty($idol->greemas_type) ? 'font-style:italic' : 'color:'.getTypeColor($idol->greemas_type) }}" title="GREE Ver">
+                                {{ $idol->greemas_type ?? 'N/A' }}</span> /
+                            <span style="color: {{ getTypeColor($idol->type) }}" title="MLTD">{{ $idol->type }}</span>
+                        </td>
                     </tr>
                     <tr>
                         <th>{{ __('Personal Color') }}</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
