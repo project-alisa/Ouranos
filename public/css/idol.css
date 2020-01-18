@@ -17,11 +17,11 @@
     z-index: 2;
 }
 
-#info{  
+#info{
     position: absolute;
     top: 30px;
     right: 0;
-    width: 750px;
+    width: 765px;
     padding: 15px 20px 5px;
     border-radius: 15px;
     background: rgba(255,255,255,0.6);
