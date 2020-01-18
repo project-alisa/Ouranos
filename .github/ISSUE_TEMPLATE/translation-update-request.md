@@ -11,6 +11,9 @@ note : The developer(@miyacorata) speaks Japanese.
 It would be helpful if you could write it in Japanese or English, but you don't have to write it in those languages.
 일본어 혹은 영어로 써주시면 감사하겠습니다만, 반드시 그러한 언어로 쓸 필요는 없습니다.
 
+Do you have a [Crowdin](https://crowdin.com/) account?  
+You can contribute via [crowdin.com/project/ouranos](https://crowdin.com/project/ouranos)!
+
 **What language?**
 note : put language name or ISO 639-1 code (ex. Korean , ko)
 
