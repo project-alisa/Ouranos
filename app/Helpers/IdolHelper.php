@@ -17,6 +17,24 @@ if(!function_exists('separateString')){
     }
 }
 
+if(!function_exists('swapNameOrder')){
+    /**
+     * 姓名スワップ関数
+     *
+     * $name を $name_separate 文字目を境にスワップし $glue = ' ' で接続する
+     *
+     * @param string $name
+     * @param $name_separate
+     * @param string $glue
+     * @return string
+     */
+    function swapNameOrder(string $name, $name_separate, string $glue = ' '){
+        $last = mb_substr($name,$name_separate);
+        $first = mb_substr($name,0,$name_separate);
+        return $last.$glue.$first;
+    }
+}
+
 if(!function_exists('convertDateString')){
     /**
      * 日付変換関数
