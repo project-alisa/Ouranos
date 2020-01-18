@@ -35,6 +35,16 @@ if(!function_exists('swapNameOrder')){
     }
 }
 
+if(!function_exists('genMillTokyoLinkText')){
+    function genMillTokyoLinkText(string $name, $name_separate){
+        if(!empty(config('idol.millTokyoNameExceptionList.'.$name))){
+            return config('idol.millTokyoNameExceptionList.'.$name);
+        }else{
+            return swapNameOrder($name,$name_separate,'-');
+        }
+    }
+}
+
 if(!function_exists('convertDateString')){
     /**
      * 日付変換関数
