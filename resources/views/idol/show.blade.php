@@ -197,7 +197,7 @@
                             </a>
                         </div>
                     @else
-                        <p class="notice">{{ __('messages.idol.show.mltd.oversea.none') }}</p>
+                        <p class="notice">{{ __fb('messages.idol.show.mltd.oversea.none') }}</p>
                     @endif
                 </div>
                 <div class="msgboxfoot"></div>
@@ -207,7 +207,7 @@
                 <div class="msgboxbody">
                     @if(empty($idol->greemas_type))
                         <p class="notice">
-                            {{ __('messages.idol.show.gree.none') }}
+                            {{ __fb('messages.idol.show.gree.none') }}
                         </p>
                     @else
                         <div class="buttonbox">
