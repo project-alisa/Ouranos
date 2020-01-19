@@ -8,7 +8,7 @@ return [
 
     'googleAnalytics' => env('GOOGLE_ANALYTICS','UA-000000000-0'),
 
-    'acceptableLangs' => array('ja','en','ko-KR','zh-CN'),
+    'acceptableLangs' => array('ja','en','ko','zh-CN','zh-TW'),
 
     'acceptableTypes' => array('Princess','Fairy','Angel','Ex'),
     'mastodonFeedUrl' => 'https://mstdn.miyacorata.net/@ML_Portal.rss',
