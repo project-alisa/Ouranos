@@ -25,6 +25,7 @@ return [
     'idol.show.mltd.oversea' => 'Overseas version',
     'idol.show.mltd.ja.cards' => 'TheaterDays Cards (ja)',
     'idol.show.mltd.oversea.none' => 'This idol has not appeared in the overseas version yet.',
+    'idol.show.gree.none' => 'This idol is not appeared in the GREE version.',
 
     'search.index.desc' => 'You can search for idol.',
     'search.result.found' => ':count idols found.',
