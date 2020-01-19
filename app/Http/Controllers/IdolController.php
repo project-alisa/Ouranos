@@ -74,10 +74,8 @@ class IdolController extends Controller
                 break;
             case 'en':
                 $name .= '_r'; break;
-            case 'ko-KR':
-                $name .= '_ko'; break;
             default:
-                $name .= '_'.\App::getLocale();
+                $name .= '_'.mb_substr(\App::getLocale(),0,2);
         }
         if(empty($idol->$name)) $name = 'name_r'; //fallback
         $separate = $name.'_separate';

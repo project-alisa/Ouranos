@@ -9,13 +9,17 @@
                     <p class="notification">
                         {{ __fb('messages.search.result.found',['count' => $search_count]) }}
                     </p>
+                    <?php
+                    $current_lang = App::getLocale();
+                    $ja_flag = App::isLocale('ja');
+                    $en_flag = App::isLocale('en');
+                    ?>
                     @forelse ($search as $idol)
                         <?php
                         /** @var App\Idol $idol */
                         $icon = asset('image/icon/'.$idol->name_r.'/0.png');
-                        $ja_flag = App::isLocale('ja');
                         if(!$ja_flag){
-                            $name = 'name_'.(App::isLocale('en') ? 'r' : App::getLocale());
+                            $name = 'name_'.($en_flag ? 'r' : mb_substr($current_lang,0,2));
                             if(empty($idol->$name)) $name = 'name_r'; //fallback
                             $separate = $name.'_separate';
                             $text = e(ucwords(separateString($idol->$name,$idol->$separate)));
