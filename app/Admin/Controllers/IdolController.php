@@ -35,6 +35,7 @@ class IdolController extends AdminController
         $grid->column('name_y_separate', __('Name y separate'));
         $grid->column('name_r_separate', __('Name r separate'));
         $grid->column('type', __('Type'));
+        $grid->column('greemas_type','Type(Gree)');
         $grid->column('birthdate', __('Birthdate'));
         $grid->column('age', __('Age'));
         $grid->column('height', __('Height'));

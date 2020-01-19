@@ -17,6 +17,34 @@ if(!function_exists('separateString')){
     }
 }
 
+if(!function_exists('swapNameOrder')){
+    /**
+     * 姓名スワップ関数
+     *
+     * $name を $name_separate 文字目を境にスワップし $glue = ' ' で接続する
+     *
+     * @param string $name
+     * @param $name_separate
+     * @param string $glue
+     * @return string
+     */
+    function swapNameOrder(string $name, $name_separate, string $glue = ' '){
+        $last = mb_substr($name,$name_separate);
+        $first = mb_substr($name,0,$name_separate);
+        return $last.$glue.$first;
+    }
+}
+
+if(!function_exists('genMillTokyoLinkText')){
+    function genMillTokyoLinkText(string $name, $name_separate){
+        if(!empty(config('idol.millTokyoNameExceptionList.'.$name))){
+            return config('idol.millTokyoNameExceptionList.'.$name);
+        }else{
+            return swapNameOrder($name,$name_separate,'-');
+        }
+    }
+}
+
 if(!function_exists('convertDateString')){
     /**
      * 日付変換関数
@@ -55,6 +83,12 @@ if(!function_exists('getTypeColor')){
                 return "#ff2284";
             case "angel":
                 return "#ffbb00";
+            case "vocal":
+                return "deeppink";
+            case "dance":
+                return "deepskyblue";
+            case "visual":
+                return "orange";
             default:
                 return "#00ff43";
         }
