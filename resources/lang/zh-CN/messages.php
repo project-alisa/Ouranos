@@ -25,6 +25,7 @@ return [
     'idol.show.mltd.oversea' => '海外服',
     'idol.show.mltd.ja.cards' => 'MLTD卡片一览',
     'idol.show.mltd.oversea.none' => '海外服还未登场',
+    'idol.show.gree.none' => '',
 
     'search.index.desc' => '可以用各种条件搜索偶像',
     'search.result.found' => '找到:count个偶像',
