@@ -205,10 +205,16 @@
             <div class="msgbox">
                 <div class="msgboxtop">GREEm@s info</div>
                 <div class="msgboxbody">
-                    <div class="buttonbox">
-                        <a href="http://mill.tokyo/category/{{ strtolower($idol->greemas_type).'/'.genMillTokyoLinkText($idol->name_r,$idol->name_r_separate) }}"
-                           class="button jwil" target="_blank">MillionLive Cards<span class="subline">mill.tokyo</span></a>
-                    </div>
+                    @if(empty($idol->greemas_type))
+                        <p class="notice">
+                            {{ __('messages.idol.show.gree.none') }}
+                        </p>
+                    @else
+                        <div class="buttonbox">
+                            <a href="http://mill.tokyo/category/{{ strtolower($idol->greemas_type).'/'.genMillTokyoLinkText($idol->name_r,$idol->name_r_separate) }}/"
+                               class="button jwil" target="_blank">MillionLive Cards<span class="subline">mill.tokyo</span></a>
+                        </div>
+                    @endif
                 </div>
                 <div class="msgboxfoot"></div>
             </div>

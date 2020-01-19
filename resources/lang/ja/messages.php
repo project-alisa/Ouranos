@@ -25,6 +25,7 @@ return [
     'idol.show.mltd.oversea' => '海外版',
     'idol.show.mltd.ja.cards' => 'ミリシタ カード一覧',
     'idol.show.mltd.oversea.none' => '海外版にはまだ登場していません',
+    'idol.show.gree.none' => 'GREE版では登場していません',
 
     'search.index.desc' => '様々な条件からアイドルを検索できます',
     'search.result.found' => ':count人のアイドルが見つかりました',
