@@ -47,6 +47,13 @@
                 font-family: 'Noto Sans SC','Open Sans','VL PGothic','Gothic A1','Segoe UI',sans-serif;
             }
         </style>
+    @elseif(\App::isLocale('zh-TW'))
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap');
+            body{
+                font-family: 'Noto Sans TC','Open Sans','VL PGothic','Gothic A1','Segoe UI',sans-serif;
+            }
+        </style>
     @endif
     @yield('style')
 
