@@ -25,6 +25,7 @@ return [
     'idol.show.mltd.oversea' => '',
     'idol.show.mltd.ja.cards' => '',
     'idol.show.mltd.oversea.none' => '',
+    'idol.show.gree.none' => '',
 
     'search.index.desc' => '',
     'search.result.found' => '',
