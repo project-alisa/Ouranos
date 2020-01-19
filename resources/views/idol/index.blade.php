@@ -1,10 +1,10 @@
-@extends('layouts.app',['title' => $type.' '.__('Idols list'), 'sub' => __('messages.idol.index.desc')])
+@extends('layouts.app',['title' => $type.' '.__fb('Idols list'), 'sub' => __fb('messages.idol.index.desc')])
 
 @section('content')
     <div id="twinbox">
         <div id="contentwide">
             <div class="msgbox">
-                <div class="msgboxtop">{{ __('Idols list') }}</div>
+                <div class="msgboxtop">{{ __fb('Idols list') }}</div>
                 <div class="msgboxbody">
                     @foreach ($idols as $idol)
                         <?php
@@ -26,10 +26,10 @@
                                 <p class="name">{!! $ja_flag ? e(separateString($idol->name,$idol->name_separate)) : $text !!}</p>
                                 <table>
                                     <tr>
-                                        <th>{{ __('Type') }}</th><td style="width: 80px;font-weight: bold;color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
-                                        <th>{{ __('Age') }}</th><td style="width: 70px;">{{ $idol->age ?: 'N/A' }}</td>
-                                        <th>{{ __('Birthdate') }}</th><td>{{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : 'N/A' }}</td>
-                                        <th>{{ __('Color') }}</th><td style="color: {{ '#'.$idol->color }};width: 100px">{{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}</td>
+                                        <th>{{ __fb('Type') }}</th><td style="width: 80px;font-weight: bold;color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
+                                        <th>{{ __fb('Age') }}</th><td style="width: 70px;">{{ $idol->age ?: 'N/A' }}</td>
+                                        <th>{{ __fb('Birthdate') }}</th><td>{{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : 'N/A' }}</td>
+                                        <th>{{ __fb('Color') }}</th><td style="color: {{ '#'.$idol->color }};width: 100px">{{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}</td>
                                     </tr>
                                 </table>
                             </div>
@@ -41,7 +41,7 @@
         </div>
         <div id="contentnarrow">
             <div class="msgbox">
-                <div class="msgboxtop">{{ __('messages.idol.index.typeselect') }}</div>
+                <div class="msgboxtop">{{ __fb('messages.idol.index.typeselect') }}</div>
                 <div class="msgboxbody">
                     <div class="buttonbox">
                         <a class="button jwil{{ $type === 'Princess' ? ' selected' : '' }}" href="{{ url('/idol?type=Princess') }}">
@@ -61,9 +61,9 @@
             <div class="msgbox">
                 <div class="msgboxtop">Inform@tion</div>
                 <div class="msgboxbody">
-                    <h2>{{ __('messages.idol.index.typedetail',['type' => $type ?: 'All']) }}</h2>
+                    <h2>{{ __fb('messages.idol.index.typedetail',['type' => $type ?: 'All']) }}</h2>
                     <p>
-                        {{ __('messages.common.numbersof',['type' => $type.' '.__('Idol')]) }}：{{ $idol_count }}
+                        {{ __fb('messages.common.numbersof',['type' => $type.' '.__fb('Idol')]) }}：{{ $idol_count }}
                     </p>
                 </div>
                 <div class="msgboxfoot"></div>

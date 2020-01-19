@@ -1,13 +1,13 @@
-@extends('layouts.app',['title' => __('Search'), 'sub' => __('messages.search.index.desc')])
+@extends('layouts.app',['title' => __fb('Search'), 'sub' => __fb('messages.search.index.desc')])
 
 @section('content')
     <div id="twinbox">
         <div id="contentwide">
             <div class="msgbox">
-                <div class="msgboxtop">{{ __('Search') }}</div>
+                <div class="msgboxtop">{{ __fb('Search') }}</div>
                 <div class="msgboxbody">
                     <p class="notification">
-                        {{ __('messages.search.result.found',['count' => $search_count]) }}
+                        {{ __fb('messages.search.result.found',['count' => $search_count]) }}
                     </p>
                     @forelse ($search as $idol)
                         <?php
@@ -29,10 +29,10 @@
                                 <p class="name">{!! $ja_flag ? e(separateString($idol->name,$idol->name_separate)) : $text !!}</p>
                                 <table>
                                     <tr>
-                                        <th>{{ __('Type') }}</th><td style="width: 80px;font-weight: bold;color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
-                                        <th>{{ __('Age') }}</th><td style="width: 70px;">{{ $idol->age ?: 'N/A' }}</td>
-                                        <th>{{ __('Birthdate') }}</th><td>{{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : 'N/A' }}</td>
-                                        <th>{{ __('Color') }}</th><td style="color: {{ '#'.$idol->color }};width: 100px">{{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}</td>
+                                        <th>{{ __fb('Type') }}</th><td style="width: 80px;font-weight: bold;color: {{ getTypeColor($idol->type) }}">{{ $idol->type }}</td>
+                                        <th>{{ __fb('Age') }}</th><td style="width: 70px;">{{ $idol->age ?: 'N/A' }}</td>
+                                        <th>{{ __fb('Birthdate') }}</th><td>{{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : 'N/A' }}</td>
+                                        <th>{{ __fb('Color') }}</th><td style="color: {{ '#'.$idol->color }};width: 100px">{{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}</td>
                                     </tr>
                                 </table>
                             </div>
@@ -46,16 +46,16 @@
         </div>
         <div id="contentnarrow">
             <div class="msgbox">
-                <div class="msgboxtop">{{ __('messages.search.result.query') }}</div>
+                <div class="msgboxtop">{{ __fb('messages.search.result.query') }}</div>
                 <div class="msgboxbody">
                     <p>{{ trans_choice('messages.search.result.query.info',count($query_info)) }}</p>
                     @foreach($query_info as $query)
-                        <h3>{{ __($query['type']) }}</h3>
+                        <h3>{{ __fb($query['type']) }}</h3>
                         <p style="text-align: center;font-size: 18px;">{{ $query['value'] }}</p>
                     @endforeach
                 </div>
                 <div class="msgboxfoot">
-                    <a href="{{ url('/search') }}" class="button jw">{{ __('Reset') }}</a>
+                    <a href="{{ url('/search') }}" class="button jw">{{ __fb('Reset') }}</a>
                 </div>
             </div>
         </div>

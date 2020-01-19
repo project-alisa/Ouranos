@@ -9,7 +9,7 @@
             <div class="desc">Not Found</div>
         </div>
         <p>
-            {{ __('The requested page was not found on this server.') }}
+            {{ __fb('The requested page was not found on this server.') }}
         </p>
     </div>
 @endsection
