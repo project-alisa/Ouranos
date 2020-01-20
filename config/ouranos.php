@@ -2,8 +2,8 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '1.1.1 Angelic Parade',
-    'phrase' => 'Let\'s cast the first magic',
+    'version' => '2.0.0 BlueSymphony',
+    'phrase' => 'Flap your wings, our song!',
     'cardname' => env('CARD_NAME','shihokitazawa_therapistonboat'),
 
     'googleAnalytics' => env('GOOGLE_ANALYTICS','UA-000000000-0'),
