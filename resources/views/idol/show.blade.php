@@ -45,12 +45,12 @@
                     if(!empty($idol->subname)) $namestr .= ' ('.$idol->subname.')';
                     $dateflag = App::isLocale('ja') ? 'ja' : 'slash';
                     $urlname = urlencode($idol->name) ?>
-                    <th>{{ __fb('Name') }}</th><td colspan="2">{{ $namestr }}</td>
-                    <th>{{ __fb('CV') }}</th><td colspan="2">{{ $idol->cv }}</td>
+                    <th>{{ __fb('Name') }}</th><td colspan="2" class="ja">{{ $namestr }}</td>
+                    <th>{{ __fb('CV') }}</th><td colspan="2" class="ja">{{ $idol->cv }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Hiragana') }}</th><td colspan="2">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
-                    <th>{{ __fb('Chinese') }}</th><td colspan="2">{{ $idol->name_zh ? separateString($idol->name_zh,$idol->name_zh_separate) : __fb('N/A') }}</td>
+                    <th>{{ __fb('Hiragana') }}</th><td colspan="2" class="ja">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
+                    <th>{{ __fb('Chinese')  }}</th><td colspan="2" class="zh_TW">{{ $idol->name_zh ? separateString($idol->name_zh,$idol->name_zh_separate) : __fb('N/A') }}</td>
                 </tr>
                 <tr>
                     <th>Alphabet</th><td colspan="2">{{ ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</td>
@@ -67,27 +67,27 @@
                     <th>{{ __fb('Handedness') }}</th><td>{{ __fb(translateHandedness($idol->handedness)) ?: __fb('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Birthplace') }}</th><td><a href="{{ url('/search').'?birthplace='.$idol->birthplace }}">{{ $idol->birthplace ?: '不明' }}</a></td>
+                    <th>{{ __fb('Birthplace') }}</th><td class="ja"><a href="{{ url('/search').'?birthplace='.$idol->birthplace }}">{{ $idol->birthplace ?: '不明' }}</a></td>
                     <th>BMI</th><td>{{ calcBmi($idol->height,$idol->weight) ?: __fb('N/A') }}</td>
                     <th>{{ __fb('3 size') }}</th><td>{{ $idol->bust ? $idol->bust.' / '.$idol->waist.' / '.$idol->hip : __fb('N/A') }}</td>
                 </tr>
                 <tr>
                     <th>{{ __fb('Hobby') }}</th>
-                    <td colspan="5">
+                    <td colspan="5" class="ja">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->hobby,App::getLocale()) ?>
                         {{ $idol->hobby ?: __fb('N/A') }}
                     </td>
                 </tr>
                 <tr>
                     <th>{{ __fb('Skill') }}</th>
-                    <td colspan="5">
+                    <td colspan="5" class="ja">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->skill,App::getLocale()) ?>
                         {{ $idol->skill ?: __fb('N/A') }}
                     </td>
                 </tr>
                 <tr>
                     <th>{{ __fb('Favorite') }}</th>
-                    <td colspan="5">
+                    <td colspan="5" class="ja">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->favorite,App::getLocale()) ?>
                         {{ $idol->favorite ?: __fb('N/A') }}
                     </td>

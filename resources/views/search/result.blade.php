@@ -12,18 +12,17 @@
                     <?php
                     $current_lang = App::getLocale();
                     $ja_flag = App::isLocale('ja');
-                    $en_flag = App::isLocale('en');
                     ?>
                     @forelse ($search as $idol)
                         <?php
                         /** @var App\Idol $idol */
                         $icon = asset('image/icon/'.$idol->name_r.'/0.png');
                         if(!$ja_flag){
-                            $name = 'name_'.($en_flag ? 'r' : mb_substr($current_lang,0,2));
+                            $name = 'name_'.((App::isLocale('en') || App::isLocale('zh-CN')) ? 'r' : mb_substr($current_lang,0,2));
                             if(empty($idol->$name)) $name = 'name_r'; //fallback
                             $separate = $name.'_separate';
                             $text = e(ucwords(separateString($idol->$name,$idol->$separate)));
-                            $text .= "<span style='font-size: 15px;color: dimgray;margin-left: 15px'>".e(ucwords(separateString($idol->name,$idol->name_separate)))."</span>";
+                            $text .= "<span class='ja' style='font-size: 15px;color: dimgray;margin-left: 15px'>".e(ucwords(separateString($idol->name,$idol->name_separate)))."</span>";
                         }
                         $dateflag = $ja_flag ? 'ja' : 'slash';
                         ?>

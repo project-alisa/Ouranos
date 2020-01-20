@@ -38,6 +38,7 @@
     background-repeat: no-repeat;
     background-size: 32px;
     background-position: top 5px left;
+    font-family: 'VL PGothic',sans-serif;
 }
 #idolname.Fairy{
     background-image: url("../image/fairy_symbol.png");
