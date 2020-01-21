@@ -15,7 +15,7 @@
         "doctrine/dbal": "^2.10",
         "encore/laravel-admin": "^1.7",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "6.11.*",
+        "laravel/framework": "6.12.*",
         "laravel/tinker": "^2.0"
     },
     "require-dev": {
