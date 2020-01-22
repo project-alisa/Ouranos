@@ -10,7 +10,7 @@ class InfoController extends Controller
         // mastodonRSS取得
         try {
             $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
-            $feed_txt = preg_replace("{https?://[\w/:%#$&?()~.=+\-]+}",'',strip_tags($feed->channel->item[0]->description));
+            $feed_txt = strip_tags($feed->channel->item[0]->description,'<a>');
             $feed_txt .= " (<a href=\"{$feed->channel->item[0]->link}\" target=\"_blank\">";
             $feed_txt .= date('Y/m/d',strtotime($feed->channel->item[0]->pubDate)).'配信'."</a>)";
         }catch (\Exception $exception){
