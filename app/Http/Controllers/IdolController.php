@@ -25,7 +25,8 @@ class IdolController extends Controller
             $idols = \App\Idol::select()->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')->get();
             $idol_count = $idols->count();
         }
-        return view('idol.index',compact('idols','type','idol_count'));
+        $description = 'アイドルを属性ごとに一覧できます。'.config('ouranos.defaultDescription');
+        return view('idol.index',compact('idols','type','idol_count','description'));
     }
 
     /**
@@ -79,7 +80,9 @@ class IdolController extends Controller
         if(empty($idol->$name)) $name = 'name_r'; //fallback
         $separate = $name.'_separate';
         $title = ucwords(separateString($idol->$name,$idol->$separate));
-        return view('idol.show',compact('idol','title','name'));
+        $description = $idol->name.'のプロフィールを確認したり、Twitter・Pixiv・ニコニコのコンテンツを検索できます。';
+        $description .= config('ouranos.defaultDescription');
+        return view('idol.show',compact('idol','title','name','description'));
     }
 
     /**

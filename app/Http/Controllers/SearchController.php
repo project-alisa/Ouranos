@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     public function search(Request $request){
+        // description
+        $description = '様々な条件からアイドルを検索できます。'.config('ouranos.defaultDescription');
+
         // Inputの確認
         $name       /* 名前      */ = $request->input('name',false);
         $birthplace /* 出身地    */ = $request->input('birthplace',false);
@@ -26,7 +29,7 @@ class SearchController extends Controller
 
         if(!($name||$birthplace||$month||$day||$age||$range)){
             // 条件未入力なので検索開始画面を出す
-            return view('search.index');
+            return view('search.index',compact('description'));
         }
 
         // 検索開始
@@ -110,7 +113,7 @@ class SearchController extends Controller
         }elseif($search_count === 0){
             return abort(404,__('messages.search.result.notfound'));
         }else{
-            return view('search.result',compact('search','query_info','search_count'));
+            return view('search.result',compact('search','query_info','search_count','description'));
         }
     }
 }
