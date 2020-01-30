@@ -2,7 +2,7 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '2.0.0 BlueSymphony',
+    'version' => '2.1.0 BlueSymphony',
     'phrase' => 'Flap your wings, our song!',
     'cardname' => env('CARD_NAME','shihokitazawa_therapistonboat'),
 
