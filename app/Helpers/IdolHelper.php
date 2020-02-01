@@ -36,7 +36,17 @@ if(!function_exists('swapNameOrder')){
 }
 
 if(!function_exists('genMillTokyoLinkText')){
-    function genMillTokyoLinkText(string $name, $name_separate){
+    /**
+     * mill.tokyo向けリンク文字列生成関数
+     *
+     * configの例外リストに当てはまる場合はそれを、
+     * 当てはまらない場合は姓名をスワップしハイフンでつなげた文字列を返す
+     *
+     * @param string $name
+     * @param int $name_separate
+     * @return \Illuminate\Config\Repository|mixed|string
+     */
+    function genMillTokyoLinkText(string $name, int $name_separate){
         if(!empty(config('idol.millTokyoNameExceptionList.'.$name))){
             return config('idol.millTokyoNameExceptionList.'.$name);
         }else{
@@ -113,7 +123,14 @@ if(!function_exists('calcBmi')){
 }
 
 if(!function_exists('genTranslationLink')){
-    function genTranslationLink($string,$locale){
+    /**
+     * GoogleTranslateリンク生成関数
+     *
+     * @param string $string
+     * @param string $locale
+     * @return string
+     */
+    function genTranslationLink(string $string, string $locale){
         $tag = "<a href='https://translate.google.com/#view=home&op=translate&sl=ja&tl={$locale}&text={$string}' target='_blank' class='button smaller'>";
         $tag .= __('View translation on Google');
         $tag .= "</a>";
@@ -163,5 +180,18 @@ if(!function_exists('translateHandedness')){
             default:
                 return false;
         }
+    }
+}
+
+if(!function_exists('getIdolByBithdate')){
+    /**
+     * 誕生日のアイドルをコレクションで返すやつ
+     *
+     * @param string|null $date
+     * @return mixed
+     */
+    function getIdolByBirthdate(string $date = null){
+        $date = date('2017-m-d',strtotime($date) ?? time());
+        return \App\Idol::where('birthdate','=',$date)->get();
     }
 }
