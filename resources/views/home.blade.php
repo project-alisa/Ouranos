@@ -3,6 +3,8 @@
 <?php
     $bg_position = preg_match('/Android.+Chrome/',$_SERVER['HTTP_USER_AGENT'])
         ? 'background-position: center top;' : '';
+    $current_lang = App::getLocale();
+    $ja_flag = App::isLocale('ja');
 ?>
 
 @section('content')
@@ -10,22 +12,31 @@
          style="background-image: url('{{ asset('image/homebackground.jpg') }}');{!! $bg_position !!}"></div>
     <main>
         <h1 id="sitelogo"><img src="{{ asset('image/mlp_ouranos.png') }}" alt="{{ config('ouranos.sitename',config('app.name','Ouranos')) }}"></h1>
-        <div class="msgbox" style="width: 1000px;margin: 0 auto 20px;">
+        <div class="msgbox" style="width: 930px;margin: 0 auto 20px;">
             <div class="msgboxtop">Welcome!!</div>
-            <div class="msgboxbody" style="text-align: center">
-                <p style="font-size: 24px">Welcome!!</p>
-                <p>{{ __fb('messages.home.description') }}</p>
-                <hr>
-                <div class="buttonbox">
-                    <a href="{{ url('/idol') }}" class="button jwil">
-                        {{ __fb('Idols list') }}
-                        <span class="subline">{{ __fb('messages.idol.show.desc') }}</span>
-                    </a>
-                    <a href="{{ url('/search') }}" class="button jwil">
-                        {{ __fb('Search') }}
-                        <span class="subline">{{ __fb('messages.search.index.desc') }}</span>
-                    </a>
+            <div class="msgboxbody">
+                <div style="text-align: center">
+                    <p style="font-size: 24px">Welcome!!</p>
+                    <p>{{ __fb('messages.home.description') }}</p>
+                    <hr>
+                    <div class="buttonbox">
+                        <a href="{{ url('/idol') }}" class="button jwil">
+                            {{ __fb('Idols list') }}
+                            <span class="subline">{{ __fb('messages.idol.show.desc') }}</span>
+                        </a>
+                        <a href="{{ url('/search') }}" class="button jwil">
+                            {{ __fb('Search') }}
+                            <span class="subline">{{ __fb('messages.search.index.desc') }}</span>
+                        </a>
+                    </div>
                 </div>
+                @if($birthday->count() !== 0)
+                    <h2>本日のお誕生日</h2>
+                    <p style="font-size: 18px; text-align: center;padding: 2px">{{ $birth_text }}</p>
+                    @foreach($birthday as $idol)
+                        @include('layouts.idol',['idol' => $idol])
+                    @endforeach
+                @endif
             </div>
             <div class="msgboxfoot"></div>
         </div>

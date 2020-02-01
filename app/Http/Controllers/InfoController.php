@@ -17,7 +17,7 @@ class InfoController extends Controller
             $feed_txt = '( ! ) Mastodonからお知らせを取得できませんでした';
         }
         // 誕生日
-        $birthday = \App\Idol::where('birthdate','=',date('2017-m-d'))->get();
+        $birthday = getIdolByBirthdate();
         if($birthday->count() !== 0){
             $birth_text = '今日は';
             foreach ($birthday as $idol) $birth_text .= $idol->name.'さん('.$idol->age.'歳)、';
@@ -51,7 +51,16 @@ class InfoController extends Controller
         }catch (\Exception $exception){
             $feed = null;
         }
-        return view('home',compact('feed'));
+        $birthday = getIdolByBirthdate();
+        if($birthday->count() !== 0){
+            $birth_text = date('n月j日').'は';
+            foreach ($birthday as $idol) $birth_text .= $idol->name.'さん、';
+            $birth_text = mb_substr($birth_text,0,mb_strlen($birth_text)-1);
+            $birth_text .= 'のお誕生日です！';
+        }else{
+            $birth_text = null;
+        }
+        return view('home',compact('feed','birthday','birth_text'));
     }
 
     public function about(){
