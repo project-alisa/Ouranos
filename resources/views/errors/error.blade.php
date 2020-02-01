@@ -4,7 +4,8 @@ $status_desc = array(
     403 => 'Forbidden',
     404 => 'Not Found',
     500 => 'Internal Server Error',
-    503 => 'Service Unavailable'
+    503 => 'Service Unavailable',
+    'default' => 'Something Wrong'
 );
 $status_message = array(
     400 => __fb('messages.400'),
@@ -14,9 +15,9 @@ $status_message = array(
     503 => __fb('messages.503')
 );
 if(!empty($exception)){
-    $code = $exception->getStatusCode() ?: '500';
-    $desc = $status_desc[$code];
-    $message = $exception->getMessage() ?: $status_message[$code];
+    $code = $exception->getStatusCode();
+    $desc = $status_desc[$code] ?? 'Error '.$code;
+    $message = $exception->getMessage() ?: $status_message[$code] ?? 'A serious error has occurred. Please contact to administrator with error code.';
 }
 @endphp
 
