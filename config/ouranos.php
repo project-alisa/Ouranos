@@ -4,7 +4,9 @@ return [
     'sitename' => 'MillionLivePortal',
     'version' => '2.1.0 BlueSymphony',
     'phrase' => 'Flap your wings, our song!',
-    'cardname' => env('CARD_NAME','shihokitazawa_therapistonboat'),
+
+    'homeCardName' => env('HOME_CARD_NAME','yurikonanao_sunshinegirlofbeach'),
+    'clockCardName' => env('CLOCK_CARD_NAME','shihokitazawa_therapistonboat'),
 
     'googleAnalytics' => env('GOOGLE_ANALYTICS','UA-000000000-0'),
 

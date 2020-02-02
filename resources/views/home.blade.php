@@ -9,7 +9,7 @@
 
 @section('content')
     <div id="homebackground"
-         style="background-image: url('{{ asset('image/homebackground.jpg') }}');{!! $bg_position !!}"></div>
+         style="background-image: url('{{ asset('image/card/'.config('ouranos.homeCardName').'.jpg') }}');{!! $bg_position !!}"></div>
     <main>
         <h1 id="sitelogo"><img src="{{ asset('image/mlp_ouranos.png') }}" alt="{{ config('ouranos.sitename',config('app.name','Ouranos')) }}"></h1>
         <div class="msgbox" style="width: 930px;margin: 0 auto 20px;">

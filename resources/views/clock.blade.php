@@ -13,7 +13,7 @@
     <script src="{{ asset('js/clock.js') }}"></script>
 </head>
 <body>
-<img src="{{ asset('image/card/'.config('ouranos.cardname').'.jpg') }}" alt="Background" id="background">
+<img src="{{ asset('image/card/'.config('ouranos.clockCardName').'.jpg') }}" alt="Background" id="background">
 <div id="systemname">
     <img src="{{ asset('image/ouranos_icon.png') }}" id="logo" alt="{{ config('ouranos.sitename',config('app.name','Ouranos')) }}"><br>
     {{ config('app.name') }}
