@@ -191,7 +191,8 @@ if(!function_exists('getIdolByBithdate')){
      * @return mixed
      */
     function getIdolByBirthdate(string $date = null){
-        $date = date('2017-m-d',strtotime($date) ?? time());
+        if($date) $date = date('2017-m-d',strtotime($date));
+        else $date = date('2017-m-d');
         return \App\Idol::where('birthdate','=',$date)->get();
     }
 }
