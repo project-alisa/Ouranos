@@ -2,8 +2,8 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '2.1.0 BlueSymphony',
-    'phrase' => 'Flap your wings, our song!',
+    'version' => '3.0.0 CatCrossing',
+    'phrase' => 'The evidence of strength',
 
     'homeCardName' => env('HOME_CARD_NAME','yurikonanao_sunshinegirlofbeach'),
     'clockCardName' => env('CLOCK_CARD_NAME','shihokitazawa_therapistonboat'),
