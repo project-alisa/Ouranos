@@ -8,21 +8,21 @@ return [
 
     'common.numbersof' => '',
 
-    'home.description' => '',
-    'home.latestnews' => '',
+    'home.description' => 'MillionLivePortal은, 아이돌마스터 밀리언라이브! 의 비공식 데이터베이스 & 포털사이트입니다.',
+    'home.latestnews' => '최신 정보',
     'home.mastodon' => '',
     'home.mastodon.error' => '',
 
     'idol.index.desc' => '정보를 보려면 idol을 선택하십시오.',
-    'idol.index.incorrect' => '',
-    'idol.index.typedetail' => '',
+    'idol.index.incorrect' => '존재하지 않는 속성입니다.',
+    'idol.index.typedetail' => ':type 아이돌의 개요',
     'idol.index.typeselect' => '',
 
     'idol.show.desc' => '아이돌의 정보를 확인할 수 있습니다.',
     'idol.show.dbid' => '데이터베이스아이디는 게임내부ID와 동일합니다.',
     'idol.show.type' => 'MLTD에서의 아이돌의 속성을 나타냅니다.',
-    'idol.show.mltd.ja' => '',
-    'idol.show.mltd.oversea' => '',
+    'idol.show.mltd.ja' => '일본어판',
+    'idol.show.mltd.oversea' => '해외판',
     'idol.show.mltd.ja.cards' => '',
     'idol.show.mltd.oversea.none' => '',
     'idol.show.gree.none' => '',
