@@ -3,7 +3,7 @@
   "Name": "이름",
   "Name y": "읽기",
   "Hiragana": "히라가나",
-  "Name r": "",
+  "Name r": "알파벳",
   "Chinese": "정체자",
   "Hangul": "한글",
   "Name separate": "NS",
@@ -54,7 +54,7 @@
   "How to use": "",
   "Share": "공유하다",
   "Close": "닫기",
-  "Reset": "",
+  "Reset": "초기화",
   "Idols list": "아이돌 목록",
   "About this site": "이 사이트 정보"
 }
