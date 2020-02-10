@@ -13,7 +13,7 @@ return [
     'twitter.image.desc' => '이미지를 포함한 트윗 검색',
     'twitter.video' => '동영상 검색',
     'twitter.video.desc' => '동영상을 포함한 트윗 검색',
-    'twitter.azure' => '',
+    'twitter.azure' => 'Azure-Gallery 검색',
     'twitter.azure.desc' => '일러스트를 포함한 트윗 검색',
     'twitter.notice.0' => '트위터 검색은 애칭・닉네임으로부터 표시되어야 할 결과를 표시하지 못할 수 있습니다.',
     'twitter.notice.1' => 'azure-gallery.net은 팬아트나 창작에 관련된 트윗을 검색하는 것에 특화된 웹사이트입니다. (공식 사이트는 아닙니다.)',
