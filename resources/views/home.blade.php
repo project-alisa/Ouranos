@@ -5,11 +5,25 @@
         ? 'background-position: center top;' : '';
     $current_lang = App::getLocale();
     $ja_flag = App::isLocale('ja');
+
+    /* 背景探索 */
+    $bg = array();
+    if(!empty($birthday)){ //誕生日
+        foreach ($birthday as $bi){
+            $bg += glob(public_path('image/card/'.$bi->name_r.'_*.jpg'));
+        }
+    }
+    /* 乱数選択 */
+    if(!empty($bg) && !config('ouranos.homeCardForce',false)){
+        $background = asset(str_replace(public_path(),'',$bg[mt_rand(0,count($bg)-1)]));
+    }else{
+        $background = asset('image/card/'.config('ouranos.homeCardName').'.jpg');
+    }
 ?>
 
 @section('content')
     <div id="homebackground"
-         style="background-image: url('{{ asset('image/card/'.config('ouranos.homeCardName').'.jpg') }}');{!! $bg_position !!}"></div>
+         style="background-image: url('{{ $background }}');{!! $bg_position !!}"></div>
     <main>
         <h1 id="sitelogo"><img src="{{ asset('image/mlp_ouranos.png') }}" alt="{{ config('ouranos.sitename',config('app.name','Ouranos')) }}"></h1>
         <div class="msgbox" style="width: 930px;margin: 0 auto 20px;">
@@ -30,7 +44,7 @@
                         </a>
                     </div>
                 </div>
-                @if($birthday->count() !== 0)
+                @if($birthday->count() !== 0) {{-- 誕生日のアイドル出すとこ --}}
                     <h2>{{ __('messages.home.birthday') }}</h2>
                     @if(App::isLocale('ja'))
                     <p style="font-size: 18px; text-align: center;padding: 2px">{{ $birth_text }}</p>

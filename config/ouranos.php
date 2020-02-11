@@ -7,6 +7,7 @@ return [
 
     'homeCardName' => env('HOME_CARD_NAME','yurikonanao_sunshinegirlofbeach'),
     'clockCardName' => env('CLOCK_CARD_NAME','shihokitazawa_therapistonboat'),
+    'homeCardForce' => env('HOME_CARD_FORCE',false),
 
     'googleAnalytics' => env('GOOGLE_ANALYTICS','UA-000000000-0'),
 
