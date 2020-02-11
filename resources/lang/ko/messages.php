@@ -25,7 +25,7 @@ return [
     'idol.show.mltd.oversea' => '해외판',
     'idol.show.mltd.ja.cards' => '밀리시타 카드 일람',
     'idol.show.mltd.oversea.none' => '해외판에는 아직 등장하지 않았습니다.',
-    'idol.show.gree.none' => '',
+    'idol.show.gree.none' => 'GREE판에서는 등장하고 있지 않습니다.',
 
     'search.index.desc' => '다양한 조건으로 아이돌을 검색할 수 있습니다.',
     'search.result.found' => ':count명의 아이돌을 찾았습니다.',
