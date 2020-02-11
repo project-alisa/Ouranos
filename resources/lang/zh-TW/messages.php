@@ -12,6 +12,7 @@ return [
     'home.latestnews' => '',
     'home.mastodon' => '',
     'home.mastodon.error' => '',
+    'home.birthday' => '',
 
     'idol.index.desc' => '',
     'idol.index.incorrect' => '',
