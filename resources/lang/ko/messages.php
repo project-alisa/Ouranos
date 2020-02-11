@@ -12,6 +12,7 @@ return [
     'home.latestnews' => '최신 정보',
     'home.mastodon' => '',
     'home.mastodon.error' => '',
+    'home.birthday' => '',
 
     'idol.index.desc' => '정보를 보려면 idol을 선택하십시오.',
     'idol.index.incorrect' => '존재하지 않는 속성입니다.',
