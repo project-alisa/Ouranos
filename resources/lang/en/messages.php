@@ -12,6 +12,7 @@ return [
     'home.latestnews' => 'Latest info',
     'home.mastodon' => 'Website informations are delivered from Miyano Station (Mastodon instance).',
     'home.mastodon.error' => 'Failed to get notification from Mastodon',
+    'home.birthday' => 'Today\'s birthday idol',
 
     'idol.index.desc' => 'Select idol to see information.',
     'idol.index.incorrect' => 'Incorrect type.',

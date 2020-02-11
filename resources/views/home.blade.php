@@ -31,8 +31,10 @@
                     </div>
                 </div>
                 @if($birthday->count() !== 0)
-                    <h2>本日のお誕生日</h2>
+                    <h2>{{ __('messages.home.birthday') }}</h2>
+                    @if(App::isLocale('ja'))
                     <p style="font-size: 18px; text-align: center;padding: 2px">{{ $birth_text }}</p>
+                    @endif
                     @foreach($birthday as $idol)
                         @include('layouts.idol',['idol' => $idol])
                     @endforeach
