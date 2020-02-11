@@ -12,6 +12,7 @@ return [
     'home.latestnews' => '最新信息',
     'home.mastodon' => '最新信息由宮野站（长毛象实例）发布',
     'home.mastodon.error' => '无法从长毛象获取信息',
+    'home.birthday' => '',
 
     'idol.index.desc' => '请选择偶像',
     'idol.index.incorrect' => '该属性不存在',
