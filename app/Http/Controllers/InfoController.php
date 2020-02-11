@@ -60,7 +60,9 @@ class InfoController extends Controller
         }else{
             $birth_text = null;
         }
-        return view('home',compact('feed','birthday','birth_text'));
+        $top_commentout = file_exists(base_path('commentouttxt/home.txt')) ?
+            file_get_contents(base_path('commentouttxt/home.txt')) : null;
+        return view('home',compact('feed','birthday','birth_text','top_commentout'));
     }
 
     public function about(){

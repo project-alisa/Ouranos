@@ -82,7 +82,9 @@ class IdolController extends Controller
         $title = ucwords(separateString($idol->$name,$idol->$separate));
         $description = $idol->name.'のプロフィールを確認したり、Twitter・Pixiv・ニコニコのコンテンツを検索できます。';
         $description .= config('ouranos.defaultDescription');
-        return view('idol.show',compact('idol','title','name','description'));
+        $top_commentout = file_exists(base_path('commentouttxt/idol/'.$idol->name_r.'.txt')) ?
+            file_get_contents(base_path('commentouttxt/idol/'.$idol->name_r.'.txt')) : null;
+        return view('idol.show',compact('idol','title','name','description','top_commentout'));
     }
 
     /**
