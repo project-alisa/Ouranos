@@ -10,9 +10,9 @@ return [
 
     'home.description' => 'MillionLivePortal은, 아이돌마스터 밀리언라이브! 의 비공식 데이터베이스 & 포털사이트입니다.',
     'home.latestnews' => '최신 정보',
-    'home.mastodon' => '',
+    'home.mastodon' => '웹사이트 정보는 미야노 역(Mastodon 인스턴스)에서 받아오고 있습니다.',
     'home.mastodon.error' => '',
-    'home.birthday' => '',
+    'home.birthday' => '오늘 생일인 아이돌',
 
     'idol.index.desc' => '정보를 보려면 idol을 선택하십시오.',
     'idol.index.incorrect' => '존재하지 않는 속성입니다.',
