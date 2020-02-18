@@ -6,18 +6,18 @@ return [
     '500' => '인터넷 서버 오류. 불편을 끼쳐 드려 죄송합니다.',
     '503' => '용량 문제 또는 유지 관리로 인해 서비스를 일시적으로 사용할 수 없습니다.',
 
-    'common.numbersof' => '',
+    'common.numbersof' => ':type의 인원수',
 
     'home.description' => 'MillionLivePortal은, 아이돌마스터 밀리언라이브! 의 비공식 데이터베이스 & 포털사이트입니다.',
     'home.latestnews' => '최신 정보',
     'home.mastodon' => '웹사이트 정보는 미야노 역(Mastodon 인스턴스)에서 받아오고 있습니다.',
-    'home.mastodon.error' => '',
+    'home.mastodon.error' => 'Mastodon으로부터 정보를 가져오지 못했습니다.',
     'home.birthday' => '오늘 생일인 아이돌',
 
     'idol.index.desc' => '정보를 보려면 idol을 선택하십시오.',
     'idol.index.incorrect' => '존재하지 않는 속성입니다.',
     'idol.index.typedetail' => ':type 아이돌의 개요',
-    'idol.index.typeselect' => '',
+    'idol.index.typeselect' => '속성으로 분류',
 
     'idol.show.desc' => '아이돌의 정보를 확인할 수 있습니다.',
     'idol.show.dbid' => '데이터베이스아이디는 게임내부ID와 동일합니다.',
