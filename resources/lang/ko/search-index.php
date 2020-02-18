@@ -12,7 +12,7 @@ return [
 
     'birthdate.header' => '생일로 검색',
     'birthdate.notice.0' => '',
-    'birthdate.notice.1' => '',
+    'birthdate.notice.1' => '(예시: 모든 8월생을 검색, 월을 지정하지 않고 27일생을 검색)',
     'birthdate.notice.2' => '월 또는 일 중 하나는 반드시 지정해 주십시오.',
 
     'age.header' => '나이로 검색',
@@ -20,6 +20,6 @@ return [
     'age.input' => '나이 (정수)',
     'age.range' => '나이의 범위',
     'age.range.older' => '이상',
-    'age.range.equal' => '',
+    'age.range.equal' => '일치',
     'age.range.younger' => '이하',
 ];
