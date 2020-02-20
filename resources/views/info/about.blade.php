@@ -131,7 +131,7 @@
             <tr>
                 <th>Special Thanks</th>
                 <td>
-                    <strong>Translator :</strong> 夜楓Yoka (zh)
+                    <strong>Translator :</strong> 夜楓Yoka (zh), Hwanhee Chae (ko)
                 </td>
             </tr>
         </table>
