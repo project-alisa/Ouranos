@@ -68,7 +68,7 @@ return [
     'alert'                 => '경계경보',
     'parent_id'             => '상위',
     'icon'                  => '아이콘',
-    'uri'                   => '',
+    'uri'                   => 'URI',
     'operation_log'         => '작업 로그',
     'parent_select_error'   => '상위 선택 오류',
     'pagination'            => [
@@ -94,9 +94,11 @@ return [
     'listbox'               => [
         'text_total'         => '전체 {0}',
         'text_empty'         => '빈 목록',
-        'filtered'           => '',
+        'filtered'           => '{0} / {1}',
         'filter_clear'       => '전체 보기',
         'filter_placeholder' => '필터',
     ],
-    'menu_titles'           => [],
+    'grid_items_selected' => '{n} 선택한 항목',
+
+    'menu_titles' => [],
 ];
