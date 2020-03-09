@@ -532,16 +532,16 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.7.11",
+            "version": "v1.7.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "326c9c31fa8ad76a0fefd15bff93c70dbdae7d7b"
+                "reference": "198cbb78f869d4b139214863c61c4fde1bb7478c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/326c9c31fa8ad76a0fefd15bff93c70dbdae7d7b",
-                "reference": "326c9c31fa8ad76a0fefd15bff93c70dbdae7d7b",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/198cbb78f869d4b139214863c61c4fde1bb7478c",
+                "reference": "198cbb78f869d4b139214863c61c4fde1bb7478c",
                 "shasum": ""
             },
             "require": {
@@ -597,7 +597,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-03-04T14:17:40+00:00"
+            "time": "2020-03-07T15:52:23+00:00"
         },
         {
             "name": "fideloper/proxy",
