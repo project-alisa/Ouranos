@@ -20,3 +20,6 @@ Route::get('/search', 'SearchController@search');
 Route::get('/about', 'InfoController@about');
 
 Route::resource('idol','IdolController',['only' => ['index','show']]);
+
+// Blogparts
+Route::get('/blogparts/idol','BlogPartsController@idol');
