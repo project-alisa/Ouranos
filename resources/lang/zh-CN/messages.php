@@ -12,7 +12,7 @@ return [
     'home.latestnews' => '最新信息',
     'home.mastodon' => '最新信息由宮野站（长毛象实例）发布',
     'home.mastodon.error' => '无法从长毛象获取信息',
-    'home.birthday' => '',
+    'home.birthday' => '今天过生日的偶像',
 
     'idol.index.desc' => '请选择偶像',
     'idol.index.incorrect' => '该属性不存在',
@@ -26,7 +26,7 @@ return [
     'idol.show.mltd.oversea' => '海外服',
     'idol.show.mltd.ja.cards' => 'MLTD卡片一览',
     'idol.show.mltd.oversea.none' => '海外服还未登场',
-    'idol.show.gree.none' => '',
+    'idol.show.gree.none' => '未在GREE版登场',
 
     'search.index.desc' => '可以用各种条件搜索偶像',
     'search.result.found' => '找到:count个偶像',
