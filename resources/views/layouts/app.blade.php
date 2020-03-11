@@ -61,6 +61,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/changelang.js') }}"></script>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <!-- dialog-polyfill -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.5.0/dialog-polyfill.css" integrity="sha256-hT0ET4tfm+7MyjeBepBgV2N5tOmsAVKcTWhH82jvoaA=" crossorigin="anonymous" />
@@ -91,6 +92,7 @@
         </nav>
     </div>
     <div id="share_button">
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-hashtags="ML_Portal" data-show-count="false" style="opacity: 0">Tweet</a>
         <a href="javascript:openShareWindow()" class="fedi">{{ __fb('Share') }}</a>
     </div>
 </header>
