@@ -9,12 +9,15 @@ class BlogPartsController extends Controller
 {
     public function idol(Request $request){
         $id = $request->get('id');
+        if(empty($id) || !is_numeric($id)){
+            $message = 'パラメータが指定されていないか、形式が正しくありません';
+            return response(view('blogparts.error',compact('message')),400);
+        }
         try {
             $idol = \App\Idol::findOrFail($id);
         }catch (ModelNotFoundException $e){
-            http_response_code(404);
-            $message = '該当するアイドルが見つからなかったかパラメータ漏れです';
-            return view('blogparts.error',compact('message'));
+            $message = '該当するアイドルは存在しないか、メメントしてしまいました';
+            return response(view('blogparts.error',compact('message')),404);
         }
         return view('blogparts.idol',compact('idol'));
     }
