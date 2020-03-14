@@ -23,3 +23,5 @@ Route::resource('idol','IdolController',['only' => ['index','show']]);
 
 // Blogparts
 Route::get('/blogparts/idol','BlogPartsController@idol');
+
+Route::get('/blogparts','BlogPartsController@docs');

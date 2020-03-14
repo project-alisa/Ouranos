@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class BlogPartsController extends Controller
 {
+    public function docs(Request $request){
+        $idol_id = $request->get('idol_id') ?: 28;
+        return view('blogparts.doc',compact('idol_id'));
+    }
+
     public function idol(Request $request){
         $id = $request->get('id');
         if(empty($id) || !is_numeric($id)){
