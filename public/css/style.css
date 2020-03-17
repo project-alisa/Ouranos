@@ -606,6 +606,15 @@ dialog::backdrop , dialog + .backdrop{
     background: rgba(0,0,0,0.4);
 }
 
+/* code */
+code{
+    background: rgba(0,0,0,0.1);
+    border: solid 1px rgba(0,0,0,0.4);
+    border-radius: 2px;
+    padding: 1px 3px;
+    font-size: inherit;
+}
+
 /* mastodon */
 .mstdn{
     display:inline-block;

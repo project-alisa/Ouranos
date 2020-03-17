@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "VL PGothic";
+    src: local("VL PGothic"),
+    url('../../font/VL-PGothic-Regular.woff');
+}
+
+html{
+    background: gray;
+}
+body{
+    background: whitesmoke;
+    width: 312px;
+    height: 176px;
+    overflow: hidden;
+    margin: 0;
+}
+header{
+    background: linear-gradient(#a40000,red);
+    padding: 2px 7px;
+    color: white;
+    border-bottom: solid 1px darkred;
+}
+header > h1{
+    font-size: 11px;
+    margin: 0;
+}
+header > h1 > a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+h2{
+    font-size: 24px;
+    margin: 0.3em 0;
+}
+
+main{
+    padding: 5px 10px;
+}
+
+a{
+    color: #222222;
+}
+
+.table{
+    position: relative;
+    margin-bottom: 5px;
+    border-spacing: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+.table th{
+    border:solid 2px black;
+    border-radius: 50px;
+    padding: 0 10px;
+}
+.table td{
+    text-align: left;
+    padding:0 4px;
+    border: none;
+    border-bottom: dashed 1px lightgray;
+}
