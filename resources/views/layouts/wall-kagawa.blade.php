@@ -89,7 +89,9 @@
     }
 
     const wallKagawa = document.getElementById('wall-kagawa-dialog');
+    dialogPolyfill.registerDialog(wallKagawa);
     const wallKagawaBlocker = document.getElementById('wall-kagawa-blocker');
+    dialogPolyfill.registerDialog(wallKagawaBlocker);
     wallKagawa.addEventListener('cancel',function(event){
         event.preventDefault();
     });
@@ -117,7 +119,7 @@
     if(localStorage.getItem('wallkagawa') === "true"){
         wallKagawaBlocker.showModal();
         console.error('WallKagawa enabled!');
-        console.info('Are you not Kagawa citizen? run')
+        console.info('Are you not Kagawa citizen? run %clocalStorage.removeItem(\'wallkagawa\')','color:skyblue')
     }else if(localStorage.getItem('wallkagawa') !== "false"){
         wallKagawa.showModal();
     }else{
