@@ -1,11 +1,10 @@
-<dialog id="wall-kagawa">
-    <div class="msgbox" style="width: 750px;height: 500px">
+<dialog id="wall-kagawa-dialog" style="height: 500px">
+    <div class="msgbox" style="width: 750px;">
         <div class="msgboxtop">確認</div>
         <div class="msgboxbody" style="text-align: center">
             <span style="font-size: 60px">&#x26a0;</span>
             <p style="font-size: 23px">あなたは香川県民ですか？</p>
             <hr>
-            <p>{{ session('locale') . ' - ' . session('pref') }}</p>
             <p>
                 当サイトは、香川県ネット・ゲーム依存症対策条例第11条各項に基づき、<br>
                 香川県内からのアクセスはすべてお断りしています。<br>
@@ -30,9 +29,32 @@
         </div>
     </div>
 </dialog>
+<dialog id="wall-kagawa-blocker" style="height: 500px">
+    <div class="msgbox" style="width: 750px;">
+        <div class="msgboxtop">警告</div>
+        <div class="msgboxbody" style="text-align: center">
+            <span style="font-size: 60px">&#x26d4;</span>
+            <p style="font-size: 23px">閲覧を制限しています</p>
+            <hr>
+            <p>
+                当サイトは、香川県ネット・ゲーム依存症対策条例第11条各項に基づき、<br>
+                香川県内からのアクセスはすべてお断りしています。<br>
+                なお、この確認は当サイトが同条例に対し賛同を示すものではありません。
+            </p>
+            <p style="font-size: 13px;">
+                This dialog is displayed based on the Kagawa Prefectural Internet and Game Addiction Measures Ordinance.
+            </p>
+        </div>
+        <div class="msgboxfoot">
+        </div>
+    </div>
+</dialog>
 <style>
-    dialog#wall-kagawa::backdrop, dialog#wall-kagawa + .backdrop{
+    dialog#wall-kagawa-dialog::backdrop, dialog#wall-kagawa-dialog + .backdrop{
         background: rgba(0,0,0,0.8);
+    }
+    dialog#wall-kagawa-blocker::backdrop, dialog#wall-kagawa-blocker + .backdrop{
+        background: black;
     }
 </style>
 
@@ -66,8 +88,12 @@
         }
     }
 
-    const wallKagawa = document.getElementById('wall-kagawa');
+    const wallKagawa = document.getElementById('wall-kagawa-dialog');
+    const wallKagawaBlocker = document.getElementById('wall-kagawa-blocker');
     wallKagawa.addEventListener('cancel',function(event){
+        event.preventDefault();
+    });
+    wallKagawaBlocker.addEventListener('cancel',function(event){
         event.preventDefault();
     });
 
@@ -78,7 +104,9 @@
     }
     function enableWallKagawa(){
         localStorage.setItem('wallkagawa',true);
-        location.href = location.href + '?pref=kagawa'
+        //location.href = location.href + '?pref=kagawa';
+        wallKagawa.close();
+        wallKagawaBlocker.showModal();
     }
 
     if(storageAvailable('localStorage')){
@@ -86,7 +114,11 @@
         document.getElementById('localStorageUnavailable').setAttribute('style','display:none;');
     }
 
-    if(localStorage.getItem('wallkagawa') !== "false"){
+    if(localStorage.getItem('wallkagawa') === "true"){
+        wallKagawaBlocker.showModal();
+        console.error('WallKagawa enabled!');
+        console.info('Are you not Kagawa citizen? run')
+    }else if(localStorage.getItem('wallkagawa') !== "false"){
         wallKagawa.showModal();
     }else{
         console.info('WallKagawa is already disabled.');
