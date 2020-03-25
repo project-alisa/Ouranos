@@ -2,7 +2,7 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '3.3.0 CatCrossing',
+    'version' => '3.3.1 CatCrossing',
     'phrase' => 'The evidence of strength',
 
     'homeCardName' => env('HOME_CARD_NAME','yurikonanao_sunshinegirlofbeach'),
