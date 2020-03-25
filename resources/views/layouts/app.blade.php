@@ -204,6 +204,9 @@
         </div>
     </div>
 </dialog>
+
+@include('layouts.wall-kagawa')
+
 <script>
     var sharewindow = document.querySelector('#sharewindow');
     dialogPolyfill.registerDialog(sharewindow);
