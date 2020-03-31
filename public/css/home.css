@@ -9,7 +9,7 @@
     background-image: url("/image/homebackground.jpg");
     background-color: transparent;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: 100vw auto;
     z-index: 1;
     overflow: hidden;
     -webkit-mask-image:linear-gradient(180deg, black 85%, transparent 100%);
