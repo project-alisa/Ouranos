@@ -8,7 +8,7 @@
             <p>
                 当サイトは、香川県ネット・ゲーム依存症対策条例第11条各項に基づき、<br>
                 香川県内からのアクセスはすべてお断りしています。<br>
-                なお、この確認は当サイトが同条例に対し賛同を示すものではありません。
+                なお、この確認は本日限定実装です。明日以降の本実装では適用されません。
             </p>
             <p style="font-size: 13px;">
                 This dialog is displayed based on the Kagawa Prefectural Internet and Game Addiction Measures Ordinance.<br>
@@ -39,13 +39,14 @@
             <p>
                 当サイトは、香川県ネット・ゲーム依存症対策条例第11条各項に基づき、<br>
                 香川県内からのアクセスはすべてお断りしています。<br>
-                なお、この確認は当サイトが同条例に対し賛同を示すものではありません。
+                なお、この確認は本日限定実装です。明日以降の本実装では適用されません。
             </p>
             <p style="font-size: 13px;">
                 This dialog is displayed based on the Kagawa Prefectural Internet and Game Addiction Measures Ordinance.
             </p>
         </div>
         <div class="msgboxfoot">
+            <a href="javascript:localStorage.removeItem('wallkagawa');location.reload()" class="button jw">転出届を出す</a>
         </div>
     </div>
 </dialog>
