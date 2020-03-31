@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 @if(!empty($top_commentout))<!--
-{!! str_replace('-->','- >',strip_tags($top_commentout)) !!}
+{!! str_replace('-->','- >',$top_commentout) !!}
 -->@endif<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
