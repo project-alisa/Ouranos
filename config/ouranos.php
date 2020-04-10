@@ -2,8 +2,8 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '3.3.2 CatCrossing',
-    'phrase' => 'The evidence of strength',
+    'version' => '4.0.0 Dreamscape',
+    'phrase' => 'I\'ll be the freedom wind, with you.',
 
     'homeCardName' => env('HOME_CARD_NAME','yurikonanao_sunshinegirlofbeach'),
     'clockCardName' => env('CLOCK_CARD_NAME','shihokitazawa_therapistonboat'),

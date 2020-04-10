@@ -125,7 +125,7 @@
 <footer>
     <div id="siteinfo">
         <div class="sitename">{{ config('ouranos.sitename') }}</div>
-        <div class="appinfo">{{ config('app.name')." Ver".config('ouranos.version') }}</div>
+        <div class="appinfo" title="{{ config('ouranos.phrase') }}">{{ config('app.name')." Ver".config('ouranos.version') }}</div>
         <p>
             <label>
                 Language:
