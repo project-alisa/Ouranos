@@ -26,6 +26,14 @@ class CheckForMaintenanceMode extends Middleware
             if (isset($data['allowed']) && IpUtils::checkIp($request->ip(), (array) $data['allowed'])) {
                 return $next($request);
             }
+            if (mb_substr($request->path(),0,3) === 'api'){
+                return response()->json(
+                    ['error' => [
+                        'status' => 503,
+                        'error' => 'Service Unavailable',
+                        'message' => $data['message'] ?: 'Sorry : Now under maintenance mode.'
+                    ]],503);
+            }
 
             throw new MaintenanceModeException($data['time'], $data['retry'], $data['message']);
         }else{
