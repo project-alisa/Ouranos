@@ -20,7 +20,11 @@ Route::group(['middleware' => 'api'],function (){
     });
 
     Route::fallback(function (){
-        return response()->json(['error' => 'Not found']);
+        return response()->json(['error' => [
+            'status' => 404,
+            'error' => 'Not Found',
+            'message' => 'There is nothing here.'
+        ]],404);
     });
 });
 
