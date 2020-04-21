@@ -7,7 +7,7 @@ return [
     '503' => 'Service temporarily unavailable due to capacity problems or maintenance.',
 
     'common.numbersof' => 'Numbers of :type',
-    'common.goto' => 'Go to :page',
+    'common.goto' => 'Go to :page Page',
 
     'home.description' => 'MillionLivePortal, the unofficial database and portal website for THE IDOLM@STER MILLION LIVE!',
     'home.latestnews' => 'Latest info',
@@ -38,6 +38,7 @@ return [
     'search.error.range.empty' => 'Age search range not specified',
     'search.error.range.invalid' => 'Invalid search range for age',
     'search.error.birthdate.invalid' => 'Neither month nor day is specified',
+    'searchwindow.notice' => 'Detailed search is available on the search page.',
 
     'share.title' => 'Share to Fediverse',
     'share.input' => 'Enter the instance host to share.',
