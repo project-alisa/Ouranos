@@ -235,7 +235,7 @@
             </div>
             <hr>
             <p style="text-align: center;margin: 10px">
-                名前以外の条件による詳細な検索は、検索ページをご利用ください。
+                {{ __fb('messages.searchwindow.notice') }}
             </p>
         </div>
         <div class="msgboxfoot">
