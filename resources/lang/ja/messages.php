@@ -7,6 +7,7 @@ return [
     '503' => 'アクセス集中かメンテナンスのため一時的にページを表示できません',
 
     'common.numbersof' => ':typeの人数',
+    'common.goto' => ':pageへ',
 
     'home.description' => 'MillionLivePortalは、アイドルマスターミリオンライブ！の非公式データベース＆ポータルサイトです。',
     'home.latestnews' => '最新情報',

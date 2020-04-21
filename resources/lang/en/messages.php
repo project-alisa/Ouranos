@@ -7,6 +7,7 @@ return [
     '503' => 'Service temporarily unavailable due to capacity problems or maintenance.',
 
     'common.numbersof' => 'Numbers of :type',
+    'common.goto' => 'Go to :page',
 
     'home.description' => 'MillionLivePortal, the unofficial database and portal website for THE IDOLM@STER MILLION LIVE!',
     'home.latestnews' => 'Latest info',
