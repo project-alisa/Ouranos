@@ -7,6 +7,7 @@ return [
     '503' => '용량 문제 또는 유지 관리로 인해 서비스를 일시적으로 사용할 수 없습니다.',
 
     'common.numbersof' => ':type의 인원수',
+    'common.goto' => '',
 
     'home.description' => 'MillionLivePortal은, 아이돌마스터 밀리언라이브! 의 비공식 데이터베이스 & 포털사이트입니다.',
     'home.latestnews' => '최신 정보',
@@ -37,6 +38,7 @@ return [
     'search.error.range.empty' => '나이 검색 범위가 지정되지 않았습니다.',
     'search.error.range.invalid' => '나이 검색 범위 지정이 올바르지 않습니다.',
     'search.error.birthdate.invalid' => '월이나 일 중 하나가 지정되지 않았습니다.',
+    'searchwindow.notice' => '',
 
     'share.title' => 'Fediverse 에 공유',
     'share.input' => '공유 할 인스턴스 호스트를 입력하십시오.',
