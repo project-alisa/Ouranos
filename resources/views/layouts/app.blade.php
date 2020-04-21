@@ -62,6 +62,7 @@
     <script src="{{ asset('js/changelang.js') }}"></script>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/mousetrap.min.js" crossorigin="anonymous"></script>
 
     <!-- dialog-polyfill -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.5.0/dialog-polyfill.css" integrity="sha256-hT0ET4tfm+7MyjeBepBgV2N5tOmsAVKcTWhH82jvoaA=" crossorigin="anonymous" />
@@ -215,6 +216,38 @@
     }
 
     twemoji.parse(document.body);
+</script>
+
+<dialog id="searchwindow">
+    <div class="msgbox" style="width:550px">
+        <div class="msgboxtop">{{ __fb('Search') }}</div>
+        <div class="msgboxbody">
+            <h2>{{ __fb('search-index.name.header') }}</h2>
+            <div style="text-align: center">
+                <form action="{{ url('/search') }}" method="get" name="name" style="text-align: center">
+                    <input type="search" name="name" class="textarea" required style="width: 300px" title="{{ __fb('Name') }}" placeholder="{{ __fb('Name') }}">
+                    <input type="submit" value="{{ __fb('Search') }}" class="button main">
+                </form>
+            </div>
+            <hr>
+            <p style="text-align: center;margin: 10px">
+                名前以外の条件による詳細な検索は、検索ページをご利用ください。
+            </p>
+        </div>
+        <div class="msgboxfoot">
+            <a href="javascript:searchwindow.close()" class="button jw">{{ __fb('Close') }}</a>
+            <a href="{{ url('/search') }}" class="button jw">{{ __('messages.common.goto',['page' => __fb('Search')]) }}</a>
+        </div>
+    </div>
+</dialog>
+<script>
+    var searchwindow = document.getElementById('searchwindow');
+    dialogPolyfill.registerDialog(searchwindow);
+    Mousetrap.bind('m f',function(){
+        if(!searchwindow.open)searchwindow.showModal();
+        else console.info('[info] Search window has already opened.');
+        return false;
+    });
 </script>
 
 </body>
