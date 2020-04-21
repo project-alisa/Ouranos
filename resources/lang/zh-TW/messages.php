@@ -7,6 +7,7 @@ return [
     '503' => '',
 
     'common.numbersof' => '',
+    'common.goto' => '',
 
     'home.description' => '',
     'home.latestnews' => '',
@@ -37,6 +38,7 @@ return [
     'search.error.range.empty' => '',
     'search.error.range.invalid' => '',
     'search.error.birthdate.invalid' => '',
+    'searchwindow.notice' => '',
 
     'share.title' => '',
     'share.input' => '',
