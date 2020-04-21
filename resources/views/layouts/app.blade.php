@@ -209,11 +209,15 @@
     var sharewindow = document.querySelector('#sharewindow');
     dialogPolyfill.registerDialog(sharewindow);
     function openShareWindow(){
-        sharewindow.showModal();
+        if(!sharewindow.open)sharewindow.showModal();
     }
     function closeShareWindow(){
-        sharewindow.close();
+        if(sharewindow.open)sharewindow.close();
     }
+    Mousetrap.bind('m s',function () {
+        openShareWindow();
+        return false;
+    });
 
     twemoji.parse(document.body);
 </script>
