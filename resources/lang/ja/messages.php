@@ -7,6 +7,7 @@ return [
     '503' => 'アクセス集中かメンテナンスのため一時的にページを表示できません',
 
     'common.numbersof' => ':typeの人数',
+    'common.goto' => ':pageページへ',
 
     'home.description' => 'MillionLivePortalは、アイドルマスターミリオンライブ！の非公式データベース＆ポータルサイトです。',
     'home.latestnews' => '最新情報',
@@ -37,6 +38,7 @@ return [
     'search.error.range.empty' => '年齢の検索範囲指定がありません',
     'search.error.range.invalid' => '年齢の検索範囲指定が正しくありません',
     'search.error.birthdate.invalid' => '月か日どちらかは指定してください',
+    'searchwindow.notice' => '検索ページではさらに詳細な検索が可能です。',
 
     'share.title' => 'Fediverseで共有',
     'share.input' => '共有するインスタンスのホストを入力してください',
