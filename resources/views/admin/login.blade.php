@@ -31,7 +31,7 @@
             @endif
 
                 <label>
-                    <input type="text" class="form-control" placeholder="User name" name="username" value="{{ old('username') }}" required>
+                    <input type="text" class="form-control" placeholder="User" name="username" value="{{ old('username') }}" required>
                 </label>
         </div>
         <div class="form-group has-feedback {!! !$errors->has('password') ?: 'has-error' !!}">
