@@ -91,3 +91,14 @@ hr{
     border: solid 1px rgba(255,255,255,0.4);
     margin: 20px 0;
 }
+
+.error{
+    text-align: center;
+    margin: 5px 0;
+    padding: 4px;
+    border-bottom: solid 2px darkred;
+    background: linear-gradient(transparent, rgba(158, 0, 0, 0.5));
+}
+.error::before{
+    content: 'Error : ';
+}
