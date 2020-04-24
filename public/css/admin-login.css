@@ -26,6 +26,18 @@ body{
     background: black;
 }
 
+@media (max-width: 1200px){
+    body{
+        display: block;
+    }
+    #login_form{
+        width: 100%;
+    }
+    #illustration{
+        display: none;
+    }
+}
+
 img#logo{
     height: 50px;
     width: auto;
