@@ -2,7 +2,7 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '4.1.0 Dreamscape',
+    'version' => '4.2.0 Dreamscape',
     'phrase' => 'I\'ll be the freedom wind, with you.',
 
     'homeCardName' => env('HOME_CARD_NAME','yurikonanao_sunshinegirlofbeach'),
