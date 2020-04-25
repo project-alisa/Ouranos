@@ -53,6 +53,7 @@ input[type=text],input[type=password]{
     font-size: 17px;
     box-sizing: border-box;
     border: none;
+    border-radius: 2px;
 }
 .checkbox{
     text-align: center;
@@ -77,6 +78,7 @@ button,.button{
     padding: 7px;
     border: none;
     cursor: pointer;
+    border-radius: 2px;
 }
 
 button.primary,.button.primary{
