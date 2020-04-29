@@ -534,16 +534,16 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.7.14",
+            "version": "v1.7.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "163fc093aae2ff27d749633cddbd954833c9144d"
+                "reference": "f681aece0c2730e5d1082f9beb37243eb7d6e3c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/163fc093aae2ff27d749633cddbd954833c9144d",
-                "reference": "163fc093aae2ff27d749633cddbd954833c9144d",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/f681aece0c2730e5d1082f9beb37243eb7d6e3c8",
+                "reference": "f681aece0c2730e5d1082f9beb37243eb7d6e3c8",
                 "shasum": ""
             },
             "require": {
@@ -599,7 +599,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-03-16T06:57:52+00:00"
+            "time": "2020-04-27T07:15:45+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -1940,16 +1940,16 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v4.4.5",
+            "version": "v4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "11dcf08f12f29981bf770f097a5d64d65bce5929"
+                "reference": "4d0fb3374324071ecdd94898367a3fa4b5563162"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/11dcf08f12f29981bf770f097a5d64d65bce5929",
-                "reference": "11dcf08f12f29981bf770f097a5d64d65bce5929",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/4d0fb3374324071ecdd94898367a3fa4b5563162",
+                "reference": "4d0fb3374324071ecdd94898367a3fa4b5563162",
                 "shasum": ""
             },
             "require": {
@@ -1997,7 +1997,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
-            "time": "2020-02-29T10:05:28+00:00"
+            "time": "2020-03-29T19:12:22+00:00"
         },
         {
             "name": "symfony/error-handler",
