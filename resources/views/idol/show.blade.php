@@ -211,7 +211,7 @@
                         </p>
                     @else
                         <div class="buttonbox">
-                            <a href="https://mill.tokyo/?name={{ genMillTokyoLinkText($idol->name_r,$idol->name_r_separate) }}/"
+                            <a href="https://mill.tokyo/?idol={{ genMillTokyoLinkText($idol->name_r,$idol->name_r_separate) }}"
                                class="button jwil" target="_blank">MillionLive Cards<span class="subline">mill.tokyo</span></a>
                         </div>
                     @endif
