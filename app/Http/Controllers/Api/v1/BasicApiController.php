@@ -16,4 +16,12 @@ class BasicApiController extends Controller
         $return['birthday'] = getIdolByBirthdate();
         return response()->json($return);
     }
+
+    public function routeFallback(){
+        return response()->json(['error' => [
+            'status' => 404,
+            'error' => 'Not Found',
+            'message' => 'There is nothing here.'
+        ]],404);
+    }
 }

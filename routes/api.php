@@ -19,12 +19,6 @@ Route::group(['middleware' => 'api'],function (){
         Route::get('status','BasicApiController@status');
     });
 
-    Route::fallback(function (){
-        return response()->json(['error' => [
-            'status' => 404,
-            'error' => 'Not Found',
-            'message' => 'There is nothing here.'
-        ]],404);
-    });
+    Route::fallback('Api\v1\BasicApiController@routeFallback');
 });
 
