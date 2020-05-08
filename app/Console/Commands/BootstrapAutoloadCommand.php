@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Console\Commands;
 
@@ -35,7 +35,7 @@ class BootstrapAutoloadCommand extends Command
      *
      * @return mixed
      */
-    public function handle()
+    public function handle():void
     {
         $autoloadPath = base_path('vendor/autoload.php');
         $helperPath = app_path('Helpers/OverrideHelper.php');
@@ -44,11 +44,14 @@ class BootstrapAutoloadCommand extends Command
         $before = file_get_contents($autoloadPath);
 
         // 先に自作ヘルパファイルを一番最初に読み込むようにする
-        $after = str_replace('<?php' . PHP_EOL, "<?php require_once '$helperPath';" . PHP_EOL, $before);
+        $after = str_replace('<?php' , "<?php require_once '$helperPath';" , $before);
 
         // オートローダーを上書きする
-        file_put_contents($autoloadPath, $after);
+        $rewrite = file_put_contents($autoloadPath, $after);
+        if($rewrite === FALSE || $rewrite === 0){
+            $this->error('Autoloader rewrite failed!');
+        }
 
-        return 0;
+        $this->info('Autoloader rewrited.');
     }
 }
