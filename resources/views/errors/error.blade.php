@@ -18,6 +18,7 @@ if(!empty($exception)){
     $code = $exception->getStatusCode();
     $desc = $status_desc[$code] ?? 'Error '.$code;
     $message = $exception->getMessage() ?: $status_message[$code] ?? 'A serious error has occurred. Please contact to administrator with error code.';
+    if($code === 500) $message = $status_message[500];
 }
 @endphp
 
