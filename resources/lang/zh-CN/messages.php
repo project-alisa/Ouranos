@@ -41,6 +41,6 @@ return [
     'searchwindow.notice' => '',
 
     'share.title' => '分享到长毛象',
-    'share.input' => '请输入要共享的实例链接',
+    'share.input' => '',
     'share.select' => '也可以从以下实例选择',
 ];
