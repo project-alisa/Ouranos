@@ -7,6 +7,7 @@ if(!function_exists('__')){
      * @param  array  $replace
      * @param  string|null  $locale
      * @return string|array|null
+     * @see \Illuminate\Translation\Translator
      */
     function __($key = null, $replace = [], $locale = null)
     {

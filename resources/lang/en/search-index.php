@@ -2,13 +2,14 @@
 return [
     'howtouse' => 'You can search by each condition alone, or enter several necessary conditions and consider them all.',
     'searchbyallcond' => 'Search by several condition',
+    'dropdown' => 'Select...',
 
     'name.header' => 'Search by name',
     'name.notice.0' => 'Search idols by name (Kanji or Hiragana or Alphabet)',
     'name.notice.1' => 'If there is only one search result, it will automatically transition to the details page.',
 
     'birthplace.header' => 'Search by birthplace',
-    'birthplace.notice' => 'Search idols by birthplace (Now only Japanese. Sorry.)',
+    'birthplace.notice' => 'Search idols by birthplace',
 
     'birthdate.header' => 'Search by birthdate',
     'birthdate.notice.0' => 'You can also search by specifying only month or day.',
