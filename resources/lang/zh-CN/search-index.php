@@ -2,7 +2,7 @@
 return [
     'howtouse' => '可以单条件搜索，也可以多条件搜索',
     'searchbyallcond' => '多条件搜索',
-    'dropdown' => '',
+    'dropdown' => '请选择',
 
     'name.header' => '姓名搜索',
     'name.notice.0' => '可以用汉字和假名搜索',
