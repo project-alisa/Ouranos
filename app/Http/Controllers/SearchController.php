@@ -49,46 +49,62 @@ class SearchController extends Controller
             switch($birthplace){
                 case "東北":
                     $ar = array("青森県","秋田県","岩手県","宮城県","福島県","山形県");
+                    $area = 'tohoku';
                     break;
                 case "関東":
                     $ar = array("東京都","神奈川県","千葉県","埼玉県","神奈川県","茨城県","栃木県","群馬県");
+                    $area = 'kanto';
                     break;
                 case "中部":
                     $ar = array("新潟県","富山県","石川県","福井県","山梨県","長野県","岐阜県","静岡県","愛知県");
+                    $area = 'chubu';
                     break;
                 case "近畿":
                     $ar = array("大阪府","兵庫県","京都府","滋賀県","奈良県","和歌山県","三重県","京都府？");
+                    $area = 'kinki';
                     break;
                 case "中国":
                     $ar = array("鳥取県","島根県","岡山県","広島県","山口県");
+                    $area = 'chugoku';
                     break;
                 case "四国":
                     $ar = array("香川県","徳島県","愛媛県","高知県");
+                    $area = 'shikoku';
                     break;
                 case "九州沖縄":
                     $ar = array("福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県","沖縄県");
+                    $area = 'kyushuokinawa';
                     break;
                 case "海外":
                     $ar = array("イギリス","ブラジル","オーストリア");
+                    $area = 'overseas';
                     break;
                 default:
                     $ar = array($birthplace);
+                    $area = false;
             }
             $search = $search->whereIn('birthplace',$ar);
-            $query_info[1] = array('type' => 'Birthplace', 'value' => $birthplace);
+            if($area){
+                $query_info[1] = array('type' => 'Birthplace', 'value' => __('place.area.'.$area));
+            }else{
+                $query_info[1] = array('type' => 'Birthplace', 'value' => __('place.pref.'.$birthplace));
+            }
         }
         if($month){ //誕生日 - 月
             $search = $search->whereRaw('MONTH(birthdate) = ?',[$month]);
             $order_by = "birthdate";
-            $query_info[2] = array('type' => 'Birthdate','value' => $month.'月生まれ');
+            if(\App::isLocale('ja')) $query_info[2] = array('type' => 'Birthdate','value' => $month.'月生まれ');
+            else $query_info[2] = array('type' => 'Birthdate','value' => $month.' / ?');
         }
         if($day){ // 誕生日 - 日
             $search = $search->whereRaw('DAY(birthdate) = ?',[$day]);
             $order_by = "birthdate";
-            $query_info[2] = array('type' => 'Birthdate','value' => $day.'日生まれ');
+            if(\App::isLocale('ja')) $query_info[2] = array('type' => 'Birthdate','value' => $day.'日生まれ');
+            else $query_info[2] = array('type' => 'Birthdate','value' => '? / '.$day);
         }
         if($month && $day){
-            $query_info[2] = array('type' => 'Birthdate','value' => $month.'月'.$day.'日生まれ');
+            if(\App::isLocale('ja')) $query_info[2] = array('type' => 'Birthdate','value' => $month.'月'.$day.'日生まれ');
+            else $query_info[2] = array('type' => 'Birthdate','value' => $month.' / '.$day);
         }
         if($age){
             if(!$range) abort(400,__('messages.search.error.range.empty'));
