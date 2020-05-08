@@ -74,21 +74,21 @@
                 <tr>
                     <th>{{ __('Hobby') }}</th>
                     <td colspan="5" class="ja">
-                        <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->hobby,App::getLocale()) ?>
+                        <?php if(!App::isLocale('ja') && !empty($idol->hobby)) echo genTranslationLink($idol->hobby,App::getLocale()) ?>
                         {{ $idol->hobby ?: __('N/A') }}
                     </td>
                 </tr>
                 <tr>
                     <th>{{ __('Skill') }}</th>
                     <td colspan="5" class="ja">
-                        <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->skill,App::getLocale()) ?>
+                        <?php if(!App::isLocale('ja') && !empty($idol->skill)) echo genTranslationLink($idol->skill,App::getLocale()) ?>
                         {{ $idol->skill ?: __('N/A') }}
                     </td>
                 </tr>
                 <tr>
                     <th>{{ __('Favorite') }}</th>
                     <td colspan="5" class="ja">
-                        <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->favorite,App::getLocale()) ?>
+                        <?php if(!App::isLocale('ja') && !empty($idol->favorite)) echo genTranslationLink($idol->favorite,App::getLocale()) ?>
                         {{ $idol->favorite ?: __('N/A') }}
                     </td>
                 </tr>
