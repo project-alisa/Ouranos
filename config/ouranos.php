@@ -2,8 +2,8 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '4.2.2 Dreamscape',
-    'phrase' => 'I\'ll be the freedom wind, with you.',
+    'version' => '5.0.0 EpisodeTiara',
+    'phrase' => 'A princess, who dreams earnestly.',
 
     'homeCardName' => env('HOME_CARD_NAME','yurikonanao_sunshinegirlofbeach'),
     'clockCardName' => env('CLOCK_CARD_NAME','shihokitazawa_therapistonboat'),
