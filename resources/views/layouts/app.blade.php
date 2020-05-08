@@ -86,15 +86,15 @@
         <nav class="headmenu">
             <ul>
                 <li><a href="{{ url('/') }}">ToP!!!!!!!!!!!!!</a></li>
-                <li><a href="{{ url('/idol') }}">{{ __fb('Idols list') }}</a></li>
-                <li><a href="{{ url('/search') }}">{{ __fb('Search') }}</a></li>
+                <li><a href="{{ url('/idol') }}">{{ __('Idols list') }}</a></li>
+                <li><a href="{{ url('/search') }}">{{ __('Search') }}</a></li>
                 <li><a href="{{ url('/clock') }}">Clock</a></li>
             </ul>
         </nav>
     </div>
     <div id="share_button">
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-hashtags="ML_Portal" data-show-count="false" style="opacity: 0">Tweet</a>
-        <a href="javascript:openShareWindow()" class="fedi">{{ __fb('Share') }}</a>
+        <a href="javascript:openShareWindow()" class="fedi">{{ __('Share') }}</a>
     </div>
 </header>
 
@@ -132,13 +132,13 @@
                 Language:
                 <select id="language">
                     @foreach(config('ouranos.acceptableLangs') as $lang)
-                        <option value="{{ $lang }}" @if(\App::isLocale($lang)) selected @endif>{{ __fb('locale.'.$lang) }}</option>
+                        <option value="{{ $lang }}" @if(\App::isLocale($lang)) selected @endif>{{ __('locale.'.$lang) }}</option>
                     @endforeach
                 </select>
             </label>
         </p>
         <div id="footlinks">
-            <a href="{{ url('/about') }}">{{ __fb('About this site') }}</a>
+            <a href="{{ url('/about') }}">{{ __('About this site') }}</a>
             <a href="{{ config('ouranos.repositoryUrl','https://github.com/project-alisa/Ouranos') }}" target="_blank">GitHub</a>
             @forelse(config('ouranos.footerLinkUrls') as $site => $link)
                 <a href="{{ $link }}" target="_blank">{{ $site }}</a>
@@ -157,9 +157,9 @@
     <div class="msgbox" style="width: 700px">
         <div class="msgboxtop">Share</div>
         <div class="msgboxbody">
-            <h2>{{ __fb('messages.share.title') }}</h2>
+            <h2>{{ __('messages.share.title') }}</h2>
             <div style="padding: 5px 10px 10px;text-align: center">
-                <p style="margin: 10px 15px;">{{ __fb('messages.share.input') }}</p>
+                <p style="margin: 10px 15px;">{{ __('messages.share.input') }}</p>
                 <label>
                     <input type="search" id="sm_instance" list="mastodon_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block;width: 450px">
                 </label>
@@ -173,7 +173,7 @@
                     <option value="misskey.io">
                     <option value="misskey.m544.net">
                 </datalist>
-                <p>{{ __fb('messages.share.select') }}</p>
+                <p>{{ __('messages.share.select') }}</p>
                 <hr>
                 <div class="buttonbox">
                     <a href="javascript:openTootWindow('imastodon.net')" class="mstdn il half">imastodon.net</a>
@@ -201,7 +201,7 @@
             </div>
         </div>
         <div class="msgboxfoot">
-            <a href="javascript:closeShareWindow()" class="button jw">{{ __fb('Close') }}</a>
+            <a href="javascript:closeShareWindow()" class="button jw">{{ __('Close') }}</a>
         </div>
     </div>
 </dialog>
@@ -224,23 +224,23 @@
 
 <dialog id="searchwindow">
     <div class="msgbox" style="width:550px">
-        <div class="msgboxtop">{{ __fb('Search') }}</div>
+        <div class="msgboxtop">{{ __('Search') }}</div>
         <div class="msgboxbody">
-            <h2>{{ __fb('search-index.name.header') }}</h2>
+            <h2>{{ __('search-index.name.header') }}</h2>
             <div style="text-align: center">
                 <form action="{{ url('/search') }}" method="get" name="name" style="text-align: center">
-                    <input type="search" name="name" class="textarea" required style="width: 300px" title="{{ __fb('Name') }}" placeholder="{{ __fb('Name') }}">
-                    <input type="submit" value="{{ __fb('Search') }}" class="button main">
+                    <input type="search" name="name" class="textarea" required style="width: 300px" title="{{ __('Name') }}" placeholder="{{ __('Name') }}">
+                    <input type="submit" value="{{ __('Search') }}" class="button main">
                 </form>
             </div>
             <hr>
             <p style="text-align: center;margin: 10px">
-                {{ __fb('messages.searchwindow.notice') }}
+                {{ __('messages.searchwindow.notice') }}
             </p>
         </div>
         <div class="msgboxfoot">
-            <a href="javascript:searchwindow.close()" class="button jw">{{ __fb('Close') }}</a>
-            <a href="{{ url('/search') }}" class="button jw">{{ __('messages.common.goto',['page' => __fb('Search')]) }}</a>
+            <a href="javascript:searchwindow.close()" class="button jw">{{ __('Close') }}</a>
+            <a href="{{ url('/search') }}" class="button jw">{{ __('messages.common.goto',['page' => __('Search')]) }}</a>
         </div>
     </div>
 </dialog>

@@ -8,11 +8,11 @@ $status_desc = array(
     'default' => 'Something Wrong'
 );
 $status_message = array(
-    400 => __fb('messages.400'),
-    403 => __fb('messages.403'),
-    404 => __fb('messages.404'),
-    500 => __fb('messages.500'),
-    503 => __fb('messages.503')
+    400 => __('messages.400'),
+    403 => __('messages.403'),
+    404 => __('messages.404'),
+    500 => __('messages.500'),
+    503 => __('messages.503')
 );
 if(!empty($exception)){
     $code = $exception->getStatusCode();

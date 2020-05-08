@@ -31,16 +31,16 @@
             <div class="msgboxbody">
                 <div style="text-align: center">
                     <p style="font-size: 24px">Welcome!!</p>
-                    <p>{{ __fb('messages.home.description') }}</p>
+                    <p>{{ __('messages.home.description') }}</p>
                     <hr>
                     <div class="buttonbox">
                         <a href="{{ url('/idol') }}" class="button jwil">
-                            {{ __fb('Idols list') }}
-                            <span class="subline">{{ __fb('messages.idol.show.desc') }}</span>
+                            {{ __('Idols list') }}
+                            <span class="subline">{{ __('messages.idol.show.desc') }}</span>
                         </a>
                         <a href="{{ url('/search') }}" class="button jwil">
-                            {{ __fb('Search') }}
-                            <span class="subline">{{ __fb('messages.search.index.desc') }}</span>
+                            {{ __('Search') }}
+                            <span class="subline">{{ __('messages.search.index.desc') }}</span>
                         </a>
                     </div>
                 </div>
@@ -60,11 +60,11 @@
         <div id="twinbox">
             <div id="contentwide">
                 <div class="msgbox">
-                    <div class="msgboxtop">{{ __fb('messages.home.latestnews') }}</div>
+                    <div class="msgboxtop">{{ __('messages.home.latestnews') }}</div>
                     <div class="msgboxbody">
                         <p>
                             <a href="https://mstdn.miyacorata.net/@ml_portal" class="mstdn" target="_blank">ml_portal<span>mstdn.miyacorata.net</span></a>
-                            {{ __fb('messages.home.mastodon') }}
+                            {{ __('messages.home.mastodon') }}
                         </p>
                         <hr>
                         <div style="height: 500px;overflow-y: scroll">

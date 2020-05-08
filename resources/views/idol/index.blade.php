@@ -1,10 +1,10 @@
-@extends('layouts.app',['title' => $type.' '.__fb('Idols list'), 'sub' => __fb('messages.idol.index.desc')])
+@extends('layouts.app',['title' => $type.' '.__('Idols list'), 'sub' => __('messages.idol.index.desc')])
 
 @section('content')
     <div id="twinbox">
         <div id="contentwide">
             <div class="msgbox">
-                <div class="msgboxtop">{{ __fb('Idols list') }}</div>
+                <div class="msgboxtop">{{ __('Idols list') }}</div>
                 <div class="msgboxbody">
                     <?php
                     $current_lang = App::getLocale();
@@ -19,7 +19,7 @@
         </div>
         <div id="contentnarrow">
             <div class="msgbox">
-                <div class="msgboxtop">{{ __fb('messages.idol.index.typeselect') }}</div>
+                <div class="msgboxtop">{{ __('messages.idol.index.typeselect') }}</div>
                 <div class="msgboxbody">
                     <div class="buttonbox">
                         <a class="button jwil{{ $type === 'Princess' ? ' selected' : '' }}" href="{{ url('/idol?type=Princess') }}">
@@ -39,9 +39,9 @@
             <div class="msgbox">
                 <div class="msgboxtop">Inform@tion</div>
                 <div class="msgboxbody">
-                    <h2>{{ __fb('messages.idol.index.typedetail',['type' => $type ?: 'All']) }}</h2>
+                    <h2>{{ __('messages.idol.index.typedetail',['type' => $type ?: 'All']) }}</h2>
                     <p>
-                        {{ __fb('messages.common.numbersof',['type' => $type.' '.__fb('Idol')]) }}：{{ $idol_count }}
+                        {{ __('messages.common.numbersof',['type' => $type.' '.__('Idol')]) }}：{{ $idol_count }}
                     </p>
                 </div>
                 <div class="msgboxfoot"></div>

@@ -1,20 +1,20 @@
-@extends('layouts.app',['title' => __fb('Search'), 'sub' => __fb('messages.search.index.desc')])
+@extends('layouts.app',['title' => __('Search'), 'sub' => __('messages.search.index.desc')])
 
 @section('content')
     <div id="twinbox">
         <div id="contentwide">
             <div class="msgbox">
-                <div class="msgboxtop">{{ __fb('Search') }}</div>
+                <div class="msgboxtop">{{ __('Search') }}</div>
                 <div class="msgboxbody">
-                    <h2>{{ __fb('search-index.name.header') }}</h2>
+                    <h2>{{ __('search-index.name.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="name" style="text-align: center">
-                        <input type="search" name="name" class="textarea" required style="width: 300px" title="{{ __fb('Name') }}" placeholder="{{ __fb('Name') }}">
-                        <input type="submit" value="{{ __fb('Search') }}" class="button">
+                        <input type="search" name="name" class="textarea" required style="width: 300px" title="{{ __('Name') }}" placeholder="{{ __('Name') }}">
+                        <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
-                        {{ __fb('search-index.name.notice.0') }}<br>{{ __fb('search-index.name.notice.1') }}
+                        {{ __('search-index.name.notice.0') }}<br>{{ __('search-index.name.notice.1') }}
                     </p>
-                    <h2>{{ __fb('search-index.birthplace.header') }}</h2>
+                    <h2>{{ __('search-index.birthplace.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="birthplace" style="text-align: center">
                         <select name="birthplace" title="出身地を選択">
                             <option value="" disabled selected>選択してください</option>
@@ -102,14 +102,14 @@
                                 <option value="不明">不明</option>
                             </optgroup>
                         </select>
-                        <input type="submit" value="{{ __fb('Search') }}" class="button">
+                        <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
-                        {{ __fb('search-index.birthplace.notice') }}
+                        {{ __('search-index.birthplace.notice') }}
                     </p>
-                    <h2>{{ __fb('search-index.birthdate.header') }}</h2>
+                    <h2>{{ __('search-index.birthdate.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="birthday" style="text-align: center">
-                        <select name="month" title="{{ __fb('Month') }}">
+                        <select name="month" title="{{ __('Month') }}">
                             <option value="u" selected>-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -124,7 +124,7 @@
                             <option value="11">11</option>
                             <option value="12">12</option>
                         </select><span style="margin:0 4px">{{ App::isLocale('ja') ? '月' : '/' }}</span>
-                        <select name="day" title="{{ __fb('Day') }}">
+                        <select name="day" title="{{ __('Day') }}">
                             <option value="u" selected>-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -158,30 +158,30 @@
                             <option value="30">30</option>
                             <option value="31">31</option>
                         </select><span style="margin:0 4px">{{ App::isLocale('ja') ? '日' : '' }}</span>
-                        <input type="submit" value="{{ __fb('Search') }}" class="button">
+                        <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
-                        {{ __fb('search-index.birthdate.notice.0') }}<br>
-                        {{ __fb('search-index.birthdate.notice.1') }}<br>
-                        {{ __fb('search-index.birthdate.notice.2') }}
+                        {{ __('search-index.birthdate.notice.0') }}<br>
+                        {{ __('search-index.birthdate.notice.1') }}<br>
+                        {{ __('search-index.birthdate.notice.2') }}
                     </p>
-                    <h2>{{ __fb('search-index.age.header') }}</h2>
+                    <h2>{{ __('search-index.age.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="age" style="text-align:center;">
-                        <input type="number" name="age" title="{{ __fb('search-index.age.input') }}" placeholder="{{ __fb('search-index.age.input') }}" class="textarea" max="40" min="10" required style="width: 110px;padding-left:15px">
-                        <span style="margin: 4px 0;font-weight: bold">{{ __fb('years old') }}</span>
-                        <select name="range" class="select" title="{{ __fb('search-index.age.range') }}">
-                            <option value="higher">{{ __fb('search-index.age.range.older') }}</option>
-                            <option value="equal" selected>{{ __fb('search-index.age.range.equal') }}</option>
-                            <option value="lower">{{ __fb('search-index.age.range.younger') }}</option>
+                        <input type="number" name="age" title="{{ __('search-index.age.input') }}" placeholder="{{ __('search-index.age.input') }}" class="textarea" max="40" min="10" required style="width: 110px;padding-left:15px">
+                        <span style="margin: 4px 0;font-weight: bold">{{ __('years old') }}</span>
+                        <select name="range" class="select" title="{{ __('search-index.age.range') }}">
+                            <option value="higher">{{ __('search-index.age.range.older') }}</option>
+                            <option value="equal" selected>{{ __('search-index.age.range.equal') }}</option>
+                            <option value="lower">{{ __('search-index.age.range.younger') }}</option>
                         </select>
-                        <input type="submit" value="{{ __fb('Search') }}" class="button">
+                        <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
-                        {{ __fb('search-index.age.notice') }}
+                        {{ __('search-index.age.notice') }}
                     </p>
                 </div>
                 <div class="msgboxfoot">
-                    <a href="javascript:searchByAllCondition()" class="button jw">{{ __fb('search-index.searchbyallcond') }}</a>
+                    <a href="javascript:searchByAllCondition()" class="button jw">{{ __('search-index.searchbyallcond') }}</a>
                     <script>
                         function searchByAllCondition(){
                             var url = location.pathname+'?';
@@ -200,11 +200,11 @@
             <div class="msgbox">
                 <div class="msgboxtop">Inform@tion</div>
                 <div class="msgboxbody">
-                    <h3>{{ __fb('How to use') }}</h3>
-                    <p>{{ __fb('search-index.howtouse') }}</p>
+                    <h3>{{ __('How to use') }}</h3>
+                    <p>{{ __('search-index.howtouse') }}</p>
                 </div>
                 <div class="msgboxfoot">
-                    <a class="button jw" href="javascript:location.reload()">{{ __fb('Reset') }}</a>
+                    <a class="button jw" href="javascript:location.reload()">{{ __('Reset') }}</a>
                 </div>
             </div>
         </div>

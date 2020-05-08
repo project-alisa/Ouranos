@@ -1,4 +1,4 @@
-@extends('layouts.app',['title' => $title, 'sub' => __fb('messages.idol.show.desc'), 'css' => 'idol'])
+@extends('layouts.app',['title' => $title, 'sub' => __('messages.idol.show.desc'), 'css' => 'idol'])
 
 @section('content')
     @if(date('2017-m-d') === $idol->birthdate) {{-- 2017-m-d --}}
@@ -20,10 +20,10 @@
                 </div>
                 <table id="idolinfo">
                     <tr>
-                        <th title="{{ __fb('messages.idol.show.dbid') }}">{{ __fb('Database ID') }}</th><td>{{ $idol->id }}</td>
+                        <th title="{{ __('messages.idol.show.dbid') }}">{{ __('Database ID') }}</th><td>{{ $idol->id }}</td>
                     </tr>
                     <tr>
-                        <th title="{{ __fb('messages.idol.show.type') }}">{{ __fb('Idol').(\App::isLocale('ja') ? '' : ' ').__fb('Type') }}</th>
+                        <th title="{{ __('messages.idol.show.type') }}">{{ __('Idol').(\App::isLocale('ja') ? '' : ' ').__('Type') }}</th>
                         <td>
                             <span style="{{ empty($idol->greemas_type) ? 'font-style:italic' : 'color:'.getTypeColor($idol->greemas_type) }}" title="GREE Ver">
                                 {{ $idol->greemas_type ?? 'N/A' }}</span> /
@@ -31,7 +31,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>{{ __fb('Personal Color') }}</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
+                        <th>{{ __('Personal Color') }}</th><td style="color:{{ '#'.($idol->color ?: '000') }}">
                             {{ !empty($idol->color) ? '■ #'.str_replace('#','',$idol->color) : 'N/A' }}
                         </td>
                     </tr>
@@ -45,72 +45,72 @@
                     if(!empty($idol->subname)) $namestr .= ' ('.$idol->subname.')';
                     $dateflag = App::isLocale('ja') ? 'ja' : 'slash';
                     $urlname = urlencode($idol->name) ?>
-                    <th>{{ __fb('Name') }}</th><td colspan="2" class="ja">{{ $namestr }}</td>
-                    <th>{{ __fb('CV') }}</th><td colspan="2" class="ja">{{ $idol->cv }}</td>
+                    <th>{{ __('Name') }}</th><td colspan="2" class="ja">{{ $namestr }}</td>
+                    <th>{{ __('CV') }}</th><td colspan="2" class="ja">{{ $idol->cv }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Hiragana') }}</th><td colspan="2" class="ja">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
-                    <th>{{ __fb('Chinese')  }}</th><td colspan="2" class="zh_TW">{{ $idol->name_zh ? separateString($idol->name_zh,$idol->name_zh_separate) : __fb('N/A') }}</td>
+                    <th>{{ __('Hiragana') }}</th><td colspan="2" class="ja">{{ separateString($idol->name_y,$idol->name_y_separate) }}</td>
+                    <th>{{ __('Chinese')  }}</th><td colspan="2" class="zh_TW">{{ $idol->name_zh ? separateString($idol->name_zh,$idol->name_zh_separate) : __('N/A') }}</td>
                 </tr>
                 <tr>
                     <th>Alphabet</th><td colspan="2">{{ ucwords(separateString($idol->name_r,$idol->name_r_separate)) }}</td>
-                    <th>{{ __fb('Hangul') }}</th><td colspan="2">{{ $idol->name_ko ? separateString($idol->name_ko,$idol->name_ko_separate) : __fb('N/A') }}</td>
+                    <th>{{ __('Hangul') }}</th><td colspan="2">{{ $idol->name_ko ? separateString($idol->name_ko,$idol->name_ko_separate) : __('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Birthdate') }}</th><td>{{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : __fb('N/A') }}</td>
-                    <th>{{ __fb('Height') }}</th><td>{{ $idol->height ?: '? ' }}cm</td>
-                    <th>{{ __fb('Blood type') }}</th><td>{{ $idol->bloodtype ?: __fb('N/A') }}</td>
+                    <th>{{ __('Birthdate') }}</th><td>{{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : __('N/A') }}</td>
+                    <th>{{ __('Height') }}</th><td>{{ $idol->height ?: '? ' }}cm</td>
+                    <th>{{ __('Blood type') }}</th><td>{{ $idol->bloodtype ?: __('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Age') }}</th><td>{{ $idol->age ? $idol->age.(!App::isLocale('en') ? __fb('years old') : '') : __fb('N/A')}}</td>
-                    <th>{{ __fb('Weight') }}</th><td>{{ $idol->weight ?: '? ' }}kg</td>
-                    <th>{{ __fb('Handedness') }}</th><td>{{ __fb(translateHandedness($idol->handedness)) ?: __fb('N/A') }}</td>
+                    <th>{{ __('Age') }}</th><td>{{ $idol->age ? $idol->age.(!App::isLocale('en') ? __('years old') : '') : __('N/A')}}</td>
+                    <th>{{ __('Weight') }}</th><td>{{ $idol->weight ?: '? ' }}kg</td>
+                    <th>{{ __('Handedness') }}</th><td>{{ __(translateHandedness($idol->handedness)) ?: __('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Birthplace') }}</th><td class="ja"><a href="{{ url('/search').'?birthplace='.$idol->birthplace }}">{{ $idol->birthplace ?: '不明' }}</a></td>
-                    <th>BMI</th><td>{{ calcBmi($idol->height,$idol->weight) ?: __fb('N/A') }}</td>
-                    <th>{{ __fb('3 size') }}</th><td>{{ $idol->bust ? $idol->bust.' / '.$idol->waist.' / '.$idol->hip : __fb('N/A') }}</td>
+                    <th>{{ __('Birthplace') }}</th><td class="ja"><a href="{{ url('/search').'?birthplace='.$idol->birthplace }}">{{ $idol->birthplace ?: '不明' }}</a></td>
+                    <th>BMI</th><td>{{ calcBmi($idol->height,$idol->weight) ?: __('N/A') }}</td>
+                    <th>{{ __('3 size') }}</th><td>{{ $idol->bust ? $idol->bust.' / '.$idol->waist.' / '.$idol->hip : __('N/A') }}</td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Hobby') }}</th>
+                    <th>{{ __('Hobby') }}</th>
                     <td colspan="5" class="ja">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->hobby,App::getLocale()) ?>
-                        {{ $idol->hobby ?: __fb('N/A') }}
+                        {{ $idol->hobby ?: __('N/A') }}
                     </td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Skill') }}</th>
+                    <th>{{ __('Skill') }}</th>
                     <td colspan="5" class="ja">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->skill,App::getLocale()) ?>
-                        {{ $idol->skill ?: __fb('N/A') }}
+                        {{ $idol->skill ?: __('N/A') }}
                     </td>
                 </tr>
                 <tr>
-                    <th>{{ __fb('Favorite') }}</th>
+                    <th>{{ __('Favorite') }}</th>
                     <td colspan="5" class="ja">
                         <?php if(!App::isLocale('ja')) echo genTranslationLink($idol->favorite,App::getLocale()) ?>
-                        {{ $idol->favorite ?: __fb('N/A') }}
+                        {{ $idol->favorite ?: __('N/A') }}
                     </td>
                 </tr>
             </table>
             <div id="idollinks">
                 <div>
-                    <h2>{{ __fb('Encyclopedia') }}</h2>
+                    <h2>{{ __('Encyclopedia') }}</h2>
                     <div class="buttonbox">
                         <a href="https://dic.nicovideo.jp/a/{{ urlencode($idol->name) }}" class="button jwil" target="_blank">
-                            {{ __fb('niconico Pedia') }}
+                            {{ __('niconico Pedia') }}
                         </a>
                         <a href="https://dic.pixiv.net/a/{{ urlencode($idol->name) }}" class="button jwil" target="_blank">
-                            {{ __fb('pixiv encyclopedia (ja)') }}
+                            {{ __('pixiv encyclopedia (ja)') }}
                         </a>
                     </div>
                 </div>
                 <div>
-                    <h2>{{ __fb('Musics info') }}</h2>
+                    <h2>{{ __('Musics info') }}</h2>
                     <div class="buttonbox">
                         <a href="https://fujiwarahaji.me/idol/765/{{ $idol->name_r }}" class="button jwil" target="_blank">
-                            {{ __fb('fujiwarahaji.me') }}
-                            <span class="subline">{{ __fb('THE IDOLM@STER Musics DB') }}</span>
+                            {{ __('fujiwarahaji.me') }}
+                            <span class="subline">{{ __('THE IDOLM@STER Musics DB') }}</span>
                         </a>
                     </div>
                 </div>
@@ -120,55 +120,55 @@
     <div id="twinbox">
         <div id="contentwide">
             <div class="msgbox">
-                <div class="msgboxtop">{{ __fb('mediasearch.title') }}</div>
+                <div class="msgboxtop">{{ __('mediasearch.title') }}</div>
                 <div class="msgboxbody">
-                    <h2>{{ __fb('mediasearch.twitter') }}</h2>
+                    <h2>{{ __('mediasearch.twitter') }}</h2>
                     <div class="buttonbox">
                         <a href="https://twitter.com/search?q={{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f50e; {{ __fb('mediasearch.twitter.normal') }}<br><span class="subline">{{ __fb('mediasearch.twitter.normal.desc') }}</span>
+                            &#x1f50e; {{ __('mediasearch.twitter.normal') }}<br><span class="subline">{{ __('mediasearch.twitter.normal.desc') }}</span>
                         </a>
                         <a href="https://twitter.com/search?f=live&q={{ $urlname }}" class="button jwil" target="_blank">
-                            &#x231a; {{ __fb('mediasearch.twitter.realtime') }}<br><span class="subline">{{ __fb('mediasearch.twitter.realtime.desc') }}</span>
+                            &#x231a; {{ __('mediasearch.twitter.realtime') }}<br><span class="subline">{{ __('mediasearch.twitter.realtime.desc') }}</span>
                         </a>
                         <a href="https://twitter.com/search?f=user&q={{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f1f5; {{ __fb('mediasearch.twitter.user') }}<br><span class="subline">{{ __fb('mediasearch.twitter.user.desc') }}</span>
+                            &#x1f1f5; {{ __('mediasearch.twitter.user') }}<br><span class="subline">{{ __('mediasearch.twitter.user.desc') }}</span>
                         </a>
                         <a href="https://twitter.com/search?f=image&q={{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f4f7; {{ __fb('mediasearch.twitter.image') }}<br><span class="subline">{{ __fb('mediasearch.twitter.image.desc') }}</span>
+                            &#x1f4f7; {{ __('mediasearch.twitter.image') }}<br><span class="subline">{{ __('mediasearch.twitter.image.desc') }}</span>
                         </a>
                         <a href="https://twitter.com/search?f=video&q={{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f4f9; {{ __fb('mediasearch.twitter.video') }}<br><span class="subline">{{ __fb('mediasearch.twitter.video.desc') }}</span>
+                            &#x1f4f9; {{ __('mediasearch.twitter.video') }}<br><span class="subline">{{ __('mediasearch.twitter.video.desc') }}</span>
                         </a>
                         <a href="https://azure-gallery.net/?query=imas%3A{{ $urlname }}" class="button jwil" target="_blank">
-                            &#x2693; {{ __fb('mediasearch.twitter.azure') }}<br><span class="subline">{{ __fb('mediasearch.twitter.azure.desc') }}</span>
+                            &#x2693; {{ __('mediasearch.twitter.azure') }}<br><span class="subline">{{ __('mediasearch.twitter.azure.desc') }}</span>
                         </a>
                     </div>
                     <p class="notification">
-                        {{ __fb('mediasearch.twitter.notice.0') }}<br>
-                        {{ __fb('mediasearch.twitter.notice.1') }}
+                        {{ __('mediasearch.twitter.notice.0') }}<br>
+                        {{ __('mediasearch.twitter.notice.1') }}
                     </p>
-                    <h2>{{ __fb('mediasearch.niconico') }}</h2>
+                    <h2>{{ __('mediasearch.niconico') }}</h2>
                     <div class="buttonbox">
                         <a href="http://www.nicovideo.jp/search/{{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f4fa; {{ __fb('mediasearch.niconico.keyword') }}
+                            &#x1f4fa; {{ __('mediasearch.niconico.keyword') }}
                         </a>
                         <a href="http://www.nicovideo.jp/tag/{{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f4fa; {{ __fb('mediasearch.niconico.tag') }}
+                            &#x1f4fa; {{ __('mediasearch.niconico.tag') }}
                         </a>
                         <a href="http://seiga.nicovideo.jp/tag/{{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f3a8; {{ __fb('mediasearch.niconico.seiga') }}
+                            &#x1f3a8; {{ __('mediasearch.niconico.seiga') }}
                         </a>
                     </div>
-                    <h2>{{ __fb('mediasearch.pixiv') }}</h2>
+                    <h2>{{ __('mediasearch.pixiv') }}</h2>
                     <div class="buttonbox">
                         <a href="https://www.pixiv.net/search.php?s_mode=s_tag_full&word={{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f3a8; {{ __fb('mediasearch.pixiv.tag') }}<br><span class="subline">{{ __fb('mediasearch.pixiv.tag.desc') }}</span>
+                            &#x1f3a8; {{ __('mediasearch.pixiv.tag') }}<br><span class="subline">{{ __('mediasearch.pixiv.tag.desc') }}</span>
                         </a>
                         <a href="https://www.pixiv.net/search.php?s_mode=s_tc&word={{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f3a8; {{ __fb('mediasearch.pixiv.keyword') }}<br><span class="subline">{{ __fb('mediasearch.pixiv.keyword.desc') }}</span>
+                            &#x1f3a8; {{ __('mediasearch.pixiv.keyword') }}<br><span class="subline">{{ __('mediasearch.pixiv.keyword.desc') }}</span>
                         </a>
                         <a href="https://www.pixiv.net/novel/tags.php?tag={{ $urlname }}" class="button jwil" target="_blank">
-                            &#x1f4dd; {{ __fb('mediasearch.pixiv.novel') }}<br><span class="subline">{{ __fb('mediasearch.pixiv.novel.desc') }}</span>
+                            &#x1f4dd; {{ __('mediasearch.pixiv.novel') }}<br><span class="subline">{{ __('mediasearch.pixiv.novel.desc') }}</span>
                         </a>
                     </div>
                 </div>
@@ -179,14 +179,14 @@
             <div class="msgbox">
                 <div class="msgboxtop">TheaterDays info</div>
                 <div class="msgboxbody">
-                    <h2>{{ __fb('messages.idol.show.mltd.ja') }}</h2>
+                    <h2>{{ __('messages.idol.show.mltd.ja') }}</h2>
                     <div class="buttonbox">
                         <a href="https://mltd.matsurihi.me/cards/#idol-list-{{ $idol->id }}" class="button jwil" target="_blank">
-                            {{ __fb('messages.idol.show.mltd.ja.cards') }}
+                            {{ __('messages.idol.show.mltd.ja.cards') }}
                             <span class="subline">matsurihi.me Fantasia</span>
                         </a>
                     </div>
-                    <h2>{{ __fb('messages.idol.show.mltd.oversea') }}</h2>
+                    <h2>{{ __('messages.idol.show.mltd.oversea') }}</h2>
                     @if(!empty($idol->cknameid))
                         <div class="buttonbox">
                             <a href="https://mltd.matsurihi.me/zh/cards/#idol-list-{{ $idol->id }}" class="button jw" target="_blank">
@@ -197,7 +197,7 @@
                             </a>
                         </div>
                     @else
-                        <p class="notice">{{ __fb('messages.idol.show.mltd.oversea.none') }}</p>
+                        <p class="notice">{{ __('messages.idol.show.mltd.oversea.none') }}</p>
                     @endif
                 </div>
                 <div class="msgboxfoot"></div>
@@ -207,7 +207,7 @@
                 <div class="msgboxbody">
                     @if(empty($idol->greemas_type))
                         <p class="notice">
-                            {{ __fb('messages.idol.show.gree.none') }}
+                            {{ __('messages.idol.show.gree.none') }}
                         </p>
                     @else
                         <div class="buttonbox">

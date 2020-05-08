@@ -1,4 +1,4 @@
-@extends('layouts.app',['title' => __fb('About this site')])
+@extends('layouts.app',['title' => __('About this site')])
 
 @section('style')
     <style>
@@ -26,7 +26,7 @@
 
 @section('content')
 <div class="msgbox">
-    <div class="msgboxtop">{{ __fb('About this site') }}</div>
+    <div class="msgboxtop">{{ __('About this site') }}</div>
     <div class="msgboxbody">
         <div style="display: flex;align-items: center;justify-content: center;margin: 25px auto">
             <img src="{{ asset('image/icon/'.$selected_idol->name_r.'/0.png') }}"
@@ -45,7 +45,7 @@
         <hr>
         @if(\App::isLocale('ja'))
             <h2>MillionLivePortalとは？</h2>
-            <p>{{ __fb('messages.home.description') }}</p>
+            <p>{{ __('messages.home.description') }}</p>
             <p>
                 アイドルのプロフィール検索はもちろんのこと、そこからニコニコ動画、pixivなどの動画・イラストを検索したり、
                 ニコニコ大百科やピクシブ百科事典にジャンプしてさらに詳しく調べたり、
@@ -75,7 +75,7 @@
                     現在、以下の言語で利用できます。
                     <p class="notification">
                         @foreach(config('ouranos.acceptableLangs') as $lang)
-                            {{ __fb('locale.'.$lang) }}
+                            {{ __('locale.'.$lang) }}
                         @endforeach
                         {{ '：計'.count(config('ouranos.acceptableLangs')).'言語' }}
                     </p>
@@ -109,7 +109,7 @@
             <a title="Crowdin" target="_blank" href="https://crowdin.com/project/ouranos"><img src="https://badges.crowdin.net/ouranos/localized.svg"></a>
         @else
             <h2>What is MillionLivePortal?</h2>
-            <p>{{ __fb('messages.home.description') }}</p>
+            <p>{{ __('messages.home.description') }}</p>
             <h2>Please help us!</h2>
             <p>
                 MLP is looking for someone to help translate this website.<br>

@@ -12,7 +12,7 @@
             @if(!empty($exception->getMessage()))
                 {{ $exception->getMessage() }}
             @else
-                {{ __fb('You don\'t have a permission to access to this page.') }}
+                {{ __('You don\'t have a permission to access to this page.') }}
             @endif
         </p>
     </div>
