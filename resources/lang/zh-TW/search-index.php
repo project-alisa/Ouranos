@@ -2,6 +2,7 @@
 return [
     'howtouse' => '',
     'searchbyallcond' => '',
+    'dropdown' => '',
 
     'name.header' => '',
     'name.notice.0' => '',
