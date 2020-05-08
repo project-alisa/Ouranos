@@ -64,5 +64,5 @@ return [
     'pref.ブラジル' => 'Brazil',
     'pref.オーストリア' => 'Austria',
 
-    'pref.不明' => '不明',
+    'pref.不明' => 'Unknown',
 ];
