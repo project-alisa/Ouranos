@@ -1,5 +1,5 @@
 <?php
-if(!function_exists('__fb')){
+if(!function_exists('__')){
     /**
      * 翻訳関数(空文字列時のフォールバック付)
      *
@@ -8,7 +8,7 @@ if(!function_exists('__fb')){
      * @param  string|null  $locale
      * @return string|array|null
      */
-    function __fb($key = null, $replace = [], $locale = null)
+    function __($key = null, $replace = [], $locale = null)
     {
         if (is_null($key)) {
             return $key;

@@ -14,6 +14,7 @@ class HelperServiceProvider extends ServiceProvider
     public function register()
     {
         foreach(glob(app_path().'/Helpers/*.php') as $file){
+            if(strpos($file ,'OverrideHelper.php') !== FALSE) continue;
             require_once $file;
         }
     }
