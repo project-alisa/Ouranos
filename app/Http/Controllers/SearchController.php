@@ -33,7 +33,9 @@ class SearchController extends Controller
         }
 
         // 検索開始
-        $search = Idol::select();
+        $search = Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
+            'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
+            'c_k_names.subname_zh','c_k_names.subname_ko');
         $query_info = array();
         $order_by = "id";
         $order_direction = "asc";

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use App\Idol;
 
 class IdolController extends Controller
 {
@@ -14,19 +15,34 @@ class IdolController extends Controller
      */
     public function index(Request $request)
     {
+        // 属性絞り込み
         $type = $request->input('type') ?: false;
         if(!empty($type) and array_search($type,config('ouranos.acceptableTypes')) === false){
             abort(404,__('messages.idol.index.incorrect'));
         }elseif(!empty($type)){
-            $idols = \App\Idol::select()->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')->where('type',$type)->get();
+            $idols = Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
+                'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
+                'c_k_names.subname_zh','c_k_names.subname_ko')
+                ->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')->where('type',$type)->get();
             if($idols->isEmpty()) abort(404);
             $idol_count = $idols->count();
         }else{
-            $idols = \App\Idol::select()->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')->get();
+            $idols = Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
+                'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
+                'c_k_names.subname_zh','c_k_names.subname_ko')
+                ->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')->get();
             $idol_count = $idols->count();
         }
         $description = 'アイドルを属性ごとに一覧できます。'.config('ouranos.defaultDescription');
-        return view('idol.index',compact('idols','type','idol_count','description'));
+
+        // 動作モード
+        $mode = $request->input('mode') ?: 'normal';
+        if($mode !== 'normal' && $mode !== 'sortable')abort(400);
+        if($mode === 'normal'){
+            return view('idol.index',compact('idols','type','idol_count','description'));
+        }else /*if ($mode === 'sortable')*/{
+            return view('idol.index-table',compact('idols','type','idol_count','description'));
+        }
     }
 
     /**
@@ -59,7 +75,7 @@ class IdolController extends Controller
     public function show($name_r)
     {
         try{
-            $idol = \App\Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
+            $idol = Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
                 'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
                 'c_k_names.subname_zh','c_k_names.subname_ko')
                 ->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')
