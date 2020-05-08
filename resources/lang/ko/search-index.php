@@ -2,6 +2,7 @@
 return [
     'howtouse' => '단일 조건 검색 및 여러 조건의 검색도 가능합니다.',
     'searchbyallcond' => '여러 조건으로 검색',
+    'dropdown' => '',
 
     'name.header' => '이름으로 검색',
     'name.notice.0' => '한자, 히라가나 또는 알파벳으로 검색할 수 있습니다.',
