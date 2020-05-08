@@ -7,7 +7,7 @@ return [
     '503' => '由于访问过多，目前无法加载此页面',
 
     'common.numbersof' => ':type的人数',
-    'common.goto' => '',
+    'common.goto' => '前往:page页面',
 
     'home.description' => 'MillionLivePortal是「偶像大师百万现场！」的非官方数据库＆导航站',
     'home.latestnews' => '最新信息',
@@ -38,9 +38,9 @@ return [
     'search.error.range.empty' => '未指定年龄搜索范围',
     'search.error.range.invalid' => '年龄的搜索范围不正确',
     'search.error.birthdate.invalid' => '请指定月份或日期',
-    'searchwindow.notice' => '',
+    'searchwindow.notice' => '在搜索页面可以进行更详细的搜索。',
 
     'share.title' => '分享到长毛象',
-    'share.input' => '',
+    'share.input' => '请输入要分享的实例链接',
     'share.select' => '也可以从以下实例选择',
 ];
