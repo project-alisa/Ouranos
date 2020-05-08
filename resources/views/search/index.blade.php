@@ -16,92 +16,96 @@
                     </p>
                     <h2>{{ __('search-index.birthplace.header') }}</h2>
                     <form action="{{ url('/search') }}" method="get" name="birthplace" style="text-align: center">
-                        <select name="birthplace" title="出身地を選択">
-                            <option value="" disabled selected>選択してください</option>
-                            <optgroup label="北海道地方">
-                                <option value="北海道">北海道</option>
-                            </optgroup>
-                            <optgroup label="東北地方">
-                                <option value="null" disabled style="background: rgba(0,0,0,0.2)">該当なし</option>
-                                <!--<option value="東北">東北地方全域</option>
-                                <option value="青森">青森</option>
-                                <option value="岩手">岩手</option>
-                                <option value="宮城">宮城</option>
-                                <option value="秋田">秋田</option>
-                                <option value="山形">山形</option>
-                                <option value="福島">福島</option>-->
-                            </optgroup>
-                            <optgroup label="関東地方">
-                                <option value="関東">関東地方全域</option>
-                                <option value="東京都">東京都</option>
-                                <option value="神奈川県">神奈川県</option>
-                                <option value="埼玉県">埼玉県</option>
-                                <option value="千葉県">千葉県</option>
-                                <option value="茨城県">茨城県</option>
-                                <!--<option value="栃木">栃木</option>
-                                <option value="群馬">群馬</option>-->
-                            </optgroup>
-                            <optgroup label="中部地方">
-                                <option value="中部">中部地方全域</option>
-                                <!--<option value="新潟県">新潟県</option>
-                                <option value="富山県">富山県</option>-->
-                                <option value="石川県">石川県</option>
-                                <!--<option value="福井県">福井県</option>
-                                <option value="山梨県">山梨県</option>-->
-                                <option value="長野県">長野県</option>
-                                <!--<option value="岐阜県">岐阜県</option>-->
-                                <option value="静岡県">静岡県</option>
-                                <option value="愛知県">愛知県</option>
-                            </optgroup>
-                            <optgroup label="近畿地方">
-                                <option value="近畿">近畿地方全域</option>
-                                <option value="大阪府">大阪府</option>
-                                <!--<option value="兵庫県">兵庫県</option>
-                                <option value="京都府">京都府</option>
-                                <option value="滋賀県">滋賀県</option>
-                                <option value="奈良県">奈良県</option>
-                                <option value="和歌山県">和歌山県</option>
-                                <option value="三重県">三重県</option>-->
-                            </optgroup>
-                            <optgroup label="近畿地方？">
-                                <option value="京都府？">京都府？</option>
-                            </optgroup>
-                            <optgroup label="中国地方">
-                                <option value="中国">中国地方全域</option>
-                                <!--<option value="鳥取県">鳥取県</option>
-                                <option value="島根県">島根県</option>
-                                <option value="岡山県">岡山県</option>-->
-                                <option value="広島県">広島県</option>
-                                <option value="山口県">山口県</option>
-                            </optgroup>
-                            <optgroup label="四国地方">
-                                <option value="四国">四国地方全域</option>
-                                <!--<option value="徳島県">徳島県</option>-->
-                                <option value="香川県">香川県</option>
-                                <option value="愛媛県">愛媛県</option>
-                                <!--<option value="高知県">高知県</option>-->
-                            </optgroup>
-                            <optgroup label="九州沖縄地方">
-                                <option value="九州沖縄">九州沖縄地方全域</option>
-                                <option value="福岡県">福岡県</option>
-                                <!--<option value="佐賀県">佐賀</option>
-                                <option value="長崎県">長崎</option>
-                                <option value="熊本県">熊本</option>
-                                <option value="大分県">大分</option>
-                                <option value="宮崎県">宮崎</option>
-                                <option value="鹿児島県">鹿児島</option>-->
-                                <option value="沖縄県">沖縄県</option>
-                            </optgroup>
-                            <optgroup label="海外">
-                                <option value="海外">海外すべて</option>
-                                <option value="イギリス">イギリス</option>
-                                <option value="ブラジル">ブラジル</option>
-                                <option value="オーストリア">オーストリア</option>
-                            </optgroup>
-                            <optgroup label="不詳">
-                                <option value="不明">不明</option>
-                            </optgroup>
-                        </select>
+                        <label>
+                            <select name="birthplace">
+                                <option value="" disabled selected>{{ __('search-index.dropdown') }}</option>
+                                <optgroup label="{{ __('place.area.hokkaido') }}">
+                                    <option value="北海道">{{ __('place.pref.北海道') }}</option>
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.tohoku') }}">
+                                    <option value="null" disabled style="background: rgba(0,0,0,0.2)">
+                                        @if(App::isLocale('ja')) 該当なし @else None @endif
+                                    </option>
+                                    <!--<option value="東北">東北地方全域</option>
+                                    <option value="青森">青森</option>
+                                    <option value="岩手">岩手</option>
+                                    <option value="宮城">宮城</option>
+                                    <option value="秋田">秋田</option>
+                                    <option value="山形">山形</option>
+                                    <option value="福島">福島</option>-->
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.kanto') }}">
+                                    <option value="関東">{{ __('place.area.kanto') }}</option>
+                                    <option value="東京都">{{ __('place.pref.東京都') }}</option>
+                                    <option value="神奈川県">{{ __('place.pref.神奈川県') }}</option>
+                                    <option value="埼玉県">{{ __('place.pref.埼玉県') }}</option>
+                                    <option value="千葉県">{{ __('place.pref.千葉県') }}</option>
+                                    <option value="茨城県">{{ __('place.pref.茨城県') }}</option>
+                                    <!--<option value="栃木県">{{ __('place.pref.栃木県') }}</option>
+                                    <option value="群馬県">{{ __('place.pref.群馬県') }}</option>-->
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.chubu') }}">
+                                    <option value="中部">{{ __('place.area.chubu') }}</option>
+                                    <!--<option value="新潟県">新潟県</option>
+                                    <option value="富山県">富山県</option>-->
+                                    <option value="石川県">{{ __('place.pref.石川県') }}</option>
+                                    <!--<option value="福井県">福井県</option>
+                                    <option value="山梨県">山梨県</option>-->
+                                    <option value="長野県">{{ __('place.pref.長野県') }}</option>
+                                    <!--<option value="岐阜県">岐阜県</option>-->
+                                    <option value="静岡県">{{ __('place.pref.静岡県') }}</option>
+                                    <option value="愛知県">{{ __('place.pref.愛知県') }}</option>
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.kinki') }}">
+                                    <option value="近畿">{{ __('place.area.kinki') }}</option>
+                                    <option value="大阪府">{{ __('place.pref.大阪府') }}</option>
+                                    <!--<option value="兵庫県">兵庫県</option>
+                                    <option value="京都府">京都府</option>
+                                    <option value="滋賀県">滋賀県</option>
+                                    <option value="奈良県">奈良県</option>
+                                    <option value="和歌山県">和歌山県</option>
+                                    <option value="三重県">三重県</option>-->
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.kinki') }}?">
+                                    <option value="京都府？">{{ __('place.pref.京都府？') }}</option>
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.chugoku') }}">
+                                    <option value="中国">{{ __('place.area.chugoku') }}</option>
+                                    <!--<option value="鳥取県">鳥取県</option>
+                                    <option value="島根県">島根県</option>
+                                    <option value="岡山県">岡山県</option>-->
+                                    <option value="広島県">{{ __('place.pref.広島県') }}</option>
+                                    <option value="山口県">{{ __('place.pref.山口県') }}</option>
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.shikoku') }}">
+                                    <option value="四国">{{ __('place.area.shikoku') }}</option>
+                                    <!--<option value="徳島県">徳島県</option>-->
+                                    <option value="香川県">{{ __('place.pref.香川県') }}</option>
+                                    <option value="愛媛県">{{ __('place.pref.愛媛県') }}</option>
+                                    <!--<option value="高知県">高知県</option>-->
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.kyushuokinawa') }}">
+                                    <option value="九州沖縄">{{ __('place.area.kyushuokinawa') }}</option>
+                                    <option value="福岡県">{{ __('place.pref.福岡県') }}</option>
+                                    <!--<option value="佐賀県">佐賀</option>
+                                    <option value="長崎県">長崎</option>
+                                    <option value="熊本県">熊本</option>
+                                    <option value="大分県">大分</option>
+                                    <option value="宮崎県">宮崎</option>
+                                    <option value="鹿児島県">鹿児島</option>-->
+                                    <option value="沖縄県">{{ __('place.pref.沖縄県') }}</option>
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.overseas') }}">
+                                    <option value="海外">{{ __('place.area.overseas') }}</option>
+                                    <option value="イギリス">{{ __('place.pref.イギリス') }}</option>
+                                    <option value="ブラジル">{{ __('place.pref.ブラジル') }}</option>
+                                    <option value="オーストリア">{{ __('place.pref.オーストリア') }}</option>
+                                </optgroup>
+                                <optgroup label="{{ __('place.area.unknown') }}">
+                                    <option value="不明">{{ __('place.area.unknown') }}</option>
+                                </optgroup>
+                            </select>
+                        </label>
                         <input type="submit" value="{{ __('Search') }}" class="button">
                     </form>
                     <p class="notification">
