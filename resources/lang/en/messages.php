@@ -46,4 +46,5 @@ return [
 
     'table.title' => 'Table view',
     'table.desc' => 'Displays a list of idols in a sortable table',
+    'table.disable' => 'Switch to normal display',
 ];

@@ -46,4 +46,5 @@ return [
 
     'table.title' => 'テーブル表示',
     'table.desc' => 'アイドルの一覧をソート可能なテーブルで表示します',
+    'table.disable' => '通常表示へ切り替え',
 ];
