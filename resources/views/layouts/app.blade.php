@@ -60,6 +60,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/changelang.js') }}"></script>
+    <script src="{{ asset('js/ouranos.js') }}"></script>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/mousetrap.min.js" crossorigin="anonymous"></script>
