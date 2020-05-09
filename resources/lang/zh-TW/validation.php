@@ -101,7 +101,7 @@ return [
 
     'custom' => [
         'attribute-name' => [
-            'rule-name' => '',
+            //'rule-name' => 'custom-message',
         ],
     ],
 
