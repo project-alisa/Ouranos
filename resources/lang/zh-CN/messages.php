@@ -9,7 +9,7 @@ return [
     'common.numbersof' => ':type的人数',
     'common.goto' => '前往:page页面',
 
-    'home.description' => 'MillionLivePortal是「偶像大师百万现场！」的非官方数据库＆导航站',
+    'home.description' => '',
     'home.latestnews' => '最新信息',
     'home.mastodon' => '最新信息由宮野站（长毛象实例）发布',
     'home.mastodon.error' => '无法从长毛象获取信息',
