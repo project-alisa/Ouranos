@@ -63,8 +63,8 @@ $return_url = changeGetParameter(url()->full(),'mode');
                             <td class="handedness">{{ __(translateHandedness($idol->handedness)) ?: 'N/A' }}</td>
                             <td class="cv ja">{{ $idol->cv }}</td>
                             <td class="color" style="color: {{ '#'.str_replace('#','',$idol->color) }}; border-right-color: {{ '#'.str_replace('#','',$idol->color) }}"
-                                onclick="setClipboard(this.innerText)" title="Click to copy to clipboard">
-                                {{ $idol->color ? '#'.str_replace('#','',$idol->color) : 'N/A' }}</td>
+                                onclick="setClipboard(this.innerText)"
+                                title="{{ __('messages.common.setclipboard') }}">{{ $idol->color ? '#'.str_replace('#','',$idol->color) : 'N/A' }}</td>
                         </tr>
                     @endforeach
                     </tbody>

@@ -32,8 +32,9 @@
                     </tr>
                     <tr>
                         <th>{{ __('Personal Color') }}</th>
-                        <td style="color:{{ '#'.($idol->color ?: '000') }}" class="colorcode" onclick="setClipboard(this.innerText)"
-                            title="Click to copy to clipboard">{{ !empty($idol->color) ? '#'.str_replace('#','',$idol->color) : 'N/A' }}</td>
+                        <td style="color:{{ '#'.($idol->color ?: '000') }}" onclick="setClipboard(this.innerText)"
+                            title="{{ __('messages.common.setclipboard') }}"
+                            class="colorcode">{{ !empty($idol->color) ? '#'.str_replace('#','',$idol->color) : 'N/A' }}</td>
                     </tr>
                 </table>
             </div>

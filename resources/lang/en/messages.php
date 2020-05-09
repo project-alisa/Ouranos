@@ -8,6 +8,7 @@ return [
 
     'common.numbersof' => 'Numbers of :type',
     'common.goto' => 'Go to :page Page',
+    'common.setclipboard' => 'Click to copy to clipboard',
 
     'home.description' => 'MillionLivePortal, the unofficial database and portal website for THE IDOLM@STER MILLION LIVE!',
     'home.latestnews' => 'Latest info',

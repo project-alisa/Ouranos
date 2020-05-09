@@ -8,6 +8,7 @@ return [
 
     'common.numbersof' => ':typeの人数',
     'common.goto' => ':pageページへ',
+    'common.setclipboard' => 'クリックしてクリップボードにコピー',
 
     'home.description' => 'MillionLivePortalは、アイドルマスターミリオンライブ！の非公式データベース＆ポータルサイトです。',
     'home.latestnews' => '最新情報',
