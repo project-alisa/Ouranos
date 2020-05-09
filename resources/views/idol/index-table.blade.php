@@ -1,14 +1,21 @@
 <?php
 $ja_flag = App::isLocale('ja');
 $dateflag = $ja_flag ? 'ja' : 'slash';
-$title = !empty($title) ? $title.' ('.__('messages.table.title').')' : __('messages.table.title');
+$top_title = !empty($title) ? $title.' ('.__('messages.table.title').')' : __('messages.table.title');
+$return_url = changeGetParameter(url()->full(),'mode');
 ?>
-@extends('layouts.app',['title' => $title, 'sub' => __('messages.table.desc'), 'fullwidth' => true, 'viewport' => 1920])
+@extends('layouts.app',['title' => $top_title, 'sub' => __('messages.table.desc'), 'fullwidth' => true, 'viewport' => 1920, 'width' => '1860px'])
+
+@section('navigation')
+    <div id="navigation">
+        <a href="{{ $return_url }}" class="button jw">{{ __('messages.table.disable') }}</a>
+    </div>
+@endsection
 
 @section('content')
     <main style="width: 1860px;">
         <div class="msgbox">
-            <div class="msgboxtop">{{ __('Idols list') }}</div>
+            <div class="msgboxtop">{{ $title ?: __('messages.table.title') }}</div>
             <div class="msgboxbody">
                 <table id="idols">
                     <thead>
