@@ -43,4 +43,8 @@ return [
     'share.title' => '分享到长毛象',
     'share.input' => '请输入要分享的实例链接',
     'share.select' => '也可以从以下实例选择',
+
+    'table.title' => '',
+    'table.desc' => '',
+    'table.disable' => '',
 ];
