@@ -9,7 +9,7 @@ return [
     'common.numbersof' => ':type的人數',
     'common.goto' => '前往:page頁面',
 
-    'home.description' => 'MillionLivePortal是「偶像大師百萬現場！」的非官方資料庫＆門戶網站',
+    'home.description' => '',
     'home.latestnews' => '最新信息',
     'home.mastodon' => '最新信息由宮野站（Mastodon實例）發布',
     'home.mastodon.error' => '無法從Mastodon獲取信息',
