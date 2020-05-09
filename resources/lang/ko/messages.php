@@ -43,4 +43,8 @@ return [
     'share.title' => 'Fediverse 에 공유',
     'share.input' => '공유 할 인스턴스 호스트를 입력하십시오.',
     'share.select' => '아래 목록에서 선택할 수도 있습니다.',
+
+    'table.title' => '',
+    'table.desc' => '',
+    'table.disable' => '',
 ];
