@@ -8,6 +8,7 @@ return [
 
     'common.numbersof' => ':type的人数',
     'common.goto' => '前往:page页面',
+    'common.setclipboard' => '',
 
     'home.description' => '',
     'home.latestnews' => '最新信息',
