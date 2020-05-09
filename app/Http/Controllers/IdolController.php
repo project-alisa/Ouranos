@@ -41,7 +41,8 @@ class IdolController extends Controller
         if($mode === 'normal'){
             return view('idol.index',compact('idols','type','idol_count','description'));
         }else /*if ($mode === 'sortable')*/{
-            return view('idol.index-table',compact('idols','type','idol_count','description'));
+            $title = __('Idols list');
+            return view('idol.index-table',compact('idols','title','type','idol_count','description'));
         }
     }
 

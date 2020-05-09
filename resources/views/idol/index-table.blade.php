@@ -1,8 +1,9 @@
-@extends('layouts.app',['title' => __('messages.table.title'), 'sub' => __('messages.table.desc'), 'fullwidth' => true, 'viewport' => 1920])
 <?php
 $ja_flag = App::isLocale('ja');
 $dateflag = $ja_flag ? 'ja' : 'slash';
+$title = !empty($title) ? $title.' ('.__('messages.table.title').')' : __('messages.table.title');
 ?>
+@extends('layouts.app',['title' => $title, 'sub' => __('messages.table.desc'), 'fullwidth' => true, 'viewport' => 1920])
 
 @section('content')
     <main style="width: 1860px;">
