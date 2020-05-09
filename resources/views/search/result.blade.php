@@ -1,5 +1,12 @@
 @extends('layouts.app',['title' => __('Search'), 'sub' => __('messages.search.index.desc')])
 
+@section('navigation')
+    <div id="navigation">
+        <a href="{{ changeGetParameter(url()->full(),'mode','sortable') }}" class="button jw">
+            {{ __('messages.table.title') }}</a>
+    </div>
+@endsection
+
 @section('content')
     <div id="twinbox">
         <div id="contentwide">
