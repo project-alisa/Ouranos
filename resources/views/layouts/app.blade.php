@@ -107,7 +107,10 @@
     </div>
 @endif
 
-<?php echo (!empty($fullwidth) && $fullwidth) ? "<div data-pagetype=\"fullwidth\">" : "<main>"; ?>
+<?php
+echo (!empty($fullwidth) && $fullwidth)
+    ? !empty($width) ? "<div data-pagetype=\"fullwidth\" style=\"width: $width;margin: auto;\">" : "<div data-pagetype=\"fullwidth\">"
+    : "<main>"; ?>
     @if(!empty($title))
         <?php $sub = !empty($sub) ? $sub : config('app.name')." - Ver".config('ouranos.version') ?>
         <div class="topnavi">
@@ -119,6 +122,7 @@
                 <div class="topnavisub">{{ $sub }}</div>
             </div>
         </div>
+        @yield('navigation')
     @endif
     @yield('content')
 <?php echo (!empty($fullwidth) && $fullwidth) ? "</div>" : "</main>"; ?>
