@@ -43,4 +43,8 @@ return [
     'share.title' => '分享到Mastodon',
     'share.input' => '請輸入要分享的實例鏈接',
     'share.select' => '也可以從以下實例選擇',
+
+    'table.title' => '',
+    'table.desc' => '',
+    'table.disable' => '',
 ];
