@@ -50,6 +50,14 @@
     background-image: url("../image/princess_symbol.png");
 }
 
+td.colorcode{
+    font-weight: bold;
+    cursor: default;
+}
+td.colorcode:before{
+    content: "■";
+}
+
 hr.gradient{
     border: 0;
     height: 2px;
