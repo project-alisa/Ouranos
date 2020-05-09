@@ -43,4 +43,8 @@ return [
     'share.title' => 'Fediverseで共有',
     'share.input' => '共有するインスタンスのホストを入力してください',
     'share.select' => 'または以下から選ぶことができます',
+
+    'table.title' => 'テーブル表示',
+    'table.desc' => 'アイドルの一覧をソート可能なテーブルで表示します',
+    'table.disable' => '通常表示へ切り替え',
 ];

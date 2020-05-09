@@ -43,4 +43,8 @@ return [
     'share.title' => 'Share to Fediverse',
     'share.input' => 'Enter the instance host to share.',
     'share.select' => 'You can also choose from the list below.',
+
+    'table.title' => 'Table view',
+    'table.desc' => 'Displays a list of idols in a sortable table',
+    'table.disable' => 'Switch to normal display',
 ];

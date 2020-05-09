@@ -4,7 +4,7 @@
 -->@endif<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=1366">
+    <meta name="viewport" content="width={{ empty($viewport) ? '1366' : $viewport }}">
 
     <!-- Descriptions and OGP -->
     <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -60,6 +60,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/changelang.js') }}"></script>
+    <script src="{{ asset('js/ouranos.js') }}"></script>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/mousetrap.min.js" crossorigin="anonymous"></script>
@@ -106,7 +107,10 @@
     </div>
 @endif
 
-<?php echo (!empty($fullwidth) && $fullwidth) ? "<div data-pagetype=\"fullwidth\">" : "<main>"; ?>
+<?php
+echo (!empty($fullwidth) && $fullwidth)
+    ? !empty($width) ? "<div data-pagetype=\"fullwidth\" style=\"width: $width;margin: auto;\">" : "<div data-pagetype=\"fullwidth\">"
+    : "<main>"; ?>
     @if(!empty($title))
         <?php $sub = !empty($sub) ? $sub : config('app.name')." - Ver".config('ouranos.version') ?>
         <div class="topnavi">
@@ -118,6 +122,7 @@
                 <div class="topnavisub">{{ $sub }}</div>
             </div>
         </div>
+        @yield('navigation')
     @endif
     @yield('content')
 <?php echo (!empty($fullwidth) && $fullwidth) ? "</div>" : "</main>"; ?>

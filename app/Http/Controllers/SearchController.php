@@ -33,7 +33,9 @@ class SearchController extends Controller
         }
 
         // 検索開始
-        $search = Idol::select();
+        $search = Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
+            'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
+            'c_k_names.subname_zh','c_k_names.subname_ko')->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id');
         $query_info = array();
         $order_by = "id";
         $order_direction = "asc";
@@ -124,12 +126,23 @@ class SearchController extends Controller
         }
         $search = $search->orderBy($order_by,$order_direction)->get();
         $search_count = $search->count();
+        // 動作モードチェック
+        $mode = $request->input('mode') ?: 'normal';
+        if($mode !== 'normal' && $mode !== 'sortable')abort(400);
+
         if($search_count === 1 && $name && !($birthplace||$month||$day||$age||$range)){
+            // 名前検索のみの場合のリダイレクト
             return redirect('/idol/'.$search[0]->name_r)->with('flash_message',__('messages.search.redirect'));
         }elseif($search_count === 0){
+            // 検索結果が見つからない場合のエラー
             return abort(404,__('messages.search.result.notfound'));
-        }else{
+        }elseif($mode === 'normal'){
+            // 標準リスト表示
             return view('search.result',compact('search','query_info','search_count','description'));
+        }else /*if($mode === 'sortable')*/{
+            $title = __('Search');
+            $idols = $search;
+            return view('idol.index-table',compact('idols','query_info','search_count','title','description'));
         }
     }
 }

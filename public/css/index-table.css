@@ -1,0 +1,83 @@
+.sort{
+    cursor: pointer;
+}
+.sort:after{
+    content: "◆";
+    color: lightgray;
+    padding-left: 4px;
+}
+.sort.desc:after {
+    content:"▼";
+    color: black;
+}
+.sort.asc:after {
+    content:"▲";
+    color: black;
+}
+
+table#idols{
+    border-spacing: 0 4px !important;
+}
+td, th{
+    text-align: center;
+    font-size: 17px;
+}
+th{
+    border-bottom: solid 1px gray;
+    padding-bottom: 4px;
+}
+td{
+    padding: 2px 0;
+    border-bottom-style: solid;
+}
+td:first-child{
+    border-left: solid 15px black;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+td:last-child{
+    border-right: solid 15px black;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+td.name, td.hiragana, td.alphabet{
+    text-align: left;
+}
+td.type{
+    font-weight: bold;
+}
+
+td.name > a, td.hiragana > a, td.alphabet > a {
+    color: darkblue;
+}
+
+td.icon > img{
+    position: absolute;
+    height: 1.5em;
+    box-sizing: border-box;
+    padding: 1px;
+    border-radius: 2px;
+    transform: translate(-.6em, -.7em);
+    transition: transform .3s;
+    z-index: 2;
+}
+td.icon:hover > img{
+    transform: scale(3);
+    z-index: 3;
+}
+td.icon{
+    width: 1.7em;
+}
+td.icon > img{
+    background: black;
+}
+
+td.color{
+    font-weight: bold;
+    cursor: default;
+}
+
+.topnavi{
+    width: 1860px;
+    margin: 0 auto;
+}
