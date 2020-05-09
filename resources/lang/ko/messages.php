@@ -8,6 +8,7 @@ return [
 
     'common.numbersof' => ':type의 인원수',
     'common.goto' => '',
+    'common.setclipboard' => '',
 
     'home.description' => 'MillionLivePortal은, 아이돌마스터 밀리언라이브! 의 비공식 데이터베이스 & 포털사이트입니다.',
     'home.latestnews' => '최신 정보',
