@@ -38,8 +38,10 @@ $dateflag = $ja_flag ? 'ja' : 'slash';
                             <td class="id" data-id="{{ $idol->id }}">{{ $idol->id }}</td>
                             <td class="name ja" data-name="{{ $idol->name }}">
                                 <a href="{{ url('/idol/'.$idol->name_r) }}">{{ separateString($idol->name, $idol->name_separate) }}</a></td>
-                            <td class="hiragana ja" data-hiragana="{{ $idol->name_y }}">{{ separateString($idol->name_y, $idol->name_y_separate) }}</td>
-                            <td class="alphabet" data-alphabet="{{ $idol->name_r }}">{{ ucwords(separateString($idol->name_r, $idol->name_r_separate)) }}</td>
+                            <td class="hiragana ja" data-hiragana="{{ $idol->name_y }}">
+                                <a href="{{ url('/idol/'.$idol->name_r) }}">{{ separateString($idol->name_y, $idol->name_y_separate) }}</a></td>
+                            <td class="alphabet" data-alphabet="{{ $idol->name_r }}">
+                                <a href="{{ url('/idol/'.$idol->name_r) }}">{{ ucwords(separateString($idol->name_r, $idol->name_r_separate)) }}</a></td>
                             <td class="type {{ strtolower($idol->type) }}">{{ $idol->type }}</td>
                             <td class="birthdate" data-birthdate="{{ $idol->birthdate }}">
                                 {{ $idol->birthdate ? convertDateString($idol->birthdate,$dateflag) : 'N/A' }}</td>
@@ -52,7 +54,8 @@ $dateflag = $ja_flag ? 'ja' : 'slash';
                             <td class="hip">{{ $idol->hip ?: '-' }}</td>
                             <td class="handedness">{{ __(translateHandedness($idol->handedness)) ?: 'N/A' }}</td>
                             <td class="cv ja">{{ $idol->cv }}</td>
-                            <td class="color" style="color: {{ '#'.str_replace('#','',$idol->color) }}; border-right-color: {{ '#'.str_replace('#','',$idol->color) }}">
+                            <td class="color" style="color: {{ '#'.str_replace('#','',$idol->color) }}; border-right-color: {{ '#'.str_replace('#','',$idol->color) }}"
+                                onclick="setClipboard(this.innerText)" title="Click to copy to clipboard">
                                 {{ $idol->color ? '#'.str_replace('#','',$idol->color) : 'N/A' }}</td>
                         </tr>
                     @endforeach
@@ -87,41 +90,8 @@ $dateflag = $ja_flag ? 'ja' : 'slash';
 @endsection
 
 @section('style')
+    <link rel="stylesheet" href="{{ asset('css/index-table.css') }}">
     <style>
-        .sort.desc:after {
-            content:"▼";
-        }
-        .sort.asc:after {
-            content:"▲";
-        }
-
-        table#idols{
-            border-spacing: 0 4px !important;
-        }
-        td, th{
-            text-align: center;
-            font-size: 17px;
-        }
-        td{
-            padding: 2px 0;
-            border-bottom-style: solid;
-        }
-        td:first-child{
-            border-left: solid 15px black;
-            border-top-left-radius: 3px;
-            border-bottom-left-radius: 3px;
-        }
-        td:last-child{
-            border-right: solid 15px black;
-            border-top-right-radius: 3px;
-            border-bottom-right-radius: 3px;
-        }
-        td.name, td.hiragana, td.alphabet{
-            text-align: left;
-        }
-        td.type{
-            font-weight: bold;
-        }
         td.princess{
             color: {{ getTypeColor('Princess') }};
         }
@@ -130,24 +100,6 @@ $dateflag = $ja_flag ? 'ja' : 'slash';
         }
         td.angel{
             color: {{ getTypeColor('Angel') }};
-            text-shadow: 0 0 3px white;
-        }
-        td.icon > img{
-            position: absolute;
-            height: 1.5em;
-            box-sizing: border-box;
-            padding: 1px;
-            border-radius: 2px;
-            transform: translate(-.4em, -.7em);
-            transition: transform .3s;
-            z-index: 2;
-        }
-        td.icon:hover > img{
-            transform: scale(3);
-            z-index: 3;
-        }
-        td.icon{
-            width: 1.7em;
         }
         td.icon > img.princess{
             background: {{ getTypeColor('Princess') }};
@@ -157,14 +109,6 @@ $dateflag = $ja_flag ? 'ja' : 'slash';
         }
         td.icon > img.angel{
             background: {{ getTypeColor('Angel') }};
-        }
-        td.color{
-            font-weight: bold;
-        }
-
-        .topnavi{
-            width: 1860px;
-            margin: 0 auto;
         }
     </style>
 @endsection
