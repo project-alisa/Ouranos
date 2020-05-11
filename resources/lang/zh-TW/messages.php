@@ -8,8 +8,9 @@ return [
 
     'common.numbersof' => ':type的人數',
     'common.goto' => '前往:page頁面',
+    'common.setclipboard' => '點擊複製到剪貼板',
 
-    'home.description' => '',
+    'home.description' => 'MillionLivePortal是「偶像大師 百萬人演唱會！」的非官方資料庫＆門戶網站',
     'home.latestnews' => '最新信息',
     'home.mastodon' => '最新信息由宮野站（Mastodon實例）發布',
     'home.mastodon.error' => '無法從Mastodon獲取信息',
@@ -43,4 +44,8 @@ return [
     'share.title' => '分享到Mastodon',
     'share.input' => '請輸入要分享的實例鏈接',
     'share.select' => '也可以從以下實例選擇',
+
+    'table.title' => '資料表模式',
+    'table.desc' => '在可分類排序的資料表中查看偶像信息',
+    'table.disable' => '返回預設模式',
 ];

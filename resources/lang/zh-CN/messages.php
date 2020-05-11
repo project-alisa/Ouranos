@@ -8,8 +8,9 @@ return [
 
     'common.numbersof' => ':type的人数',
     'common.goto' => '前往:page页面',
+    'common.setclipboard' => '点击复制到剪贴板',
 
-    'home.description' => '',
+    'home.description' => 'MillionLivePortal是「偶像大师 百万现场！」的非官方数据库＆导航站',
     'home.latestnews' => '最新信息',
     'home.mastodon' => '最新信息由宮野站（长毛象实例）发布',
     'home.mastodon.error' => '无法从长毛象获取信息',
@@ -43,4 +44,8 @@ return [
     'share.title' => '分享到长毛象',
     'share.input' => '请输入要分享的实例链接',
     'share.select' => '也可以从以下实例选择',
+
+    'table.title' => '数据表模式',
+    'table.desc' => '在可分类排序的数据表中查看偶像信息',
+    'table.disable' => '返回默认模式',
 ];

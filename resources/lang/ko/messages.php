@@ -8,6 +8,7 @@ return [
 
     'common.numbersof' => ':type의 인원수',
     'common.goto' => '',
+    'common.setclipboard' => '',
 
     'home.description' => 'MillionLivePortal은, 아이돌마스터 밀리언라이브! 의 비공식 데이터베이스 & 포털사이트입니다.',
     'home.latestnews' => '최신 정보',
@@ -43,4 +44,8 @@ return [
     'share.title' => 'Fediverse 에 공유',
     'share.input' => '공유 할 인스턴스 호스트를 입력하십시오.',
     'share.select' => '아래 목록에서 선택할 수도 있습니다.',
+
+    'table.title' => '',
+    'table.desc' => '',
+    'table.disable' => '',
 ];
