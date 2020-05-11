@@ -8,7 +8,7 @@ return [
 
     'common.numbersof' => ':type的人数',
     'common.goto' => '前往:page页面',
-    'common.setclipboard' => '',
+    'common.setclipboard' => '点击复制到剪贴板',
 
     'home.description' => 'MillionLivePortal是「偶像大师 百万现场！」的非官方数据库＆导航站',
     'home.latestnews' => '最新信息',
@@ -45,7 +45,7 @@ return [
     'share.input' => '请输入要分享的实例链接',
     'share.select' => '也可以从以下实例选择',
 
-    'table.title' => '',
-    'table.desc' => '',
-    'table.disable' => '',
+    'table.title' => '数据表模式',
+    'table.desc' => '在可分类排序的数据表中查看偶像信息',
+    'table.disable' => '返回默认模式',
 ];
