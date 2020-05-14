@@ -65,21 +65,16 @@ hr.gradient{
 }
 
 table#idolinfo{
-    padding: 0 3px;
+    padding: 0 3px 0 5px;
     font-weight: bold;
     font-size: 16px;
     line-height: 15px;
-    border-left: dotted 2px lightgray;
+    border-left: dotted 2px dimgray;
 }
 #idolinfo th{
     border: none;
     text-align: left;
-}
-#idolinfo th::after{
-    content: '\3011';
-}
-#idolinfo th::before{
-    content: '\3010';
+    color: #495265;
 }
 #idolinfo td{
     border: none;
@@ -94,14 +89,16 @@ table#idolinfo{
 }
 #datatable th{
     width: 110px;
-    border:solid 2px black;
+    background: #606060;
+    color: white;
+    font-weight: normal;
     border-radius: 50px;
 }
 #datatable td{
     text-align: left;
     padding:0 4px;
     border: none;
-    border-bottom: dashed 1px lightgray;
+    border-bottom: dotted 2px darkgray;
 }
 
 #idollinks{
