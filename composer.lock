@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d87c3d14b77861e8a8b0a3adfee8d04",
+    "content-hash": "b14d00ab36b7387cb72a2874aa8b01b4",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -544,16 +544,16 @@
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.7.16",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "fe01b0f0d00366db907e9538a7e21c3325b63b50"
+                "reference": "f634551afc5d062431f9e6581a70f0f3a041a556"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/fe01b0f0d00366db907e9538a7e21c3325b63b50",
-                "reference": "fe01b0f0d00366db907e9538a7e21c3325b63b50",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/f634551afc5d062431f9e6581a70f0f3a041a556",
+                "reference": "f634551afc5d062431f9e6581a70f0f3a041a556",
                 "shasum": ""
             },
             "require": {
@@ -609,7 +609,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2020-05-09T03:47:29+00:00"
+            "time": "2020-05-27T08:55:40+00:00"
         },
         {
             "name": "fideloper/proxy",
