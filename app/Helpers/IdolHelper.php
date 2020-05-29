@@ -193,6 +193,9 @@ if(!function_exists('getIdolByBithdate')){
     function getIdolByBirthdate(string $date = null){
         if($date) $date = date('2017-m-d',strtotime($date));
         else $date = date('2017-m-d');
-        return \App\Idol::where('birthdate','=',$date)->get();
+        return \App\Idol::select('idols.*','c_k_names.id as cknameid','c_k_names.name_zh','c_k_names.name_ko',
+            'c_k_names.name_zh_separate','c_k_names.name_ko_separate',
+            'c_k_names.subname_zh','c_k_names.subname_ko')
+            ->leftjoin('c_k_names','idols.id','=','c_k_names.idol_id')->where('birthdate','=',$date)->get();
     }
 }
