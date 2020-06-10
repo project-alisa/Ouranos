@@ -43,7 +43,7 @@ class InfoController extends Controller
             $event_txt = 'イベント情報を取得できませんでした';
         }
         // 時計表示モード
-        $clock_mode = $request->get('clock_mode') ?: env('CLOCK_DEFAULT_MODE','normal');
+        $clock_mode = $request->get('clock_mode') ?: config('ouranos.clockDefaultMode');
         $clock_mode_available = ['normal', 'right'];
         if(array_search($clock_mode, $clock_mode_available) === FALSE)abort(400,'Invalid clock mode.');
         return view('clock',compact('feed_txt','birth_text','event_txt','clock_mode'));
