@@ -56,6 +56,14 @@ h1{
     border-right: solid 1px rgba(255,255,255,0.4);
     text-align: right;
 }
+.clock-right #clock{
+    position: fixed;
+    top: calc(50vh - 120px);
+    left: 60vw;
+    border-right: none;
+    text-align: center;
+    transform: scale(2);
+}
 #date{
     font-size: 25px;
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class InfoController extends Controller
 {
-    public function clock(){
+    public function clock(Request $request){
         // mastodonRSS取得
         try {
             $feed = simplexml_load_file(config('ouranos.mastodonFeedUrl'));
@@ -42,7 +42,11 @@ class InfoController extends Controller
         }catch (\Exception $exception){
             $event_txt = 'イベント情報を取得できませんでした';
         }
-        return view('clock',compact('feed_txt','birth_text','event_txt'));
+        // 時計表示モード
+        $clock_mode = $request->get('clock_mode') ?: env('CLOCK_DEFAULT_MODE','normal');
+        $clock_mode_available = ['normal', 'right'];
+        if(array_search($clock_mode, $clock_mode_available) === FALSE)abort(400,'Invalid clock mode.');
+        return view('clock',compact('feed_txt','birth_text','event_txt','clock_mode'));
     }
 
     public function home(){

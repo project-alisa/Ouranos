@@ -23,8 +23,7 @@
     </p>
 </div>
 
-<main>
-{{--    <h1><img src="{{ asset('image/ouranos_icon.png') }}" id="logo" alt="{{ config('ouranos.sitename',config('app.name','Ouranos')) }}"></h1>--}}
+<main class="{{ 'clock-'.$clock_mode }}">
     <div id="clock">
         <div id="date"></div>
         <div id="time"></div>
@@ -49,7 +48,6 @@
         </div>
     </div>
 </main>
-
 
 </body>
 </html>
