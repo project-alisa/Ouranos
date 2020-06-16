@@ -667,16 +667,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.18.19",
+            "version": "v6.18.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "69321afec31f4a908112e5dc8995fc91024fd971"
+                "reference": "2862a9857533853bb2851bac39d65e3bfb8ba6cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/69321afec31f4a908112e5dc8995fc91024fd971",
-                "reference": "69321afec31f4a908112e5dc8995fc91024fd971",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2862a9857533853bb2851bac39d65e3bfb8ba6cd",
+                "reference": "2862a9857533853bb2851bac39d65e3bfb8ba6cd",
                 "shasum": ""
             },
             "require": {
@@ -758,6 +758,7 @@
             "suggest": {
                 "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.0).",
                 "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6).",
+                "ext-ftp": "Required to use the Flysystem FTP driver.",
                 "ext-gd": "Required to use Illuminate\\Http\\Testing\\FileFactory::image().",
                 "ext-memcached": "Required to use the memcache cache driver.",
                 "ext-pcntl": "Required to use all features of the queue worker.",
@@ -810,7 +811,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-06-09T13:59:34+00:00"
+            "time": "2020-06-16T13:21:33+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1768,7 +1769,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -1845,7 +1846,7 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -1898,7 +1899,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
@@ -2016,7 +2017,7 @@
         },
         {
             "name": "symfony/error-handler",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/error-handler.git",
@@ -2073,7 +2074,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -2201,7 +2202,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -2250,7 +2251,7 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -2305,16 +2306,16 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "54526b598d7fc86a67850488b194a88a79ab8467"
+                "reference": "81d42148474e1852a333ed7a732f2a014af75430"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/54526b598d7fc86a67850488b194a88a79ab8467",
-                "reference": "54526b598d7fc86a67850488b194a88a79ab8467",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/81d42148474e1852a333ed7a732f2a014af75430",
+                "reference": "81d42148474e1852a333ed7a732f2a014af75430",
                 "shasum": ""
             },
             "require": {
@@ -2392,20 +2393,20 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2020-05-31T05:25:51+00:00"
+            "time": "2020-06-12T11:15:37+00:00"
         },
         {
             "name": "symfony/mime",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "2adc53069becd0de3ea2748438646610ad0968db"
+                "reference": "af8e69e7527f752ab0ef6e1b717bac3f7336b8c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/2adc53069becd0de3ea2748438646610ad0968db",
-                "reference": "2adc53069becd0de3ea2748438646610ad0968db",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/af8e69e7527f752ab0ef6e1b717bac3f7336b8c6",
+                "reference": "af8e69e7527f752ab0ef6e1b717bac3f7336b8c6",
                 "shasum": ""
             },
             "require": {
@@ -2454,7 +2455,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2020-05-25T05:42:33+00:00"
+            "time": "2020-06-09T09:16:12+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2871,7 +2872,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -2920,7 +2921,7 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
@@ -3054,7 +3055,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -3187,7 +3188,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.4.9",
+            "version": "v4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
