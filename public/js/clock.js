@@ -19,7 +19,7 @@ function monthname(num) {
         'September',
         'October',
         'November',
-        'December'
+        'December',
     ];
     if (num > 11) return false;
     return months[num];
