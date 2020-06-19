@@ -49,4 +49,4 @@ function showClock() {
     document.getElementById('time').innerHTML = `${nowHour}:${nowMin}<span style='font-size:35px'>${nowSec}`;
 }
 //showClock();
-setInterval('showClock()', 1000);
+setInterval(()=>showClock(), 1000);
