@@ -1,64 +1,52 @@
 /**
  * Created by miyano on 17/06/29.
  */
-function keta(num) {
-    var ret;
-    if (10 > num) {
-        ret = "0" + num;
-    } else {
-        ret = num;
-    }
-    return ret;
+function keta (num) {
+    if (10 > num) return '0' + num;
+    return num.toString();
 }
+
 function monthname(num) {
-    var months;
-    months = ["January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"];
-    if( num > 11 ){
-        return false;
-    }else{
-        return months[num];
-    }
+    const months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+    ];
+    if (num > 11) return false;
+    return months[num];
 }
-function addOrdinal(num){
-    switch (num){
-        case 11:
-        case 12:
-        case 13:
-            return num + "th";
+function addOrdinal(num) {
+    if (num >= 11 && num < 14) return num + "th";
+    switch (num % 10) {
+        case 1:
+            return num + "st";
+        case 2:
+            return num + "nd";
+        case 3:
+            return num + "rd";
         default:
-            switch ( num % 10 ){
-                case 1:
-                    return num + "st";
-                case 2:
-                    return num + "nd";
-                case 3:
-                    return num + "rd";
-                default:
-                    return num + "th";
-            }
+            return num + "th";
     }
 }
 function showClock() {
-    var nowTime = new Date();
-    var nowYear = nowTime.getFullYear();
-    var nowMonth = monthname(nowTime.getMonth());
-    var nowDay = addOrdinal(nowTime.getDate());
-    var nowHour = nowTime.getHours();
-    var nowMin = keta(nowTime.getMinutes());
-    var nowSec = keta(nowTime.getSeconds());
-    document.getElementById("date").innerHTML = nowMonth + " " + nowDay + ", " + nowYear;
-    document.getElementById("time").innerHTML = nowHour + ":" + nowMin + "<span style='font-size:35px'> " + nowSec;
+    const nowTime = new Date();
+    const nowYear = nowTime.getFullYear();
+    const nowMonth = monthname(nowTime.getMonth());
+    const nowDay = addOrdinal(nowTime.getDate());
+    const nowHour = nowTime.getHours();
+    const nowMin = keta(nowTime.getMinutes());
+    const nowSec = keta(nowTime.getSeconds());
+    document.getElementById('date').innerHTML = `${nowMonth} ${nowDay} ${nowYear}`;
+    document.getElementById('time').innerHTML = `${nowHour}:${nowMin}<span style='font-size:35px'>${nowSec}</span>`;
 }
 //showClock();
-setInterval('showClock()',1000);
+setInterval(()=>showClock(), 1000);
