@@ -46,7 +46,7 @@ function showClock() {
     const nowMin = keta(nowTime.getMinutes());
     const nowSec = keta(nowTime.getSeconds());
     document.getElementById('date').innerHTML = `${nowMonth} ${nowDay} ${nowYear}`;
-    document.getElementById('time').innerHTML = `${nowHour}:${nowMin}<span style='font-size:35px'>${nowSec}`;
+    document.getElementById('time').innerHTML = `${nowHour}:${nowMin}<span style='font-size:35px'>${nowSec}</span>`;
 }
 //showClock();
 setInterval(()=>showClock(), 1000);
