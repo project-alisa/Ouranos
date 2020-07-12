@@ -116,14 +116,44 @@ class AnalogClock {
     }
 }
 
-// TODO: 日付表示
+class TodayCalendar {
+    /**
+     * @param {HTMLElement} elem
+     */
+    constructor(elem) {
+        this.elem = elem;
+    }
+
+    draw() {
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = monthname(now.getMonth());
+        const d = addOrdinal(now.getDate());
+        this.elem.innerText = `${m} ${d}, ${y}`
+    }
+
+    start() {
+        this.timer = setInterval(() => this.draw(), 500);
+    }
+
+    stop() {
+        clearInterval(this.timer);
+    }
+}
+
+function startCalendar() {
+    const date = document.querySelector('#date');
+    date.innerText = '';
+
+    const todayCalendar = new TodayCalendar(date);
+    todayCalendar.start();
+}
 
 function startAnalogClock() {
-    const date = document.querySelector('#date');
     const time = document.querySelector('#time');
     const canvas = document.createElement('canvas');
 
-    date.innerText = time.innerText = '';
+    time.innerText = '';
     canvas.style.width = canvas.style.height = '25vh';
     time.appendChild(canvas);
 
@@ -141,6 +171,7 @@ window.addEventListener('DOMContentLoaded', () => {
     switch (params.get('clock_type')) {
         case 'analog':
             startAnalogClock();
+            startCalendar();
             break;
         default:
             setInterval(() => showClock(), 1000);
