@@ -100,11 +100,19 @@ class AnalogClock {
     }
 
     on_resize() {
-        // resizeするとstrokeStyleがリセットされる
-        const style = this.ctx.strokeStyle;
+        // resizeするといろいろリセットされる
+        const style = {
+            stroke: this.ctx.strokeStyle,
+            shadow: this.ctx.shadowColor,
+            blur: this.ctx.shadowBlur,
+        };
+
         this.size = Math.max(2 * this.ctx.canvas.scrollHeight, 400);
         this.ctx.canvas.width = this.ctx.canvas.height = this.size;
-        this.ctx.strokeStyle = style;
+
+        this.ctx.strokeStyle = style.stroke;
+        this.ctx.shadowColor = style.shadow;
+        this.ctx.shadowBlur = style.blur;
     }
 
     start() {
@@ -158,7 +166,8 @@ function startAnalogClock() {
     time.appendChild(canvas);
 
     const ctx = canvas.getContext('2d');
-    // TODO: color from css
+    ctx.shadowColor = 'black';
+    ctx.shadowBlur = 10;
     ctx.strokeStyle = 'white';
 
     const analogClock = new AnalogClock(ctx);
