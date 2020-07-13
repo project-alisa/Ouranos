@@ -48,5 +48,141 @@ function showClock() {
     document.getElementById('date').innerHTML = `${nowMonth} ${nowDay} ${nowYear}`;
     document.getElementById('time').innerHTML = `${nowHour}:${nowMin}<span style='font-size:35px'>${nowSec}</span>`;
 }
-//showClock();
-setInterval(()=>showClock(), 1000);
+
+
+class AnalogClock {
+    /**
+     * @param {CanvasRenderingContext2D} ctx
+     */
+    constructor(ctx) {
+        this.ctx = ctx;
+        this.on_resize();
+        window.addEventListener('resize', () => this.on_resize());
+    }
+
+    draw_radial(angle, start, end) {
+        const half = this.size / 2;
+        this.ctx.beginPath();
+        this.ctx.moveTo(half + Math.sin(angle) * start, half - Math.cos(angle) * start);
+        this.ctx.lineTo(half + Math.sin(angle) * end, half - Math.cos(angle) * end);
+        this.ctx.closePath();
+        this.ctx.stroke();
+    }
+
+    draw_bits() {
+        this.ctx.lineWidth = 6;
+        const half = this.size / 2;
+        for (let i = 0; i < 12; i++) {
+            const angle = 2 * Math.PI * (i / 12);
+            this.draw_radial(angle, 0.92 * half, 0.98 * half);
+        }
+    }
+
+    draw() {
+        this.ctx.clearRect(0, 0, this.size, this.size);
+
+        this.draw_bits();
+        const now = new Date();
+
+        const half = this.size / 2;
+        const PI2 = 2 * Math.PI;
+        const angle_millisec = PI2 * now.getMilliseconds() / 1000;
+        const angle_sec = PI2 * now.getSeconds() / 60 + angle_millisec / 60;
+        const angle_min = PI2 * now.getMinutes() / 60 + angle_sec / 60;
+        const angle_hour = PI2 * (now.getHours() % 12) / 12 + angle_min / 12;
+
+        this.ctx.lineWidth = 2;
+        this.draw_radial(angle_sec, 0, half * 0.9);
+        this.ctx.lineWidth = 4;
+        this.draw_radial(angle_min, 0, half * 0.8);
+        this.ctx.lineWidth = 8;
+        this.draw_radial(angle_hour, 0, half * 0.5);
+    }
+
+    on_resize() {
+        // resizeするといろいろリセットされる
+        const style = {
+            stroke: this.ctx.strokeStyle,
+            shadow: this.ctx.shadowColor,
+            blur: this.ctx.shadowBlur,
+        };
+
+        this.size = Math.max(2 * this.ctx.canvas.scrollHeight, 400);
+        this.ctx.canvas.width = this.ctx.canvas.height = this.size;
+
+        this.ctx.strokeStyle = style.stroke;
+        this.ctx.shadowColor = style.shadow;
+        this.ctx.shadowBlur = style.blur;
+    }
+
+    start() {
+        this.timer = setInterval(() => this.draw(), 50);
+    }
+
+    stop() {
+        clearInterval(this.timer);
+    }
+}
+
+class TodayCalendar {
+    /**
+     * @param {HTMLElement} elem
+     */
+    constructor(elem) {
+        this.elem = elem;
+    }
+
+    draw() {
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = monthname(now.getMonth());
+        const d = addOrdinal(now.getDate());
+        this.elem.innerText = `${m} ${d}, ${y}`
+    }
+
+    start() {
+        this.timer = setInterval(() => this.draw(), 500);
+    }
+
+    stop() {
+        clearInterval(this.timer);
+    }
+}
+
+function startCalendar() {
+    const date = document.querySelector('#date');
+    date.innerText = '';
+
+    const todayCalendar = new TodayCalendar(date);
+    todayCalendar.start();
+}
+
+function startAnalogClock() {
+    const time = document.querySelector('#time');
+    const canvas = document.createElement('canvas');
+
+    time.innerText = '';
+    canvas.style.width = canvas.style.height = '25vh';
+    time.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    ctx.shadowColor = 'black';
+    ctx.shadowBlur = 10;
+    ctx.strokeStyle = 'white';
+
+    const analogClock = new AnalogClock(ctx);
+    analogClock.start();
+}
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URL(document.location).searchParams;
+    switch (params.get('clock_type')) {
+        case 'analog':
+            startAnalogClock();
+            startCalendar();
+            break;
+        default:
+            setInterval(() => showClock(), 1000);
+    }
+});
