@@ -739,16 +739,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.18.34",
+            "version": "v6.18.40",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7a74817c91be61676deafe3a84a758a71350d9f2"
+                "reference": "e42450df0896b7130ccdb5290a114424e18887c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7a74817c91be61676deafe3a84a758a71350d9f2",
-                "reference": "7a74817c91be61676deafe3a84a758a71350d9f2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e42450df0896b7130ccdb5290a114424e18887c9",
+                "reference": "e42450df0896b7130ccdb5290a114424e18887c9",
                 "shasum": ""
             },
             "require": {
@@ -846,6 +846,7 @@
                 "moontoast/math": "Required to use ordered UUIDs (^1.1).",
                 "nyholm/psr7": "Required to use PSR-7 bridging features (^1.2).",
                 "pda/pheanstalk": "Required to use the beanstalk queue driver (^4.0).",
+                "predis/predis": "Required to use the predis connector (^1.1.2).",
                 "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^4.0).",
                 "symfony/cache": "Required to PSR-6 cache bridge (^4.3.4).",
@@ -883,7 +884,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-08-06T14:55:00+00:00"
+            "time": "2020-09-09T15:02:20+00:00"
         },
         {
             "name": "laravel/tinker",
