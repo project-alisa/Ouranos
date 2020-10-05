@@ -2,7 +2,7 @@
 
 return [
     'sitename' => 'MillionLivePortal',
-    'version' => '5.4.1 EpisodeTiara',
+    'version' => '5.4.2 EpisodeTiara',
     'phrase' => 'A princess, who dreams earnestly.',
 
     'homeCardName' => env('HOME_CARD_NAME','yurikonanao_sunshinegirlofbeach'),
